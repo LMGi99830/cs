@@ -10,24 +10,19 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class AdminAttendance : Form
+    public partial class CodeManagementForm : Form
     {
-        public AdminAttendance()
+        public CodeManagementForm()
         {
             InitializeComponent();
         }
 
-        private void groupBox5_Enter(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void AdminAttendance_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox4_Enter(object sender, EventArgs e)
+        private void checkedGroupBox1_Enter(object sender, EventArgs e)
         {
 
         }

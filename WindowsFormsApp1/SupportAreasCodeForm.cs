@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class ApprovalForm : Form
+    public partial class SupportAreasCodeForm : Form
     {
-        public ApprovalForm()
+        public SupportAreasCodeForm()
         {
             InitializeComponent();
         }

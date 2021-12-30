@@ -171,5 +171,15 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void groupBox5_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

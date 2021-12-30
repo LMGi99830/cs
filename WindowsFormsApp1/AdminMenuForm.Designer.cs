@@ -29,21 +29,21 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("학생인사정보등록/조회");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("학생관리", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("현장실습등록");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("현장실습신청인원조회/승인");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("현장실습신청");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("현장실습관리", new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4,
-            treeNode5});
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("출퇴근");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("근태현황");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("근태관리", new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("학생인사정보등록/조회");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("학생관리", new System.Windows.Forms.TreeNode[] {
+            treeNode10});
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("현장실습등록");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("현장실습신청인원조회/승인");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("현장실습신청");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("현장실습관리", new System.Windows.Forms.TreeNode[] {
+            treeNode12,
+            treeNode13,
+            treeNode14});
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("출/퇴근");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("근태현황");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("근태관리", new System.Windows.Forms.TreeNode[] {
+            treeNode16,
+            treeNode17});
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -53,7 +53,6 @@ namespace WindowsFormsApp1
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -61,7 +60,6 @@ namespace WindowsFormsApp1
             this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -103,28 +101,28 @@ namespace WindowsFormsApp1
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "노드3";
-            treeNode1.Text = "학생인사정보등록/조회";
-            treeNode2.Name = "노드0";
-            treeNode2.Text = "학생관리";
-            treeNode3.Name = "노드4";
-            treeNode3.Text = "현장실습등록";
-            treeNode4.Name = "노드9";
-            treeNode4.Text = "현장실습신청인원조회/승인";
-            treeNode5.Name = "노드10";
-            treeNode5.Text = "현장실습신청";
-            treeNode6.Name = "노드1";
-            treeNode6.Text = "현장실습관리";
-            treeNode7.Name = "노드5";
-            treeNode7.Text = "출퇴근";
-            treeNode8.Name = "노드7";
-            treeNode8.Text = "근태현황";
-            treeNode9.Name = "노드2";
-            treeNode9.Text = "근태관리";
+            treeNode10.Name = "노드3";
+            treeNode10.Text = "학생인사정보등록/조회";
+            treeNode11.Name = "노드0";
+            treeNode11.Text = "학생관리";
+            treeNode12.Name = "노드4";
+            treeNode12.Text = "현장실습등록";
+            treeNode13.Name = "노드9";
+            treeNode13.Text = "현장실습신청인원조회/승인";
+            treeNode14.Name = "노드10";
+            treeNode14.Text = "현장실습신청";
+            treeNode15.Name = "노드1";
+            treeNode15.Text = "현장실습관리";
+            treeNode16.Name = "노드5";
+            treeNode16.Text = "출/퇴근";
+            treeNode17.Name = "노드7";
+            treeNode17.Text = "근태현황";
+            treeNode18.Name = "노드2";
+            treeNode18.Text = "근태관리";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode6,
-            treeNode9});
+            treeNode11,
+            treeNode15,
+            treeNode18});
             this.treeView1.Size = new System.Drawing.Size(296, 489);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -165,7 +163,7 @@ namespace WindowsFormsApp1
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(754, 416);
+            this.tabPage2.Size = new System.Drawing.Size(790, 463);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -173,9 +171,7 @@ namespace WindowsFormsApp1
             // panel3
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.panel3, 2);
-            this.panel3.Controls.Add(this.button8);
             this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button3);
@@ -189,63 +185,54 @@ namespace WindowsFormsApp1
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(603, 9);
+            this.button6.Location = new System.Drawing.Point(696, 10);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(92, 23);
+            this.button6.Size = new System.Drawing.Size(93, 23);
             this.button6.TabIndex = 0;
             this.button6.Text = "신청";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(505, 9);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(92, 23);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "반려";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(407, 9);
+            this.button7.Location = new System.Drawing.Point(597, 10);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(92, 23);
+            this.button7.Size = new System.Drawing.Size(93, 23);
             this.button7.TabIndex = 0;
             this.button7.Text = "일괄승인";
             this.button7.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(309, 9);
+            this.button4.Location = new System.Drawing.Point(499, 10);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(92, 23);
+            this.button4.Size = new System.Drawing.Size(93, 23);
             this.button4.TabIndex = 0;
             this.button4.Text = "승인";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(211, 9);
+            this.button3.Location = new System.Drawing.Point(401, 10);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 23);
+            this.button3.Size = new System.Drawing.Size(93, 23);
             this.button3.TabIndex = 0;
             this.button3.Text = "삭제";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(113, 9);
+            this.button2.Location = new System.Drawing.Point(303, 10);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 23);
+            this.button2.Size = new System.Drawing.Size(93, 23);
             this.button2.TabIndex = 0;
             this.button2.Text = "수정";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 9);
+            this.button1.Location = new System.Drawing.Point(205, 10);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 23);
+            this.button1.Size = new System.Drawing.Size(93, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "등록";
             this.button1.UseVisualStyleBackColor = true;
@@ -268,15 +255,6 @@ namespace WindowsFormsApp1
             this.label1.Size = new System.Drawing.Size(186, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "근태관리 시스템";
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(701, 9);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(92, 23);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "검색";
-            this.button8.UseVisualStyleBackColor = true;
             // 
             // AdminMenuForm
             // 
@@ -304,7 +282,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
@@ -316,6 +293,5 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
     }
 }

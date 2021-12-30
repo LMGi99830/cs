@@ -64,12 +64,6 @@
     <Compile Include="application.Designer.cs">
       <DependentUpon>application.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApprovalForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ApprovalForm.Designer.cs">
-      <DependentUpon>ApprovalForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="AtdCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +81,18 @@
     </Compile>
     <Compile Include="BnkCodeForm.Designer.cs">
       <DependentUpon>BnkCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeManagementForm.Designer.cs">
+      <DependentUpon>CodeManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customCheckGroupBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="customCheckGroupBox.Designer.cs">
+      <DependentUpon>customCheckGroupBox.cs</DependentUpon>
     </Compile>
     <Compile Include="DormitoryCodeForm.cs">
       <SubType>Form</SubType>
@@ -115,6 +121,18 @@
     <Compile Include="StudentManagementForm.Designer.cs">
       <DependentUpon>StudentManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SupportAreasCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupportAreasCodeForm.Designer.cs">
+      <DependentUpon>SupportAreasCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ttt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ttt.Designer.cs">
+      <DependentUpon>ttt.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminAttendance.resx">
       <DependentUpon>AdminAttendance.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,9 +142,6 @@
     <EmbeddedResource Include="application.resx">
       <DependentUpon>application.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ApprovalForm.resx">
-      <DependentUpon>ApprovalForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AtdCodeForm.resx">
       <DependentUpon>AtdCodeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BnkCodeForm.resx">
       <DependentUpon>BnkCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeManagementForm.resx">
+      <DependentUpon>CodeManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customCheckGroupBox.resx">
+      <DependentUpon>customCheckGroupBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DormitoryCodeForm.resx">
       <DependentUpon>DormitoryCodeForm.cs</DependentUpon>
@@ -156,6 +177,12 @@
     </Compile>
     <EmbeddedResource Include="StudentManagementForm.resx">
       <DependentUpon>StudentManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupportAreasCodeForm.resx">
+      <DependentUpon>SupportAreasCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ttt.resx">
+      <DependentUpon>ttt.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
