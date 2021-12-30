@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class CodeManagementForm : Form
+    public partial class AtdCode : Form
     {
-        public CodeManagementForm()
+        public AtdCode()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkedGroupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

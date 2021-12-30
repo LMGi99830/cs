@@ -51,8 +51,11 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -64,6 +67,7 @@ namespace WindowsFormsApp1
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -87,7 +91,6 @@ namespace WindowsFormsApp1
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,14 +102,12 @@ namespace WindowsFormsApp1
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -117,7 +118,6 @@ namespace WindowsFormsApp1
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -340,6 +340,24 @@ namespace WindowsFormsApp1
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "출결정보";
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.textBox21);
+            this.groupBox5.Location = new System.Drawing.Point(6, 242);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(292, 75);
+            this.groupBox5.TabIndex = 33;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "결근 사유";
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(11, 20);
+            this.textBox21.Multiline = true;
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(275, 50);
+            this.textBox21.TabIndex = 31;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.textBox18);
@@ -357,6 +375,15 @@ namespace WindowsFormsApp1
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(275, 50);
             this.textBox18.TabIndex = 31;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(131, 127);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(53, 12);
+            this.label19.TabIndex = 29;
+            this.label19.Text = "지각시간";
             // 
             // label4
             // 
@@ -456,6 +483,13 @@ namespace WindowsFormsApp1
             this.label9.Size = new System.Drawing.Size(17, 12);
             this.label9.TabIndex = 29;
             this.label9.Text = "월";
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(190, 124);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(59, 21);
+            this.textBox20.TabIndex = 31;
             // 
             // textBox6
             // 
@@ -685,16 +719,6 @@ namespace WindowsFormsApp1
             this.dataGridView2.Size = new System.Drawing.Size(786, 305);
             this.dataGridView2.TabIndex = 10;
             // 
-            // panel1
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.panel1, 2);
-            this.panel1.Controls.Add(this.groupBox6);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(786, 47);
-            this.panel1.TabIndex = 7;
-            // 
             // Column7
             // 
             this.Column7.HeaderText = "실습명";
@@ -750,48 +774,24 @@ namespace WindowsFormsApp1
             this.Column17.HeaderText = "결근사유";
             this.Column17.Name = "Column17";
             // 
-            // textBox20
+            // panel1
             // 
-            this.textBox20.Location = new System.Drawing.Point(190, 124);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(59, 21);
-            this.textBox20.TabIndex = 31;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(131, 127);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(53, 12);
-            this.label19.TabIndex = 29;
-            this.label19.Text = "지각시간";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.textBox21);
-            this.groupBox5.Location = new System.Drawing.Point(6, 242);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(292, 75);
-            this.groupBox5.TabIndex = 33;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "결근 사유";
-            // 
-            // textBox21
-            // 
-            this.textBox21.Location = new System.Drawing.Point(11, 20);
-            this.textBox21.Multiline = true;
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(275, 50);
-            this.textBox21.TabIndex = 31;
+            this.tableLayoutPanel1.SetColumnSpan(this.panel1, 2);
+            this.panel1.Controls.Add(this.groupBox6);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(786, 47);
+            this.panel1.TabIndex = 7;
             // 
             // AdminAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1110, 589);
+            this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AdminAttendance";
-            this.Text = "AdminAttendance";
             this.Load += new System.EventHandler(this.AdminAttendance_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -800,6 +800,8 @@ namespace WindowsFormsApp1
             this.panel3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -813,8 +815,6 @@ namespace WindowsFormsApp1
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }

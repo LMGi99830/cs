@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class AtdCodeForm : Form
+    public partial class SupAreasCode : Form
     {
-        public AtdCodeForm()
+        public SupAreasCode()
         {
             InitializeComponent();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SupAreasCode_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

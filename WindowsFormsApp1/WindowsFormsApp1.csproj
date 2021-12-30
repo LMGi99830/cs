@@ -64,11 +64,29 @@
     <Compile Include="application.Designer.cs">
       <DependentUpon>application.cs</DependentUpon>
     </Compile>
-    <Compile Include="AtdCodeForm.cs">
+    <Compile Include="ApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AtdCodeForm.Designer.cs">
-      <DependentUpon>AtdCodeForm.cs</DependentUpon>
+    <Compile Include="ApplicationForm.Designer.cs">
+      <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApprovalForm.Designer.cs">
+      <DependentUpon>ApprovalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AtdCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtdCode.Designer.cs">
+      <DependentUpon>AtdCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceCodeForm.Designer.cs">
+      <DependentUpon>AttendanceCodeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AttendanceForm.cs">
       <SubType>Form</SubType>
@@ -76,23 +94,29 @@
     <Compile Include="AttendanceForm.Designer.cs">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BnkCodeForm.cs">
+    <Compile Include="BankCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BnkCodeForm.Designer.cs">
-      <DependentUpon>BnkCodeForm.cs</DependentUpon>
+    <Compile Include="BankCodeForm.Designer.cs">
+      <DependentUpon>BankCodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CodeManagementForm.cs">
+    <Compile Include="BnkCode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CodeManagementForm.Designer.cs">
-      <DependentUpon>CodeManagementForm.cs</DependentUpon>
+    <Compile Include="BnkCode.Designer.cs">
+      <DependentUpon>BnkCode.cs</DependentUpon>
     </Compile>
     <Compile Include="customCheckGroupBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="customCheckGroupBox.Designer.cs">
       <DependentUpon>customCheckGroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DormiCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DormiCode.Designer.cs">
+      <DependentUpon>DormiCode.cs</DependentUpon>
     </Compile>
     <Compile Include="DormitoryCodeForm.cs">
       <SubType>Form</SubType>
@@ -121,6 +145,12 @@
     <Compile Include="StudentManagementForm.Designer.cs">
       <DependentUpon>StudentManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SupAreasCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupAreasCode.Designer.cs">
+      <DependentUpon>SupAreasCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="SupportAreasCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,20 +172,32 @@
     <EmbeddedResource Include="application.resx">
       <DependentUpon>application.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AtdCodeForm.resx">
-      <DependentUpon>AtdCodeForm.cs</DependentUpon>
+    <EmbeddedResource Include="ApplicationForm.resx">
+      <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApprovalForm.resx">
+      <DependentUpon>ApprovalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtdCode.resx">
+      <DependentUpon>AtdCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceCodeForm.resx">
+      <DependentUpon>AttendanceCodeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AttendanceForm.resx">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BnkCodeForm.resx">
-      <DependentUpon>BnkCodeForm.cs</DependentUpon>
+    <EmbeddedResource Include="BankCodeForm.resx">
+      <DependentUpon>BankCodeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CodeManagementForm.resx">
-      <DependentUpon>CodeManagementForm.cs</DependentUpon>
+    <EmbeddedResource Include="BnkCode.resx">
+      <DependentUpon>BnkCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="customCheckGroupBox.resx">
       <DependentUpon>customCheckGroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DormiCode.resx">
+      <DependentUpon>DormiCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DormitoryCodeForm.resx">
       <DependentUpon>DormitoryCodeForm.cs</DependentUpon>
@@ -177,6 +219,9 @@
     </Compile>
     <EmbeddedResource Include="StudentManagementForm.resx">
       <DependentUpon>StudentManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupAreasCode.resx">
+      <DependentUpon>SupAreasCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupportAreasCodeForm.resx">
       <DependentUpon>SupportAreasCodeForm.cs</DependentUpon>

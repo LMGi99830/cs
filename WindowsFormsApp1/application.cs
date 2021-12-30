@@ -15,6 +15,8 @@ namespace WindowsFormsApp1
         public application()
         {
             InitializeComponent();
+
+
         }
 
         private void application_Load(object sender, EventArgs e)
@@ -50,6 +52,21 @@ namespace WindowsFormsApp1
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new SupportAreasCodeForm().Show();
+        }
+
+        private void dataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class BnkCodeForm : Form
+    public partial class BankCodeForm : Form
     {
-        public BnkCodeForm()
+        public BankCodeForm()
         {
             InitializeComponent();
         }

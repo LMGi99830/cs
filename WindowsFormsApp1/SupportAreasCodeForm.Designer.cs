@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(102, 49);
+            this.textBox1.Location = new System.Drawing.Point(96, 50);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 1;
@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 52);
+            this.label1.Location = new System.Drawing.Point(49, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 0;
@@ -129,7 +129,7 @@ namespace WindowsFormsApp1
             this.ClientSize = new System.Drawing.Size(247, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "SupportAreasCodeForm";
-            this.Text = "SupportAreasCodeForm";
+            this.Text = "지원분야";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
