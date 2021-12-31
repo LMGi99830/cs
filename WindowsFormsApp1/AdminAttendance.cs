@@ -15,6 +15,16 @@ namespace WindowsFormsApp1
         public AdminAttendance()
         {
             InitializeComponent();
+            textBox12.TabStop = false;
+            textBox9.TabStop = false;
+            textBox2.TabStop = false;
+            textBox3.TabStop = false;
+            textBox4.TabStop = false;
+            textBox5.TabStop = false;
+            textBox11.TabStop = false;
+            textBox16.TabStop = false;
+            
+
         }
 
         private void groupBox5_Enter(object sender, EventArgs e)
@@ -28,6 +38,11 @@ namespace WindowsFormsApp1
         }
 
         private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
         {
 
         }

@@ -70,12 +70,6 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApprovalForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ApprovalForm.Designer.cs">
-      <DependentUpon>ApprovalForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="AtdCode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,12 +151,6 @@
     <Compile Include="SupportAreasCodeForm.Designer.cs">
       <DependentUpon>SupportAreasCodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ttt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ttt.Designer.cs">
-      <DependentUpon>ttt.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AdminAttendance.resx">
       <DependentUpon>AdminAttendance.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,9 +162,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ApprovalForm.resx">
-      <DependentUpon>ApprovalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AtdCode.resx">
       <DependentUpon>AtdCode.cs</DependentUpon>
@@ -225,9 +210,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SupportAreasCodeForm.resx">
       <DependentUpon>SupportAreasCodeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ttt.resx">
-      <DependentUpon>ttt.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

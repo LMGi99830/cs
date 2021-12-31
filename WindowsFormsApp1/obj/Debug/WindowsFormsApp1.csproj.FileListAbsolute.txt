@@ -17,12 +17,10 @@ C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.DormitoryCodeForm.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SupportAreasCodeForm.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.customCheckGroupBox.resources
-C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ttt.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AtdCode.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AttendanceCodeForm.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BankCodeForm.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BnkCode.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.DormiCode.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SupAreasCode.resources
-C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ApprovalForm.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ApplicationForm.resources

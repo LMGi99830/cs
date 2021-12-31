@@ -31,6 +31,7 @@ namespace WindowsFormsApp1
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@ namespace WindowsFormsApp1
             this.label19 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -128,6 +128,15 @@ namespace WindowsFormsApp1
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "신청자 정보";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(174, 541);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(84, 38);
+            this.button2.TabIndex = 25;
+            this.button2.Text = "작성 완료";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -531,15 +540,6 @@ namespace WindowsFormsApp1
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "학번";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(171, 541);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 38);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "작성 완료";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // ApplicationForm
             // 

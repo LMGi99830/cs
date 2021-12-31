@@ -40,38 +40,41 @@ namespace WindowsFormsApp1
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.9851F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.94041F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.98381F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.10931F));
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -79,7 +82,7 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.27087F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(932, 471);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(988, 668);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -91,7 +94,7 @@ namespace WindowsFormsApp1
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.tableLayoutPanel1.SetRowSpan(this.panel2, 2);
-            this.panel2.Size = new System.Drawing.Size(645, 465);
+            this.panel2.Size = new System.Drawing.Size(644, 662);
             this.panel2.TabIndex = 8;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -110,7 +113,7 @@ namespace WindowsFormsApp1
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(645, 465);
+            this.dataGridView1.Size = new System.Drawing.Size(644, 662);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -157,25 +160,17 @@ namespace WindowsFormsApp1
             // 
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(654, 3);
+            this.panel3.Location = new System.Drawing.Point(653, 3);
             this.panel3.Name = "panel3";
             this.tableLayoutPanel1.SetRowSpan(this.panel3, 2);
-            this.panel3.Size = new System.Drawing.Size(275, 465);
+            this.panel3.Size = new System.Drawing.Size(332, 662);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.groupBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(275, 465);
-            this.panel4.TabIndex = 3;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox4);
@@ -190,137 +185,168 @@ namespace WindowsFormsApp1
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(3, 9);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(269, 453);
+            this.groupBox1.Size = new System.Drawing.Size(332, 662);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "출근/퇴근관리";
             // 
-            // button2
+            // label6
             // 
-            this.button2.Location = new System.Drawing.Point(139, 271);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "퇴근";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(97, 192);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 12);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "학번";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(132, 189);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(118, 21);
+            this.textBox2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(97, 165);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "계절";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(132, 162);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(63, 21);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(85, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "실습명";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(132, 135);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(118, 21);
+            this.textBox5.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(97, 111);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "연도";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(132, 108);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(118, 21);
+            this.textBox6.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(97, 219);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 12);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "이름";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(132, 216);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(118, 21);
+            this.textBox3.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(51, 246);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 12);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "학과명(계열)";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(132, 243);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(118, 21);
+            this.textBox4.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(58, 271);
+            this.button1.Location = new System.Drawing.Point(210, 307);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "출근";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // button2
             // 
-            this.textBox4.Location = new System.Drawing.Point(91, 233);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(118, 21);
-            this.textBox4.TabIndex = 1;
+            this.button2.Location = new System.Drawing.Point(210, 348);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "퇴근";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // label4
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 236);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 12);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "학과명(계열)";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(84, 312);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 12);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "label4";
+            this.label4.Click += new System.EventHandler(this.label4_Click_1);
             // 
-            // textBox3
+            // label5
             // 
-            this.textBox3.Location = new System.Drawing.Point(91, 206);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(118, 21);
-            this.textBox3.TabIndex = 1;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(84, 353);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 12);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "label4";
+            this.label5.Click += new System.EventHandler(this.label4_Click_1);
             // 
-            // label7
+            // panel4
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(56, 209);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 12);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "이름";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(91, 98);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(118, 21);
-            this.textBox6.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "연도";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(91, 125);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(118, 21);
-            this.textBox5.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 128);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "실습명";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(91, 152);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(63, 21);
-            this.textBox1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 155);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "계절";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(91, 179);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 21);
-            this.textBox2.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(56, 182);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 12);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "학번";
+            this.panel4.Controls.Add(this.groupBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(332, 662);
+            this.panel4.TabIndex = 3;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // AttendanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 472);
+            this.ClientSize = new System.Drawing.Size(988, 668);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AttendanceForm";
@@ -328,9 +354,9 @@ namespace WindowsFormsApp1
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -340,15 +366,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -356,13 +373,24 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
     }
 }

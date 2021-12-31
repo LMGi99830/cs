@@ -15,11 +15,11 @@ namespace WindowsFormsApp1
         public PracticeForm()
         {
             InitializeComponent();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            panel1.TabStop = false;
+            panel2.TabStop = false;            
+            panel4.TabStop = false;
+            panel5.TabStop = false;
+            
         }
     }
 }

@@ -41,5 +41,15 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void checkedGroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

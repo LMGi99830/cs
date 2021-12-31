@@ -149,9 +149,9 @@ namespace WindowsFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(250, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "BnkCode";
-            this.Text = "BnkCode";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
