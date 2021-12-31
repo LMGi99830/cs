@@ -25,6 +25,7 @@ namespace WindowsFormsApp1
             }
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            
             string str = (e.Node.ToString()).Substring(10);
             //공장코드관리
 
