@@ -202,7 +202,12 @@ namespace WindowsFormsApp1
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-            new ApplicationForm().Show();
+            ApplicationForm Form1 = new ApplicationForm();
+            Form1.StartPosition = FormStartPosition.Manual;
+            Form1.Location = new Point(850, 110);
+            Form1.Show();
+
+
         }
     }
 

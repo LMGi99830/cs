@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Oracle.ManagedDataAccess.Client;
 namespace WindowsFormsApp1
 {
     static class Program
@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminMenuForm());
+            Application.Run(new AdminMenuForm());            
         }
     }
 }

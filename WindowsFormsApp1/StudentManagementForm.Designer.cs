@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -85,13 +86,11 @@ namespace WindowsFormsApp1
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.checkedGroupBox1 = new WindowsFormsApp1.CheckedGroupBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -114,7 +113,7 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.65636F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.034611F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.39267F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 305F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
@@ -129,17 +128,16 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(988, 668);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
             // panel1
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 3);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(542, 3);
+            this.panel1.Location = new System.Drawing.Point(457, 3);
             this.panel1.Name = "panel1";
             this.tableLayoutPanel1.SetRowSpan(this.panel1, 3);
-            this.panel1.Size = new System.Drawing.Size(443, 662);
+            this.panel1.Size = new System.Drawing.Size(528, 662);
             this.panel1.TabIndex = 0;
             // 
             // groupBox1
@@ -174,10 +172,21 @@ namespace WindowsFormsApp1
             this.groupBox1.Font = new System.Drawing.Font("굴림", 9F);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(443, 662);
+            this.groupBox1.Size = new System.Drawing.Size(528, 662);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "학생정보";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("굴림", 9F);
+            this.label7.Location = new System.Drawing.Point(9, 313);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 12);
+            this.label7.TabIndex = 52;
+            this.label7.Text = "기숙사 사용여부";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button3
             // 
@@ -187,6 +196,7 @@ namespace WindowsFormsApp1
             this.button3.TabIndex = 51;
             this.button3.Text = "사진 선택";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // comboBox1
             // 
@@ -291,6 +301,7 @@ namespace WindowsFormsApp1
             this.button2.TabIndex = 38;
             this.button2.Text = "찾기";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
@@ -318,6 +329,7 @@ namespace WindowsFormsApp1
             this.button1.TabIndex = 38;
             this.button1.Text = "찾기";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox3
             // 
@@ -381,7 +393,6 @@ namespace WindowsFormsApp1
             this.label16.Size = new System.Drawing.Size(29, 12);
             this.label16.TabIndex = 20;
             this.label16.Text = "은행";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // textBox13
             // 
@@ -490,7 +501,7 @@ namespace WindowsFormsApp1
             this.panel4.Location = new System.Drawing.Point(3, 81);
             this.panel4.Name = "panel4";
             this.tableLayoutPanel1.SetRowSpan(this.panel4, 2);
-            this.panel4.Size = new System.Drawing.Size(533, 584);
+            this.panel4.Size = new System.Drawing.Size(448, 584);
             this.panel4.TabIndex = 19;
             // 
             // dataGridView1
@@ -514,9 +525,8 @@ namespace WindowsFormsApp1
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(533, 584);
+            this.dataGridView1.Size = new System.Drawing.Size(448, 584);
             this.dataGridView1.TabIndex = 19;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -590,7 +600,7 @@ namespace WindowsFormsApp1
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(533, 72);
+            this.panel2.Size = new System.Drawing.Size(448, 72);
             this.panel2.TabIndex = 18;
             // 
             // groupBox4
@@ -602,11 +612,10 @@ namespace WindowsFormsApp1
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(533, 72);
+            this.groupBox4.Size = new System.Drawing.Size(448, 72);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "학생 검색";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // textBox11
             // 
@@ -644,17 +653,6 @@ namespace WindowsFormsApp1
             this.label21.TabIndex = 3;
             this.label21.Text = "이름";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("굴림", 9F);
-            this.label7.Location = new System.Drawing.Point(9, 313);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 12);
-            this.label7.TabIndex = 52;
-            this.label7.Text = "기숙사 사용여부";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // checkedGroupBox1
             // 
             this.checkedGroupBox1.Checked = true;
@@ -663,7 +661,6 @@ namespace WindowsFormsApp1
             this.checkedGroupBox1.Controls.Add(this.label14);
             this.checkedGroupBox1.Controls.Add(this.textBox7);
             this.checkedGroupBox1.Controls.Add(this.textBox15);
-            this.checkedGroupBox1.Controls.Add(this.textBox8);
             this.checkedGroupBox1.Controls.Add(this.label15);
             this.checkedGroupBox1.Controls.Add(this.label10);
             this.checkedGroupBox1.Controls.Add(this.button4);
@@ -674,7 +671,6 @@ namespace WindowsFormsApp1
             this.checkedGroupBox1.TabStop = false;
             this.checkedGroupBox1.Text = "사용함";
             this.checkedGroupBox1.ThreeState = false;
-            this.checkedGroupBox1.Enter += new System.EventHandler(this.checkedGroupBox1_Enter);
             // 
             // textBox14
             // 
@@ -700,6 +696,7 @@ namespace WindowsFormsApp1
             this.textBox7.Font = new System.Drawing.Font("굴림", 9F);
             this.textBox7.Location = new System.Drawing.Point(62, 33);
             this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(63, 21);
             this.textBox7.TabIndex = 53;
             // 
@@ -710,14 +707,6 @@ namespace WindowsFormsApp1
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(63, 21);
             this.textBox15.TabIndex = 54;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("굴림", 9F);
-            this.textBox8.Location = new System.Drawing.Point(192, 34);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(133, 21);
-            this.textBox8.TabIndex = 51;
             // 
             // label15
             // 
@@ -748,6 +737,7 @@ namespace WindowsFormsApp1
             this.button4.TabIndex = 55;
             this.button4.Text = "찾기";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // StudentManagementForm
             // 
@@ -757,6 +747,7 @@ namespace WindowsFormsApp1
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "StudentManagementForm";
+            this.Load += new System.EventHandler(this.StudentManagementForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -838,7 +829,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button4;
