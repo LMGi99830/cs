@@ -35,9 +35,10 @@ namespace WindowsFormsApp1
             conn.Close();
 
             //datagridview1 Columns
-
-            dataGridView1.Columns[0].Name = "Name";
-            dataGridView1.Columns[1].Name = "Dong";
+            dataGridView1.Columns[0].HeaderText = "동";
+            dataGridView1.Columns[1].HeaderText = "기숙사명";
+            dataGridView1.Columns[0].Name = "Dong";
+            dataGridView1.Columns[1].Name = "Name";
         }
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {

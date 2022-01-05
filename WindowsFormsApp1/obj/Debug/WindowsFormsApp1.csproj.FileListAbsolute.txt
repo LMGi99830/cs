@@ -48,3 +48,5 @@ C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\bin\Debug\System.Text.Json
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SearchCode.ReflactionTest.resources
+C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.View.resources

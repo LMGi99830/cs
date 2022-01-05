@@ -8,20 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1.SearchCode
 {
-    public partial class ReflectionTest : Form
+    public partial class ReflactionTest : Form
     {
-        public ReflectionTest()
+        public ReflactionTest()
         {
             InitializeComponent();
         }
 
-        private void ReflectionTest_Load(object sender, EventArgs e)
+
+        private void ReflactionTest_Load(object sender, EventArgs e)
         {
-
+            
         }
-
-
     }
 }

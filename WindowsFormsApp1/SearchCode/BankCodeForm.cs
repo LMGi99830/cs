@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
         {
             con = new OracleConnection(cs);
             con.Open();
-            adapt = new OracleDataAdapter("select * from P22_LMG_TATM_DON order by DON_CODE", con);
+            adapt = new OracleDataAdapter("select * from P22_LMG_TATM_BNK order by BNK_CODE", con);
             dt = new DataTable();
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;

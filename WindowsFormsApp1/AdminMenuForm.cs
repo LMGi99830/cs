@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace WindowsFormsApp1
 {
@@ -19,13 +20,9 @@ namespace WindowsFormsApp1
 
         }
         public static Dictionary<string, int> DICT_REMOVE_INDEX = new Dictionary<string, int>();
-        private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
-            {
-               
-            }
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            
+
             string str = (e.Node.ToString()).Substring(10);
             //공장코드관리
 
@@ -198,7 +195,7 @@ namespace WindowsFormsApp1
                     }
                     break;
             }
-        }        
+        }
 
         private void button6_Click_1(object sender, EventArgs e)
         {
@@ -207,9 +204,23 @@ namespace WindowsFormsApp1
             Form1.Location = new Point(850, 110);
             Form1.Show();
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+                DormiCode node = new DormiCode();
+                Type type = typeof(DormiCode);
+                var method = type.GetMethod("InsertDB");
+                method.Invoke(node, null);
+          
+        }
+
+        private void AdminMenuForm_Load(object sender, EventArgs e)
+        {
 
         }
     }
-
 }
+
 

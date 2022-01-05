@@ -75,6 +75,37 @@ namespace WindowsFormsApp1
             dataGridView1.DataSource = dt;
             con.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+                string queryString = "select * from P22_LMG_TATM_STU where STU_STUNO like '" + textBox5.Text + "'";
+                using (OracleConnection connection = new OracleConnection(cs))
+                {
+                    OracleCommand command = new OracleCommand(queryString, connection);
+                    connection.Open();
+                    OracleDataReader reader;
+                    reader = command.ExecuteReader();
+
+                    // Always call Read before accessing data.
+                    while (reader.Read())
+                    {
+                       textBox6.Text =  reader.GetString(2);
+                       textBox7.Text = reader.GetString(3);
+                }
+
+                    // Always call Close when done reading.
+                    reader.Close();
+                }
+            
+        }
+
+        private void textBox5_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button2_Click(sender, e);
+            }
+        }
     }
 }
 

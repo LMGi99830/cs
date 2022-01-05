@@ -113,10 +113,10 @@
     <Compile Include="AttendanceTotal.Designer.cs">
       <DependentUpon>AttendanceTotal.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReflectionTest.cs">
+    <Compile Include="TestCode\ReflectionTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReflectionTest.Designer.cs">
+    <Compile Include="TestCode\ReflectionTest.Designer.cs">
       <DependentUpon>ReflectionTest.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchCode\AttendanceCodeForm.cs">
@@ -176,6 +176,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchCode\ReflactionTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchCode\ReflactionTest.Designer.cs">
+      <DependentUpon>ReflactionTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,17 +200,23 @@
     <Compile Include="SearchCode\SupportAreasCodeForm.Designer.cs">
       <DependentUpon>SupportAreasCodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="test.cs">
+    <Compile Include="TestCode\test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="test.Designer.cs">
+    <Compile Include="TestCode\test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestGridView.cs">
+    <Compile Include="TestCode\TestGridView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestGridView.Designer.cs">
+    <Compile Include="TestCode\TestGridView.Designer.cs">
       <DependentUpon>TestGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestCode\View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestCode\View.Designer.cs">
+      <DependentUpon>View.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminAttendance.resx">
       <DependentUpon>AdminAttendance.cs</DependentUpon>
@@ -224,7 +236,7 @@
     <EmbeddedResource Include="AttendanceTotal.resx">
       <DependentUpon>AttendanceTotal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReflectionTest.resx">
+    <EmbeddedResource Include="TestCode\ReflectionTest.resx">
       <DependentUpon>ReflectionTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchCode\AttendanceCodeForm.resx">
@@ -263,6 +275,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SearchCode\ReflactionTest.resx">
+      <DependentUpon>ReflactionTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentManagementForm.resx">
       <DependentUpon>StudentManagementForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,11 +287,14 @@
     <EmbeddedResource Include="SearchCode\SupportAreasCodeForm.resx">
       <DependentUpon>SupportAreasCodeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="test.resx">
+    <EmbeddedResource Include="TestCode\test.resx">
       <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TestGridView.resx">
+    <EmbeddedResource Include="TestCode\TestGridView.resx">
       <DependentUpon>TestGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestCode\View.resx">
+      <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
