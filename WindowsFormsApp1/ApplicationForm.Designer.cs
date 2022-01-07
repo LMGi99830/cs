@@ -254,6 +254,7 @@ namespace WindowsFormsApp1
             this.button1.TabIndex = 20;
             this.button1.Text = "찾기";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox3
             // 

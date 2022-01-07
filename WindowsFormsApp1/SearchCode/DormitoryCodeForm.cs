@@ -58,11 +58,20 @@ namespace WindowsFormsApp1
         {
             get { return textBox2.Text.Trim(); }
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             conn = new OracleConnection(css);
             conn.Open();
-            adaptt = new OracleDataAdapter("select * from P22_LMG_TATM_DON where DON_NAME like '" + textBox1.Text + "%'", conn);
+            adaptt = new OracleDataAdapter("select * from P22_LMG_TATM_DON where DON_NAME like '" + textBox1.Text + "%' order by DON_CODE", conn);
             dtt = new DataTable();
             adaptt.Fill(dtt);
             dataGridView1.DataSource = dtt;

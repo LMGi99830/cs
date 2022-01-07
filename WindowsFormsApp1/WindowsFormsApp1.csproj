@@ -113,6 +113,12 @@
     <Compile Include="AttendanceTotal.Designer.cs">
       <DependentUpon>AttendanceTotal.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestCode\deleteform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestCode\deleteform.Designer.cs">
+      <DependentUpon>deleteform.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestCode\ReflectionTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,10 +182,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchCode\ReflactionTest.cs">
+    <Compile Include="ReflactionTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchCode\ReflactionTest.Designer.cs">
+    <Compile Include="ReflactionTest.Designer.cs">
       <DependentUpon>ReflactionTest.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentManagementForm.cs">
@@ -218,6 +224,12 @@
     <Compile Include="TestCode\View.Designer.cs">
       <DependentUpon>View.cs</DependentUpon>
     </Compile>
+    <Compile Include="testsql.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testsql.Designer.cs">
+      <DependentUpon>testsql.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminAttendance.resx">
       <DependentUpon>AdminAttendance.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AttendanceTotal.resx">
       <DependentUpon>AttendanceTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestCode\deleteform.resx">
+      <DependentUpon>deleteform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestCode\ReflectionTest.resx">
       <DependentUpon>ReflectionTest.cs</DependentUpon>
@@ -275,7 +290,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SearchCode\ReflactionTest.resx">
+    <EmbeddedResource Include="ReflactionTest.resx">
       <DependentUpon>ReflactionTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentManagementForm.resx">
@@ -295,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TestCode\View.resx">
       <DependentUpon>View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testsql.resx">
+      <DependentUpon>testsql.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>

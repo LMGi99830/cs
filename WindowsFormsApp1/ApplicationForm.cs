@@ -16,5 +16,13 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SupportAreasCodeForm Form1 = new SupportAreasCodeForm();
+            Form1.ShowDialog();
+            textBox12.Text = Form1._textBox1.ToString();
+            textBox13.Text = Form1._textBox2.ToString();
+        }
     }
 }

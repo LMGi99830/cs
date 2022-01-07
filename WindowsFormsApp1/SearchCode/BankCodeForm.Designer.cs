@@ -36,6 +36,7 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -45,6 +46,7 @@ namespace WindowsFormsApp1
             // panel2
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.panel2, 3);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label1);
@@ -61,6 +63,8 @@ namespace WindowsFormsApp1
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(10, 21);
             this.textBox2.TabIndex = 1;
+            this.textBox2.Visible = false;
+            this.textBox2.WordWrap = false;
             // 
             // textBox1
             // 
@@ -68,6 +72,7 @@ namespace WindowsFormsApp1
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 1;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // label1
             // 
@@ -118,6 +123,17 @@ namespace WindowsFormsApp1
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(9, 105);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(39, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // BankCodeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -145,5 +161,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button1;
     }
 }

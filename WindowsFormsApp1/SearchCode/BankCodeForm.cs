@@ -37,7 +37,8 @@ namespace WindowsFormsApp1
             con.Close();
 
             //datagridview1 Columns
-
+            dataGridView1.Columns[0].HeaderText = "은행코드";
+            dataGridView1.Columns[1].HeaderText = "은행명";
             dataGridView1.Columns[0].Name = "Code";
             dataGridView1.Columns[1].Name = "Name";
         }
@@ -59,6 +60,25 @@ namespace WindowsFormsApp1
         public string _textBox2
         {
             get { return textBox2.Text.Trim(); }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            con = new OracleConnection(cs); 
+            con.Open();
+            adapt = new OracleDataAdapter("select * from P22_LMG_TATM_BNK where BNK_NAME like '" + textBox1.Text + "%' order by BNK_CODE", con);
+            dt = new DataTable();
+            adapt.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
         }
     }
 }

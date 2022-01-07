@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
-            label4.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            label4.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
         }
 
         private void AttendanceForm_Load(object sender, EventArgs e)
@@ -64,44 +64,30 @@ namespace WindowsFormsApp1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label5.Text = System.DateTime.Now.ToString("yyyy-MM-dd  hh:mm:ss");
+            label5.Text = System.DateTime.Now.ToString("yyyy/MM/dd  hh:mm:ss");
             label9.Text = System.DateTime.Now.ToString("hhmm");
+            label10.Text = System.DateTime.Now.ToString("yy'/'MM'/'dd");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (textBox3.Text == "")
-            {
-                MessageBox.Show("정보들을 먼저 입력해주세요");
-            }
-            else
-            { // 출근을 한 사람은 한번 더 출근 못하게 막는 코드
-                if()
-                {
+            OracleConnection con = new OracleConnection(css);
+            con.Open();
 
-                }
-                else
-                {
+            // 명령 객체 생성
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "INSERT INTO P22_LMG_TATM_ATT(ATT_DATE, ATT_NAME ,ATT_STUNO, ATT_FTIME, ATT_TTIME) VALUES(sysdate,'" + textBox5.Text + "','" + textBox2.Text + "','" + label9.Text + "',null)";
+            MessageBox.Show("출근 완료 되었습니다.");
+            cmd.ExecuteNonQuery();
 
-                
-                OracleConnection conn = new OracleConnection(css);
-                conn.Open();
-
-                // 명령 객체 생성
-                OracleCommand cmd = new OracleCommand();
-                cmd.Connection = conn;
-
-                // SQL문 지정 및 INSERT 실행            
-                cmd.CommandText = "INSERT INTO P22_LMG_TATM_ATT(ATT_DATE, ATT_STUNO, ATT_FTIME, ATT_TTIME) VALUES(sysdate,'" + textBox2.Text + "','" + label9.Text + "',null)";
-                MessageBox.Show("출근 완료 되었습니다.");
-                cmd.ExecuteNonQuery();
-                conn.Close();
-
-                }
-            }
+            button1.Enabled = false;
+            button2.Enabled = true;
 
         }
+        
+             
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
@@ -116,6 +102,8 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+
             string queryString = "select * from P22_LMG_TATM_STU where STU_STUNO like '" + textBox2.Text + "'";
             using (OracleConnection connection = new OracleConnection(css))
             {
@@ -134,6 +122,49 @@ namespace WindowsFormsApp1
                 // Always call Close when done reading.
                 reader.Close();
             }
+            OracleConnection con = new OracleConnection(css);
+            con.Open();
+
+            // 명령 객체 생성
+            OracleCommand cmd = new OracleCommand();
+            OracleCommand cmddd = new OracleCommand();
+            cmd.Connection = con;
+            cmddd.Connection = con;
+            //db에 학번이랑 현재 날짜가 있는경우 (출근만 했을수도, 출퇴근 다했을수도 있음)
+            cmd.CommandText = "select * from P22_LMG_TATM_ATT where ATT_STUNO = '" + textBox2.Text + "' and ATT_DATE = '" + label10.Text + "' and ATT_NAME = '"+ textBox5.Text +"'";
+            cmddd.CommandText = "select nvl2(ATT_TTIME, 'B' , 'A') from P22_LMG_TATM_ATT where ATT_STUNO = '" + textBox2.Text + "' and ATT_DATE = '" + label10.Text + "' and ATT_NAME = '"+ textBox5.Text +"'";
+
+            OracleDataReader dr = cmd.ExecuteReader();
+            OracleDataReader drrl = cmddd.ExecuteReader();
+
+            Boolean check1 = false;
+            while (dr.Read())
+            {
+                check1 = true;
+            }
+            if (check1)
+            {
+                while (drrl.Read())
+                {                    
+
+                    if(drrl.GetString(0).Equals("B"))
+                    {                        
+                        button1.Enabled = false;
+                        button2.Enabled = false;                        
+                    }
+                    else
+                    {
+                        button1.Enabled = false;
+                        button2.Enabled = true;
+                    }
+                }
+            }            
+            else
+            {
+                button1.Enabled = true;
+                button2.Enabled = false;
+            }
+
         }
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
@@ -146,12 +177,6 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox3.Text == "")
-            {
-                MessageBox.Show("정보들을 먼저 입력해주세요");
-            }
-            else
-            {
                 OracleConnection conn = new OracleConnection(css);
                 conn.Open();
 
@@ -160,11 +185,24 @@ namespace WindowsFormsApp1
                 cmd.Connection = conn;
 
                 // SQL문 지정 및 INSERT 실행            
-                cmd.CommandText = "INSERT INTO P22_LMG_TATM_ATT(ATT_DATE, ATT_STUNO, ATT_FTIME, ATT_TTIME) VALUES(sysdate,'" + textBox2.Text + "',null,'" + label9.Text + "')";
+                cmd.CommandText = "UPDATE P22_LMG_TATM_ATT SET ATT_TTIME = '"+ label9.Text + "' where ATT_STUNO = '" + textBox2.Text + "' and ATT_DATE = '" + label10.Text + "' and ATT_NAME = '"+ textBox5.Text +"'";
                 MessageBox.Show("퇴근 완료 되었습니다. 오늘도 수고하셨음 ㅋ");
                 cmd.ExecuteNonQuery();
                 conn.Close();
-            }
+                
+                button1.Enabled = false;
+                button2.Enabled = false;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
