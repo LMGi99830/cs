@@ -1,0 +1,102 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Oracle.ManagedDataAccess.Client;
+using System.Windows.Forms;
+using System.IO;
+using System.Drawing.Imaging;
+
+namespace WindowsFormsApp1
+{
+    public partial class TestPicture : Form
+    {
+        string cs = "Data Source=222.237.134.74:1522/Ora7;User Id=edu;Password=edu1234;";
+        OracleConnection con;
+        OracleDataAdapter adapt;
+        DataTable dt;
+        public TestPicture()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string image_file = string.Empty;
+
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.InitialDirectory = @"C:\";
+            dialog.Filter = "Image File (*.jpg;*.png;)|*.jpg;*.png";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                image_file = dialog.FileName;
+                pictureBox1.BackgroundImage = Bitmap.FromFile(image_file);
+            }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OracleCommand cmd = con.CreateCommand();
+            Bitmap bitmap = new Bitmap((Image)pictureBox1.BackgroundImage);
+            ImageConverter converter = new ImageConverter();
+            byte[] b = (byte[])converter.ConvertTo(bitmap, typeof(byte[]));
+            String InsertSQL = "insert into P22_LMG_TATM_PIC(imageno,image) values (:NO,:PIC)";            
+
+
+            cmd.CommandText = InsertSQL;            
+            cmd.Parameters.Add("PIC", OracleDbType.Blob, b.Length, b, ParameterDirection.Input);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("사진저장완료");
+            reset_select_form();
+            con.Close();
+        }
+
+        public void reset_select_form()
+        {
+            con = new OracleConnection(cs);
+            con.Open();
+            adapt = new OracleDataAdapter("select * from P22_LMG_TATM_PIC", con);
+            dt = new DataTable();
+            adapt.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
+            dataHearder(); //헤더텍스트 이름
+        }
+
+        public void dataHearder()
+        {
+            dataGridView1.Columns[0].HeaderText = "이미지번호";
+            dataGridView1.Columns[1].HeaderText = "이미지";
+        }
+
+        private void TestPicture_Load(object sender, EventArgs e)
+        {
+            reset_select_form();
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+
+            int rowindex = dataGridView1.CurrentCell.RowIndex;
+
+            String STUNO1 = dataGridView1.Rows[rowindex].Cells[0].Value.ToString(); //학번
+            con.Open();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "select * from P22_LMG_TATM_PIC where IMAGENO=:no";
+            cmd.Parameters.Add("no", STUNO1);
+            OracleDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+            // 키값이 없을 때 처리
+            //키는 있는데 이미지없을때 처리???
+            //Bitmap 클래스는 그래픽 이미지의 픽셀 데이터를 저장하는 클래스
+
+            pictureBox1.Image = new Bitmap(new MemoryStream((byte[])dr["image"]));
+            con.Close();
+        }
+    }
+}

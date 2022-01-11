@@ -14,8 +14,7 @@ using System.Reflection;
 namespace WindowsFormsApp1
 {
     public partial class DormiCode : Form
-    {
-        //Connection String  
+    {       
         //Connection String  
         string cs = "Data Source=222.237.134.74:1522/Ora7;User Id=edu;Password=edu1234;";
         OracleConnection con;
@@ -110,7 +109,7 @@ namespace WindowsFormsApp1
                 OracleDataReader reader;
                 reader = command.ExecuteReader();
                 Boolean check1 = false;
-
+                
                 // Always call Read before accessing data.
                 while (reader.Read())
                 {

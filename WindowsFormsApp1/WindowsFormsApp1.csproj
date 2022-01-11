@@ -83,6 +83,12 @@
     <Compile Include="AdminAttendance.Designer.cs">
       <DependentUpon>AdminAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchCode\defCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchCode\defCodeForm.Designer.cs">
+      <DependentUpon>defCodeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,12 @@
     <Compile Include="TestCode\View.Designer.cs">
       <DependentUpon>View.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestCode\TestPicture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestCode\TestPicture.Designer.cs">
+      <DependentUpon>TestPicture.cs</DependentUpon>
+    </Compile>
     <Compile Include="testsql.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +244,9 @@
     </Compile>
     <EmbeddedResource Include="AdminAttendance.resx">
       <DependentUpon>AdminAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchCode\defCodeForm.resx">
+      <DependentUpon>defCodeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMenuForm.resx">
       <DependentUpon>AdminMenuForm.cs</DependentUpon>
@@ -310,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TestCode\View.resx">
       <DependentUpon>View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestCode\TestPicture.resx">
+      <DependentUpon>TestPicture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="testsql.resx">
       <DependentUpon>testsql.cs</DependentUpon>

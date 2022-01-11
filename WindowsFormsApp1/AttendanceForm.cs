@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
         {
             label5.Text = System.DateTime.Now.ToString("yyyy/MM/dd  hh:mm:ss");
             label9.Text = System.DateTime.Now.ToString("hhmm");
-            label10.Text = System.DateTime.Now.ToString("yy'/'MM'/'dd");
+            label10.Text = System.DateTime.Now.ToString("yyMMdd");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,8 +78,13 @@ namespace WindowsFormsApp1
             // 명령 객체 생성
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
-            cmd.CommandText = "INSERT INTO P22_LMG_TATM_ATT(ATT_DATE, ATT_NAME ,ATT_STUNO, ATT_FTIME, ATT_TTIME) VALUES(sysdate,'" + textBox5.Text + "','" + textBox2.Text + "','" + label9.Text + "',null)";
+            cmd.CommandText = "INSERT INTO P22_LMG_TATM_ATT(ATT_DATE, ATT_NAME ,ATT_STUNO, ATT_FTIME, ATT_TTIME) VALUES(:DAY, :NAME, :STUNO, :TIME ,null)";
             MessageBox.Show("출근 완료 되었습니다.");
+            cmd.Parameters.Add(new OracleParameter("DAY", label10.Text.ToString()));
+            cmd.Parameters.Add(new OracleParameter("NAME", textBox5.Text.ToString()));
+            cmd.Parameters.Add(new OracleParameter("STUNO", textBox2.Text.ToString()));
+            cmd.Parameters.Add(new OracleParameter("TIME", label9.Text.ToString()));
+            
             cmd.ExecuteNonQuery();
 
             button1.Enabled = false;
@@ -101,8 +106,7 @@ namespace WindowsFormsApp1
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
-
+        {            
 
             string queryString = "select * from P22_LMG_TATM_STU where STU_STUNO like '" + textBox2.Text + "'";
             using (OracleConnection connection = new OracleConnection(css))
