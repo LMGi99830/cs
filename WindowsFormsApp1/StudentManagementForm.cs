@@ -24,9 +24,9 @@ namespace WindowsFormsApp1
         public StudentManagementForm()
         {
             InitializeComponent();
-            
 
-        }        
+
+        }
         private void STU_IMG_BTN_Click(object sender, EventArgs e)
         {
             Imageload();
@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
 
         private void ZIP_BTN_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void DOR_BTN_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
             Form1.ShowDialog();
             DOR_NAME.Text = Form1._textBox1.ToString();
 
-            DOR_DON.Text = Form1._textBox2.ToString();            
+            DOR_DON.Text = Form1._textBox2.ToString();
         }
 
         private void StudentManagementForm_Load(object sender, EventArgs e)
@@ -116,15 +116,15 @@ namespace WindowsFormsApp1
 
         private void Enrollment_Click(object sender, EventArgs e)
         {
-            required();                 
+            required();
         }
         #region 학번이 빈칸이면 작동
         public void required()
         {
-            if(string.IsNullOrEmpty(STUNO.Text))
+            if (string.IsNullOrEmpty(STUNO.Text))
             {
                 MessageBox.Show("학번은 필 수 입력 항목입니다.");
-                return; 
+                return;
             }
             else
             {
@@ -156,7 +156,7 @@ namespace WindowsFormsApp1
             MessageBox.Show("등록이 완료되었습니다.");
 
             // a는 DOR_USE가 체크 되있는지 확인하는 변수
-            string a = Dor_Use_Check();            
+            string a = Dor_Use_Check();
             cmd.Parameters.Add(new OracleParameter("STUNO", STUNO.Text.ToString()));
             cmd.Parameters.Add(new OracleParameter("RESNO", RESNO.Text.ToString()));
             cmd.Parameters.Add(new OracleParameter("NAME", NAME.Text.ToString()));
@@ -177,7 +177,7 @@ namespace WindowsFormsApp1
             cmd.Parameters.Add(new OracleParameter("ACC_NAME", ACC_NAME.Text.ToString()));
             cmd.Parameters.Add(new OracleParameter("ACC_NO", ACC_NO.Text.ToString()));
             cmd.Parameters.Add(new OracleParameter("STU_IMG", OracleDbType.Blob, b.Length, b, ParameterDirection.Input));
-            
+
             cmd.ExecuteNonQuery();
 
             reset_student();
@@ -255,6 +255,7 @@ namespace WindowsFormsApp1
 
         public void picture_load()
         {
+            STU_IMG = null;
             int rowindex = dataGridView1.CurrentCell.RowIndex;
 
             String STUNO1 = dataGridView1.Rows[rowindex].Cells[0].Value.ToString(); //학번
@@ -264,22 +265,21 @@ namespace WindowsFormsApp1
             cmd.Parameters.Add("no", STUNO1);
             OracleDataReader dr = cmd.ExecuteReader();
             dr.Read();
-            
-            if(!dr.IsDBNull(19)) 
+
+            if (!dr.IsDBNull(19))
             {
                 byte[] imgByte = (byte[])dr["STU_IMG"];
 
                 MemoryStream memoryStream = new MemoryStream(imgByte);
                 STU_IMG.Image = new Bitmap(memoryStream);
             }
-            else
-            {
-                STU_IMG.Image = null;
-            }
+            
             conn.Close();
         }
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            
+            
             int rowindex = dataGridView1.CurrentCell.RowIndex;
 
             String STUNO1 = dataGridView1.Rows[rowindex].Cells[0].Value.ToString(); //학번
@@ -300,8 +300,7 @@ namespace WindowsFormsApp1
             String ACC_BANK_NO1 = dataGridView1.Rows[rowindex].Cells[15].Value.ToString(); // 은행코드
             String ACC_BANK1 = dataGridView1.Rows[rowindex].Cells[16].Value.ToString(); // 은행명
             String ACC_NAME1 = dataGridView1.Rows[rowindex].Cells[17].Value.ToString(); // 예금주
-            String ACC_NO1 = dataGridView1.Rows[rowindex].Cells[18].Value.ToString(); // 계좌번호
-            String STU_IMG1 = dataGridView1.Rows[rowindex].Cells[19].Value.ToString(); // 파일명
+            String ACC_NO1 = dataGridView1.Rows[rowindex].Cells[18].Value.ToString(); // 계좌번호            
 
             STUNO.Text = STUNO1;
             RESNO.Text = RESNO1;
@@ -329,12 +328,12 @@ namespace WindowsFormsApp1
             ACC_BANK.Text = ACC_BANK_NO1;
             ACC_BANK_NAME.Text = ACC_BANK1;
             ACC_NAME.Text = ACC_NAME1;
-            ACC_NO.Text = ACC_NO1;
+            ACC_NO.Text = ACC_NO1;            
 
             picture_load();
         }
 
-
+        #region 업데이트문
         private void update_btn_Click(object sender, EventArgs e)
         {
             int rowindex = dataGridView1.CurrentCell.RowIndex;
@@ -389,5 +388,32 @@ namespace WindowsFormsApp1
             MessageBox.Show("수정이 완료되었습니다.");
             reset_student();
         }
+        #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            delete_sql();
+        }
+
+        #region 선택한 행 삭제
+        public void delete_sql()
+        {
+            int rowindex = dataGridView1.CurrentCell.RowIndex;
+            String indexvalue = dataGridView1.Rows[rowindex].Cells[0].Value.ToString();
+
+            conn = new OracleConnection(css);
+            conn.Open();
+            OracleCommand cmdd = new OracleCommand();
+            cmdd.Connection = conn;
+            //선택한 동과 같은 값을 db에서 찾아서 제거
+            cmdd.CommandText = "DELETE P22_LMG_TATM_STU WHERE STU_STUNO = '" + indexvalue + "'";
+            MessageBox.Show("삭제가 완료되었습니다.");
+            cmdd.ExecuteNonQuery();
+            reset_student();
+            conn.Close();
+        }
+        #endregion
     }
+
 }
+

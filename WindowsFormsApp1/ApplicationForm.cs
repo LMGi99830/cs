@@ -24,5 +24,10 @@ namespace WindowsFormsApp1
             textBox12.Text = Form1._textBox1.ToString();
             textBox13.Text = Form1._textBox2.ToString();
         }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

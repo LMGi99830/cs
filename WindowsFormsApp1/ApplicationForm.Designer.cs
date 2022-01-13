@@ -355,6 +355,7 @@ namespace WindowsFormsApp1
             this.textBox12.ReadOnly = true;
             this.textBox12.Size = new System.Drawing.Size(70, 21);
             this.textBox12.TabIndex = 7;
+            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // textBox6
             // 

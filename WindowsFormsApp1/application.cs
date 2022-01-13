@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class application : Form
     {
-        
+
         string css = "Data Source=222.237.134.74:1522/Ora7;User Id=edu;Password=edu1234;";
         OracleConnection con;
         OracleDataAdapter adapt;
@@ -28,46 +28,37 @@ namespace WindowsFormsApp1
 
 
         }
-
-        private void application_Load(object sender, EventArgs e)
+        
+        public void application_reset()
         {
-
             con = new OracleConnection(css);
             con.Open();
-            adapt = new OracleDataAdapter("select * from P22_LMG_TATM_PRO order by PRO_YEAR ASC", con);
+            adapt = new OracleDataAdapter("select * from P22_LMG_TATM_PRO where PRO_STATE = '신청가능' order by PRO_YEAR ASC", con);
             dt = new DataTable();
-
+            
             dt.Columns.Add("선택", typeof(bool));
+
             adapt.Fill(dt);
             dataGridView2.DataSource = dt;
-            
 
+            
             dataGridView2.Columns[1].HeaderText = "연도";
             dataGridView2.Columns[2].HeaderText = "계절";
-            dataGridView2.Columns[3].HeaderText = "명칭";
-            dataGridView2.Columns[4].HeaderText = "실습기간(시작)";
-            dataGridView2.Columns[5].HeaderText = "실습기간(종료)";
-            dataGridView2.Columns[6].HeaderText = "실습시간(시작)";
-            dataGridView2.Columns[7].HeaderText = "실습시간(종료)";
-            dataGridView2.Columns[8].HeaderText = "자료처리일시";
-            dataGridView2.Columns[9].HeaderText = "자료처리구분";
-            dataGridView2.Columns[10].HeaderText = "자료처리자";
-            dataGridView2.Columns[11].HeaderText = "정원";
-
+            dataGridView2.Columns[3].HeaderText = "상태";
+            dataGridView2.Columns[4].HeaderText = "실습명";
+            dataGridView2.Columns[5].HeaderText = "정원";
+            dataGridView2.Columns[6].HeaderText = "신청인원";
+            dataGridView2.Columns[7].HeaderText = "실습시작일자";
+            dataGridView2.Columns[8].HeaderText = "실습종료일자";
+            dataGridView2.Columns[9].HeaderText = "실습시작시간";
+            dataGridView2.Columns[10].HeaderText = "실습종료시간";
+            dataGridView2.Columns[11].HeaderText = "자료처리시간";
+            dataGridView2.Columns[12].HeaderText = "자료처리구분";
+            dataGridView2.Columns[13].HeaderText = "자료처리자";
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void application_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-        private void dataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
+            application_reset();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -78,13 +69,17 @@ namespace WindowsFormsApp1
         private void reset_userform()
         {
 
-            con = new OracleConnection(css);
-            con.Open();
-            adapt = new OracleDataAdapter("select * from P22_LMG_TATM_APP where APP_APPRO = 'N' order by APP_YEAR ASC", con);
+            int rowindex = dataGridView2.CurrentCell.RowIndex;
+            String year = dataGridView2.Rows[rowindex].Cells[1].Value.ToString(); // 연도
+            String season = dataGridView2.Rows[rowindex].Cells[2].Value.ToString(); // 계절
+
+            adapt = new OracleDataAdapter("select * from p22_lmg_tatm_app a" +
+                "                                       where a.APP_YEAR = '" + year + "' and a.APP_SEASON = '" + season + "' and a.APP_APPRO = 'N'", con);
             dt = new DataTable();
             dt.Columns.Add("선택", typeof(bool));
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
+            con.Close();
 
             dataGridView1.Columns[1].HeaderText = "학번";
             dataGridView1.Columns[2].HeaderText = "계절";
@@ -107,13 +102,16 @@ namespace WindowsFormsApp1
             dataGridView1.Columns[19].HeaderText = "자료처리일시";
             dataGridView1.Columns[20].HeaderText = "자료처리구분";
             dataGridView1.Columns[21].HeaderText = "자료처리자";
-            dataGridView1.Columns[1].Name = "StuNO";
-            string val = this.dataGridView1.CurrentRow.Cells["StuNO"].Value.ToString();
-            
 
             //////////////////////////////////////////////
 
-            adapt = new OracleDataAdapter("select * from P22_LMG_TATM_APP where APP_APPRO = 'Y' order by APP_YEAR ASC", con);
+
+            int rowindex1 = dataGridView2.CurrentCell.RowIndex;
+            String year1 = dataGridView2.Rows[rowindex1].Cells[1].Value.ToString(); // 연도
+            String season1 = dataGridView2.Rows[rowindex1].Cells[2].Value.ToString(); // 계절
+
+            adapt = new OracleDataAdapter("select * from p22_lmg_tatm_app a" +
+                "                                       where a.APP_YEAR = '" + year1 + "' and a.APP_SEASON = '" + season1 + "' and a.APP_APPRO = 'Y'", con);
             dt = new DataTable();
             dt.Columns.Add("선택", typeof(bool));
             adapt.Fill(dt);
@@ -141,17 +139,11 @@ namespace WindowsFormsApp1
             dataGridView4.Columns[19].HeaderText = "자료처리일시";
             dataGridView4.Columns[20].HeaderText = "자료처리구분";
             dataGridView4.Columns[21].HeaderText = "자료처리자";
-            dataGridView4.Columns[1].Name = "StuNO";
-            string vall = this.dataGridView4.CurrentRow.Cells["StuNO"].Value.ToString();
-            MessageBox.Show(vall);
 
 
 
 
-        }
-        public string _textBox1
-        {
-            get { return textBox1.Text.Trim(); }
+
         }
 
         private void dataGridView2_DoubleClick(object sender, EventArgs e)
@@ -161,10 +153,11 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int rowindex1 = dataGridView2.CurrentCell.RowIndex;
 
-            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            for (int i = dataGridView1.RowCount - 1; i >= 0; i--)
             {
-                bool chk =  (bool)dataGridView1.Rows[i].Cells[0].Value;
+                bool chk = (bool)dataGridView1.Rows[i].Cells[0].Value;
                 Console.WriteLine(chk);
                 if (chk == true)
                 {
@@ -176,15 +169,139 @@ namespace WindowsFormsApp1
                     cmd.Connection = conn;
 
                     // SQL문 지정 및 INSERT 실행
-                    
-                    this.dataGridView4.AllowUserToAddRows = true;
-                    cmd.CommandText = "Update P22_LMG_TATM_APP set APP_APPRO = 'Y' where APP_STUNO = '" + _textBox1 + "'";
 
+                    this.dataGridView4.AllowUserToAddRows = true;
+                    cmd.CommandText = "Update P22_LMG_TATM_APP set APP_APPRO = 'Y' where APP_YEAR = :YEAR1  and APP_SEASON = :SEASON1 ";
+                    cmd.Parameters.Add(new OracleParameter("YEAR1", dataGridView2.Rows[rowindex1].Cells[1].Value.ToString()));
+                    cmd.Parameters.Add(new OracleParameter("SEASON1", dataGridView2.Rows[rowindex1].Cells[2].Value.ToString()));
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("업데이트 완료");
-                    conn.Close();
+
+                    UpdateStudentCount();
+
+                    MessageBox.Show("승인되었습니다.");
+                    con.Close();
                     reset_userform();
+                    UpdateState();
+                    application_reset();
                 }
+            }
+        }
+        public void UpdateStudentCount()
+        {
+            int rowindex1 = dataGridView2.CurrentCell.RowIndex;
+            OracleConnection conn = new OracleConnection(css);
+            conn.Open();
+
+            OracleCommand cmd1 = new OracleCommand();
+            cmd1.Connection = conn;
+
+            cmd1.CommandText = "update P22_LMG_TATM_PRO set PRO_STCOUNT = (select count(*) PRO_STCOUNT from p22_lmg_tatm_app a" +
+                "                         where a.APP_YEAR = :YEAR1 and a.APP_SEASON = :SEASON1 and a.APP_APPRO = 'Y') where pro_year = :YEAR1 " +
+                "                         and PRO_SEASON = :SEASON1 ";
+            cmd1.Parameters.Add(new OracleParameter("YEAR1", dataGridView2.Rows[rowindex1].Cells[1].Value.ToString()));
+            cmd1.Parameters.Add(new OracleParameter("SEASON1", dataGridView2.Rows[rowindex1].Cells[2].Value.ToString()));
+            cmd1.ExecuteNonQuery();
+        }
+
+        public void UpdateState()
+        {
+
+            int rowindex = dataGridView2.CurrentCell.RowIndex;
+            OracleConnection con = new OracleConnection(css);
+            con.Open();
+
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "select PRO_COUNT, PRO_STCOUNT from P22_LMG_TATM_PRO where PRO_COUNT = PRO_STCOUNT and PRO_YEAR = :YEAR1 and PRO_SEASON = :SEASON1";
+            cmd.Parameters.Add(new OracleParameter("YEAR1", dataGridView2.Rows[rowindex].Cells[1].Value.ToString()));
+            cmd.Parameters.Add(new OracleParameter("SEASON1", dataGridView2.Rows[rowindex].Cells[2].Value.ToString()));
+            OracleDataReader dr = cmd.ExecuteReader();
+            Boolean check = false;
+            while (dr.Read())
+            {
+                check = true;
+            }
+            if (check)
+            {
+                OracleConnection conn = new OracleConnection(css);
+                conn.Open();
+
+                OracleCommand cmd1 = new OracleCommand();
+                cmd1.Connection = conn;
+
+                cmd1.CommandText = "update P22_LMG_TATM_PRO set PRO_STATE = '마감' where PRO_YEAR = :YEAR1 and PRO_SEASON = :SEASON1";
+                cmd1.Parameters.Add(new OracleParameter("YEAR1", dataGridView2.Rows[rowindex].Cells[1].Value.ToString()));
+                cmd1.Parameters.Add(new OracleParameter("SEASON1", dataGridView2.Rows[rowindex].Cells[2].Value.ToString()));
+                cmd1.ExecuteNonQuery();
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int rowindex1 = dataGridView2.CurrentCell.RowIndex;
+
+            for (int i = 0; i < dataGridView4.RowCount - 1; i++)
+            {
+                bool chk = (bool)dataGridView4.Rows[i].Cells[0].Value;
+                Console.WriteLine(chk);
+                if (chk == true)
+                {
+                    OracleConnection conn = new OracleConnection(css);
+                    conn.Open();
+
+                    // 명령 객체 생성
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.Connection = conn;
+
+                    // SQL문 지정 및 INSERT 실행
+
+                    this.dataGridView4.AllowUserToAddRows = true;
+                    cmd.CommandText = "Update P22_LMG_TATM_APP set APP_APPRO = 'N' where APP_YEAR = :YEAR1  and APP_SEASON = :SEASON1 ";
+                    cmd.Parameters.Add(new OracleParameter("YEAR1", dataGridView2.Rows[rowindex1].Cells[1].Value.ToString()));
+                    cmd.Parameters.Add(new OracleParameter("SEASON1", dataGridView2.Rows[rowindex1].Cells[2].Value.ToString()));
+                    cmd.ExecuteNonQuery();
+
+                    UpdateStudentCount();
+
+                    MessageBox.Show("반려되었습니다.");
+                    reset_userform();
+                    DeleteState();
+                    application_reset();
+
+                    con.Close();
+
+                }
+            }
+        }
+
+        public void DeleteState()
+        {
+            int rowindex = dataGridView2.CurrentCell.RowIndex;
+            OracleConnection con = new OracleConnection(css);
+            con.Open();
+
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "select PRO_COUNT, PRO_STCOUNT from P22_LMG_TATM_PRO where PRO_COUNT = PRO_STCOUNT and PRO_YEAR = :YEAR1 and PRO_SEASON = :SEASON1";
+            cmd.Parameters.Add(new OracleParameter("YEAR1", dataGridView2.Rows[rowindex].Cells[1].Value.ToString()));
+            cmd.Parameters.Add(new OracleParameter("SEASON1", dataGridView2.Rows[rowindex].Cells[2].Value.ToString()));
+            OracleDataReader dr = cmd.ExecuteReader();
+            Boolean check = false;
+            while (dr.Read())
+            {
+                check = false;
+            }
+            if (check)
+            {
+                OracleConnection conn = new OracleConnection(css);
+                conn.Open();
+
+                OracleCommand cmd1 = new OracleCommand();
+                cmd1.Connection = conn;
+
+                cmd1.CommandText = "update P22_LMG_TATM_PRO set PRO_STATE = '신청가능' where PRO_YEAR = :YEAR1 and PRO_SEASON = :SEASON1";
+                cmd1.Parameters.Add(new OracleParameter("YEAR1", dataGridView2.Rows[rowindex].Cells[1].Value.ToString()));
+                cmd1.Parameters.Add(new OracleParameter("SEASON1", dataGridView2.Rows[rowindex].Cells[2].Value.ToString()));
+                cmd1.ExecuteNonQuery();
             }
         }
     }

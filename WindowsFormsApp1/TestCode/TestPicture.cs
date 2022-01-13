@@ -45,10 +45,10 @@ namespace WindowsFormsApp1
             Bitmap bitmap = new Bitmap((Image)pictureBox1.BackgroundImage);
             ImageConverter converter = new ImageConverter();
             byte[] b = (byte[])converter.ConvertTo(bitmap, typeof(byte[]));
-            String InsertSQL = "insert into P22_LMG_TATM_PIC(imageno,image) values (:NO,:PIC)";            
+            String InsertSQL = "insert into P22_LMG_TATM_PIC(imageno,image) values (:NO,:PIC)";                        
 
-
-            cmd.CommandText = InsertSQL;            
+            cmd.CommandText = InsertSQL;
+            cmd.Parameters.Add("NO", '4');
             cmd.Parameters.Add("PIC", OracleDbType.Blob, b.Length, b, ParameterDirection.Input);
             cmd.ExecuteNonQuery();
             MessageBox.Show("사진저장완료");
@@ -80,23 +80,31 @@ namespace WindowsFormsApp1
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
+        {            
 
             int rowindex = dataGridView1.CurrentCell.RowIndex;
 
             String STUNO1 = dataGridView1.Rows[rowindex].Cells[0].Value.ToString(); //학번
+            String PIC1 = dataGridView1.Rows[rowindex].Cells[1].Value.ToString(); //학번
             con.Open();
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "select * from P22_LMG_TATM_PIC where IMAGENO=:no";
             cmd.Parameters.Add("no", STUNO1);
             OracleDataReader dr = cmd.ExecuteReader();
             dr.Read();
-            // 키값이 없을 때 처리
-            //키는 있는데 이미지없을때 처리???
-            //Bitmap 클래스는 그래픽 이미지의 픽셀 데이터를 저장하는 클래스
 
-            pictureBox1.Image = new Bitmap(new MemoryStream((byte[])dr["image"]));
-            con.Close();
+            if (!dr.IsDBNull(1))
+            {
+                byte[] imgByte = (byte[])dr["IMAGE"];
+
+                MemoryStream memoryStream = new MemoryStream(imgByte);
+                pictureBox1.Image = new Bitmap(memoryStream);
+            }
+            else
+            {
+                bool isNullOrEmpty = pictureBox1 == null || pictureBox1.Image == null;
+            }
+            con.Close();                        
         }
     }
 }

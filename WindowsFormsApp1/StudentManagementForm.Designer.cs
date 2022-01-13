@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.update_btn = new System.Windows.Forms.Button();
             this.Search2 = new System.Windows.Forms.Button();
             this.Search1 = new System.Windows.Forms.Button();
@@ -108,7 +109,7 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.65636F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.034611F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.39267F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 385F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 402F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
@@ -129,14 +130,15 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 3);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(403, 3);
+            this.panel1.Location = new System.Drawing.Point(392, 3);
             this.panel1.Name = "panel1";
             this.tableLayoutPanel1.SetRowSpan(this.panel1, 3);
-            this.panel1.Size = new System.Drawing.Size(582, 662);
+            this.panel1.Size = new System.Drawing.Size(593, 662);
             this.panel1.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.update_btn);
             this.groupBox1.Controls.Add(this.Search2);
             this.groupBox1.Controls.Add(this.Search1);
@@ -175,14 +177,24 @@ namespace WindowsFormsApp1
             this.groupBox1.Font = new System.Drawing.Font("굴림", 9F);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(582, 662);
+            this.groupBox1.Size = new System.Drawing.Size(593, 662);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "학생정보";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(332, 630);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 64;
+            this.button1.Text = "삭제";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // update_btn
             // 
-            this.update_btn.Location = new System.Drawing.Point(276, 630);
+            this.update_btn.Location = new System.Drawing.Point(239, 630);
             this.update_btn.Name = "update_btn";
             this.update_btn.Size = new System.Drawing.Size(75, 23);
             this.update_btn.TabIndex = 63;
@@ -279,7 +291,7 @@ namespace WindowsFormsApp1
             // 
             // Enrollment
             // 
-            this.Enrollment.Location = new System.Drawing.Point(185, 630);
+            this.Enrollment.Location = new System.Drawing.Point(148, 630);
             this.Enrollment.Name = "Enrollment";
             this.Enrollment.Size = new System.Drawing.Size(75, 23);
             this.Enrollment.TabIndex = 53;
@@ -584,7 +596,7 @@ namespace WindowsFormsApp1
             this.panel4.Location = new System.Drawing.Point(3, 81);
             this.panel4.Name = "panel4";
             this.tableLayoutPanel1.SetRowSpan(this.panel4, 2);
-            this.panel4.Size = new System.Drawing.Size(394, 584);
+            this.panel4.Size = new System.Drawing.Size(383, 584);
             this.panel4.TabIndex = 19;
             // 
             // dataGridView1
@@ -595,7 +607,7 @@ namespace WindowsFormsApp1
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(394, 584);
+            this.dataGridView1.Size = new System.Drawing.Size(383, 584);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
@@ -606,7 +618,7 @@ namespace WindowsFormsApp1
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(394, 72);
+            this.panel2.Size = new System.Drawing.Size(383, 72);
             this.panel2.TabIndex = 18;
             // 
             // groupBox4
@@ -618,7 +630,7 @@ namespace WindowsFormsApp1
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(394, 72);
+            this.groupBox4.Size = new System.Drawing.Size(383, 72);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "학생 검색";
@@ -626,18 +638,18 @@ namespace WindowsFormsApp1
             // SearchBox1
             // 
             this.SearchBox1.Font = new System.Drawing.Font("굴림", 9F);
-            this.SearchBox1.Location = new System.Drawing.Point(65, 45);
+            this.SearchBox1.Location = new System.Drawing.Point(73, 45);
             this.SearchBox1.Name = "SearchBox1";
-            this.SearchBox1.Size = new System.Drawing.Size(130, 21);
+            this.SearchBox1.Size = new System.Drawing.Size(106, 21);
             this.SearchBox1.TabIndex = 47;
             this.SearchBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox11_KeyDown);
             // 
             // SearchBox2
             // 
             this.SearchBox2.Font = new System.Drawing.Font("굴림", 9F);
-            this.SearchBox2.Location = new System.Drawing.Point(261, 45);
+            this.SearchBox2.Location = new System.Drawing.Point(244, 45);
             this.SearchBox2.Name = "SearchBox2";
-            this.SearchBox2.Size = new System.Drawing.Size(130, 21);
+            this.SearchBox2.Size = new System.Drawing.Size(88, 21);
             this.SearchBox2.TabIndex = 46;
             this.SearchBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchBox2_KeyDown);
             // 
@@ -645,7 +657,7 @@ namespace WindowsFormsApp1
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("굴림", 9F);
-            this.label20.Location = new System.Drawing.Point(30, 48);
+            this.label20.Location = new System.Drawing.Point(38, 48);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(29, 12);
             this.label20.TabIndex = 2;
@@ -655,7 +667,7 @@ namespace WindowsFormsApp1
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("굴림", 9F);
-            this.label21.Location = new System.Drawing.Point(226, 48);
+            this.label21.Location = new System.Drawing.Point(209, 48);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(29, 12);
             this.label21.TabIndex = 3;
@@ -836,5 +848,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button Search1;
         private System.Windows.Forms.Button Search2;
         private System.Windows.Forms.Button update_btn;
+        private System.Windows.Forms.Button button1;
     }
 }

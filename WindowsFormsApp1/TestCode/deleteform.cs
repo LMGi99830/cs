@@ -20,9 +20,7 @@ namespace WindowsFormsApp1
         private void deleteform_Load(object sender, EventArgs e)
         {
             this.Text = "csharp-console-examples.com";
-            this.BackColor = Color.IndianRed;
-            DataGridViewTextBoxColumn dgvId = new DataGridViewTextBoxColumn();
-            dgvId.HeaderText = "Id";
+            this.BackColor = Color.IndianRed;            
             DataGridViewTextBoxColumn dgvFn = new DataGridViewTextBoxColumn();
             dgvFn.HeaderText = "First Name";
             DataGridViewTextBoxColumn dgvLn = new DataGridViewTextBoxColumn();
@@ -31,24 +29,23 @@ namespace WindowsFormsApp1
 
             DataGridViewCheckBoxColumn dgvCheckBox = new DataGridViewCheckBoxColumn();
             dgvCheckBox.HeaderText = "Select";
-
-            dataGridView1.Columns.Add(dgvId);
+            
             dataGridView1.Columns.Add(dgvFn);
             dataGridView1.Columns.Add(dgvLn);
             dataGridView1.Columns.Add(dgvCheckBox);
 
 
-            dataGridView1.Rows.Add("1", "First Name 1", "Last Name 1", false);
-            dataGridView1.Rows.Add("2", "First Name 2", "Last Name 2", false);
-            dataGridView1.Rows.Add("3", "First Name 3", "Last Name 3", false);
-            dataGridView1.Rows.Add("4", "First Name 4", "Last Name 4", false);
-            dataGridView1.Rows.Add("5", "First Name 5", "Last Name 5", false);
-            dataGridView1.Rows.Add("6", "First Name 6", "Last Name 6", false);
-            dataGridView1.Rows.Add("7", "First Name 7", "Last Name 7", false);
-            dataGridView1.Rows.Add("8", "First Name 8", "Last Name 8", false);
-            dataGridView1.Rows.Add("9", "First Name 9", "Last Name 9", false);
-            dataGridView1.Rows.Add("10", "First Name 10", "Last Name 10", false);
-            dataGridView1.Rows.Add("11", "First Name 11", "Last Name 11", false);
+            dataGridView1.Rows.Add("First Name 1", "Last Name 1");
+            dataGridView1.Rows.Add("First Name 2", "Last Name 2");
+            dataGridView1.Rows.Add("First Name 3", "Last Name 3");
+            dataGridView1.Rows.Add("First Name 4", "Last Name 4");
+            dataGridView1.Rows.Add("First Name 5", "Last Name 5");
+            dataGridView1.Rows.Add("First Name 6", "Last Name 6");
+            dataGridView1.Rows.Add("First Name 7", "Last Name 7");
+            dataGridView1.Rows.Add("First Name 8", "Last Name 8");
+            dataGridView1.Rows.Add("First Name 9", "Last Name 9");
+            dataGridView1.Rows.Add("First Name 10", "Last Name 10");
+            dataGridView1.Rows.Add("First Name 11", "Last Name 11");
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AllowUserToAddRows = false;
         }
