@@ -83,6 +83,12 @@
     <Compile Include="AdminAttendance.Designer.cs">
       <DependentUpon>AdminAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApplicationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchCode\defCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,12 +106,6 @@
     </Compile>
     <Compile Include="application.Designer.cs">
       <DependentUpon>application.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ApplicationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ApplicationForm.Designer.cs">
-      <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminCode\AtdCode.cs">
       <SubType>Form</SubType>
@@ -242,8 +242,17 @@
     <Compile Include="testsql.Designer.cs">
       <DependentUpon>testsql.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateApplicationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateApplicationForm.Designer.cs">
+      <DependentUpon>UpdateApplicationForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminAttendance.resx">
       <DependentUpon>AdminAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchCode\defCodeForm.resx">
       <DependentUpon>defCodeForm.cs</DependentUpon>
@@ -253,9 +262,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="application.resx">
       <DependentUpon>application.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ApplicationForm.resx">
-      <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminCode\AtdCode.resx">
       <DependentUpon>AtdCode.cs</DependentUpon>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="testsql.resx">
       <DependentUpon>testsql.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateApplicationForm.resx">
+      <DependentUpon>UpdateApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>

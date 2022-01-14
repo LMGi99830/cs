@@ -35,8 +35,8 @@ namespace WindowsFormsApp1
             dataGridView1.Columns.Add(dgvCheckBox);
 
 
-            dataGridView1.Rows.Add("First Name 1", "Last Name 1");
-            dataGridView1.Rows.Add("First Name 2", "Last Name 2");
+            dataGridView1.Rows.Add("First Name 1", "Last Name 1", false);
+            dataGridView1.Rows.Add("First Name 2", "Last Name 2", false);
             dataGridView1.Rows.Add("First Name 3", "Last Name 3");
             dataGridView1.Rows.Add("First Name 4", "Last Name 4");
             dataGridView1.Rows.Add("First Name 5", "Last Name 5");

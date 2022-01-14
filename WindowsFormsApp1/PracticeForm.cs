@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
         }
         public void OracleParameter()
         {
-            if (String.IsNullOrEmpty(comboBox1.Text))
+            if (String.IsNullOrEmpty(textBox4.Text))
             {
                 MessageBox.Show("연도를 입력해주세요");
                 return;
@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
             con.Open();
             OracleCommand cmd1 = con.CreateCommand();
             cmd1.CommandText = "select PRO_YEAR, PRO_SEASON from P22_LMG_TATM_PRO where PRO_YEAR = :YEAR and PRO_SEASON = :SEASON";
-            cmd1.Parameters.Add(new OracleParameter("YEAR1", comboBox1.Text.ToString()));
+            cmd1.Parameters.Add(new OracleParameter("YEAR1", textBox4.Text.ToString()));
             cmd1.Parameters.Add(new OracleParameter("SEASON1", comboBox2.Text.ToString()));
             OracleDataReader dr = cmd1.ExecuteReader();
             Boolean check1 = false;
@@ -66,12 +66,12 @@ namespace WindowsFormsApp1
                                                 PRO_YEAR,PRO_SEASON,PRO_NAME,PRO_COUNT,PRO_DAYS,PRO_DAYE,
                                                 PRO_TIMES,PRO_TIMEE)
                                             values (:YEAR,:SEASON,:NAME,:COUNT, :DAYS,:DAYE,:TIMES,:TIMEE)";
-            cmd.Parameters.Add(new OracleParameter("YEAR", comboBox1.Text.ToString()));
+            cmd.Parameters.Add(new OracleParameter("YEAR", textBox4.Text.ToString()));
             cmd.Parameters.Add(new OracleParameter("SEASON", comboBox2.Text.ToString()));
             cmd.Parameters.Add(new OracleParameter("NAME", textBox3.Text.ToString()));
             cmd.Parameters.Add(new OracleParameter("COUNT", textBox6.Text.ToString()));
-            cmd.Parameters.Add(new OracleParameter("DAYS", textBox4.Text.ToString()));
-            cmd.Parameters.Add(new OracleParameter("DAYE", textBox7.Text.ToString()));            
+            cmd.Parameters.Add(new OracleParameter("DAYS", dateTimePicker1.Value.ToString("yymmdd")));
+            cmd.Parameters.Add(new OracleParameter("DAYE", dateTimePicker2.Value.ToString("yymmdd")));            
             cmd.Parameters.Add(new OracleParameter("TIMES", textBox1.Text.ToString()));            
             cmd.Parameters.Add(new OracleParameter("TIMEE", textBox2.Text.ToString()));
 
@@ -119,6 +119,16 @@ namespace WindowsFormsApp1
         private void button3_Click(object sender, EventArgs e)
         {
             OracleParameter();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(dateTimePicker1.Text);
+
+
+            textBox7.Text = dateTimePicker1.Value.ToString("yymmdd");
+
+
         }
     }
 }
