@@ -83,6 +83,12 @@
     <Compile Include="AdminAttendance.Designer.cs">
       <DependentUpon>AdminAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminEnrollmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminEnrollmentForm.Designer.cs">
+      <DependentUpon>AdminEnrollmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +256,9 @@
     </Compile>
     <EmbeddedResource Include="AdminAttendance.resx">
       <DependentUpon>AdminAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminEnrollmentForm.resx">
+      <DependentUpon>AdminEnrollmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>

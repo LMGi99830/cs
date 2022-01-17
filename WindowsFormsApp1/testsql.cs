@@ -16,10 +16,6 @@ namespace WindowsFormsApp1
     {
         //디비 연결  
         string css = "Data Source=222.237.134.74:1522/Ora7;User Id=edu;Password=edu1234;";
-        OracleConnection con;
-        OracleDataAdapter adapt;
-        DataTable dt;
-        OracleCommand cmd;
         DataSet dtSet = new DataSet();
         public testsql()
         {

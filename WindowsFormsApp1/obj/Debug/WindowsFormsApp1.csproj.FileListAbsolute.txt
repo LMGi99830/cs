@@ -55,3 +55,4 @@ C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdminCode.defCodeForm.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.TestPicture.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.UpdateApplicationForm.resources
+C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdminEnrollmentForm.resources

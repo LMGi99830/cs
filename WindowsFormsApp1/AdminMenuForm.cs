@@ -28,15 +28,37 @@ namespace WindowsFormsApp1
 
             switch (str)
             {
-                case "학생인사정보등록/조회": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "관리자 등록": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
-                        StudentManagementForm form = new StudentManagementForm();
+                        Type formType = Assembly.GetExecutingAssembly().GetTypes()
+                         .Where(a => a.BaseType == typeof(Form) && a.Name == "AdminEnrollmentForm")
+                         .FirstOrDefault();
+                        Form form = (Form)Activator.CreateInstance(formType);  // 동적생성(폼)
                         form.TopLevel = false;
                         tabControl1.TabPages.Add(str);
                         tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(form);
                         tabControl1.SelectedIndex = tabControl1.TabPages.Count - 1;
+                        AdminMenuForm.DICT_REMOVE_INDEX.Add(str, tabControl1.SelectedIndex); //Dictionary로 화면텍스트와 탭번호 저장
+                        form.Dock = DockStyle.Fill;
+                        form.Show();
+                    }
+                    else
+                    {
+                        tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
+                    }
+                    break;
+                case "학생인사정보등록/조회": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                    if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
+                    {
+                        Type formType = Assembly.GetExecutingAssembly().GetTypes()
+                         .Where(a => a.BaseType == typeof(Form) && a.Name == "StudentManagementForm")
+                         .FirstOrDefault();
+                        Form form = (Form)Activator.CreateInstance(formType);  // 동적생성(폼)
+                        form.TopLevel = false;
+                        tabControl1.TabPages.Add(str);
                         tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(form);
+                        tabControl1.SelectedIndex = tabControl1.TabPages.Count - 1;
                         AdminMenuForm.DICT_REMOVE_INDEX.Add(str, tabControl1.SelectedIndex); //Dictionary로 화면텍스트와 탭번호 저장
                         form.Dock = DockStyle.Fill;
                         form.Show();
@@ -200,7 +222,7 @@ namespace WindowsFormsApp1
         private void button6_Click_1(object sender, EventArgs e)
         {
             ApplicationForm Form1 = new ApplicationForm();
-            Form1.StartPosition = FormStartPosition.Manual;
+            Form1.StartPosition = FormStartPosition.Manual; 
             Form1.Location = new Point(850, 110);
             Form1.Show();
 
@@ -208,12 +230,18 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-                DormiCode node = new DormiCode();
-                Type type = typeof(DormiCode);
-                var method = type.GetMethod("InsertDB");
-                method.Invoke(node, null);
-          
+            //버튼1
+            String btg = (String)(sender as Button).Tag as string;
+
+            Form form = (Form)tabControl1.SelectedTab.Controls[0];
+            Type type = form.GetType();  //> system.type의 형식결과를 반환 (메소드,필드, 프로퍼피등) 표현
+            System.Reflection.MethodInfo mtd = type.GetMethod(btg);
+
+            if (mtd == null) return;
+
+            //폼2에 있는 버튼클릭 메소드를 호출한다.
+            mtd.Invoke(form, null);
+
         }
 
         private void AdminMenuForm_Load(object sender, EventArgs e)

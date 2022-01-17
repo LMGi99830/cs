@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
 
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.InitialDirectory = @"C:\";
-            dialog.Filter = "Image File (*.jpg;*.png;)|*.jpg;*.png";
+            dialog.Filter = "Image File (*.png;)|*.png";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 image_file = dialog.FileName;
@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
             String InsertSQL = "insert into P22_LMG_TATM_PIC(imageno,image) values (:NO,:PIC)";
 
             cmd.CommandText = InsertSQL;
-            cmd.Parameters.Add("NO", '4');
+            cmd.Parameters.Add("NO", '6');
             cmd.Parameters.Add("PIC", OracleDbType.Blob, b.Length, b, ParameterDirection.Input);
             cmd.ExecuteNonQuery();
             MessageBox.Show("사진저장완료");
@@ -136,6 +136,10 @@ namespace WindowsFormsApp1
 
             }
         }
-        
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
