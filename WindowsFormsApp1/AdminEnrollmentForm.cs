@@ -25,41 +25,53 @@ namespace WindowsFormsApp1
 
         public void btn_enrollment()
         {
-            if (textBox1.Text == "")
+            con = new OracleConnection(css);
+            con.Open();
+            OracleCommand cmd = con.CreateCommand();
+            OracleCommand cmd1 = con.CreateCommand();
+
+            if (textBox1.Text == "" || String.IsNullOrWhiteSpace(textBox1.Text))
             {
-                MessageBox.Show("아이디를 입력해주세요.");
-                return;
+                    MessageBox.Show("아이디를 입력해주세요");
+                    return;
             }
-            else if (textBox2.Text == "")
+            else if (textBox2.Text == "" || String.IsNullOrWhiteSpace(textBox2.Text))
             {
                 MessageBox.Show("비밀번호를 입력해주세요.");
                 return;
             }
-            else if (textBox3.Text == "")
+            else if (textBox3.Text == "" || String.IsNullOrWhiteSpace(textBox3.Text))
             {
                 MessageBox.Show("이름을 입력해주세요.");
                 return;
             }
+
+            cmd1.CommandText = "select ADM_ID from P22_LMG_TATM_ADMIN where ADM_ID = :J_ID";
+            cmd1.Parameters.Add(new OracleParameter("J_ID", textBox1.Text.ToString()));
+            Boolean id_check = false;
+            OracleDataReader dr = cmd1.ExecuteReader();
+            while(dr.Read())
+            {
+                id_check = true;
+            }
+            if(id_check)
+            {
+                MessageBox.Show("중복 되는 ID는 사용할 수 없습니다.");
+                return;
+            }
             else
             {
-                con = new OracleConnection(css);
-                con.Open();
-                OracleCommand cmd = con.CreateCommand();
                 cmd.CommandText = "insert into P22_LMG_TATM_ADMIN (ADM_ID, ADM_PW, ADM_NAME) values( :id, :pw, :name)";
                 cmd.Parameters.Add(new OracleParameter("id", textBox1.Text.ToString()));
                 cmd.Parameters.Add(new OracleParameter("pw", textBox2.Text.ToString()));
                 cmd.Parameters.Add(new OracleParameter("name", textBox3.Text.ToString()));
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("등록 완료");
-
                 btn_load();
                 con.Close();
             }
        }
     
-           
-        
-
         public void btn_load()
         {
             con = new OracleConnection(css);
@@ -162,6 +174,10 @@ namespace WindowsFormsApp1
             {
                 btn_search();
             }
+            if (e.KeyCode == Keys.Back)
+            {
+                Back_space();
+            }
         }
         public void btn_search()
         {
@@ -172,6 +188,24 @@ namespace WindowsFormsApp1
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
             con.Close();
+        }
+
+        public void Back_space()
+        {
+            if (textBox4.Text == "")
+            {
+                btn_load();
+            }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //한글만
+            if ((Char.IsPunctuation(e.KeyChar) || Char.IsDigit(e.KeyChar) ||  Char.IsSymbol(e.KeyChar)) && e.KeyChar != 8)        
+            {
+                e.Handled = true;
+            }
+            
         }
     }
 }

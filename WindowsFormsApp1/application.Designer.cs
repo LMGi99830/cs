@@ -475,7 +475,6 @@ namespace WindowsFormsApp1
             this.dataGridView1.Size = new System.Drawing.Size(443, 291);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // tableLayoutPanel1
             // 

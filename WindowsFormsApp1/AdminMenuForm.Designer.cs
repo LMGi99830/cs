@@ -29,40 +29,40 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode91 = new System.Windows.Forms.TreeNode("관리자 등록");
-            System.Windows.Forms.TreeNode treeNode92 = new System.Windows.Forms.TreeNode("관리자관리", new System.Windows.Forms.TreeNode[] {
-            treeNode91});
-            System.Windows.Forms.TreeNode treeNode93 = new System.Windows.Forms.TreeNode("학생인사정보등록/조회");
-            System.Windows.Forms.TreeNode treeNode94 = new System.Windows.Forms.TreeNode("학생관리", new System.Windows.Forms.TreeNode[] {
-            treeNode93});
-            System.Windows.Forms.TreeNode treeNode95 = new System.Windows.Forms.TreeNode("현장실습등록");
-            System.Windows.Forms.TreeNode treeNode96 = new System.Windows.Forms.TreeNode("현장실습신청인원신청/조회/승인");
-            System.Windows.Forms.TreeNode treeNode97 = new System.Windows.Forms.TreeNode("현장실습관리", new System.Windows.Forms.TreeNode[] {
-            treeNode95,
-            treeNode96});
-            System.Windows.Forms.TreeNode treeNode98 = new System.Windows.Forms.TreeNode("출퇴근관리");
-            System.Windows.Forms.TreeNode treeNode99 = new System.Windows.Forms.TreeNode("근태현황");
-            System.Windows.Forms.TreeNode treeNode100 = new System.Windows.Forms.TreeNode("근태관리", new System.Windows.Forms.TreeNode[] {
-            treeNode98,
-            treeNode99});
-            System.Windows.Forms.TreeNode treeNode101 = new System.Windows.Forms.TreeNode("은행 등록");
-            System.Windows.Forms.TreeNode treeNode102 = new System.Windows.Forms.TreeNode("기숙사 등록");
-            System.Windows.Forms.TreeNode treeNode103 = new System.Windows.Forms.TreeNode("근태 등록");
-            System.Windows.Forms.TreeNode treeNode104 = new System.Windows.Forms.TreeNode("지원분야 등록");
-            System.Windows.Forms.TreeNode treeNode105 = new System.Windows.Forms.TreeNode("코드관리", new System.Windows.Forms.TreeNode[] {
-            treeNode101,
-            treeNode102,
-            treeNode103,
-            treeNode104});
-            System.Windows.Forms.TreeNode treeNode106 = new System.Windows.Forms.TreeNode("관리자", new System.Windows.Forms.TreeNode[] {
-            treeNode92,
-            treeNode94,
-            treeNode97,
-            treeNode100,
-            treeNode105});
-            System.Windows.Forms.TreeNode treeNode107 = new System.Windows.Forms.TreeNode("출/퇴근");
-            System.Windows.Forms.TreeNode treeNode108 = new System.Windows.Forms.TreeNode("학생", new System.Windows.Forms.TreeNode[] {
-            treeNode107});
+            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("관리자 등록");
+            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("관리자관리", new System.Windows.Forms.TreeNode[] {
+            treeNode55});
+            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("학생인사정보등록/조회");
+            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("학생관리", new System.Windows.Forms.TreeNode[] {
+            treeNode57});
+            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("현장실습등록");
+            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("현장실습신청인원신청/조회/승인");
+            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("현장실습관리", new System.Windows.Forms.TreeNode[] {
+            treeNode59,
+            treeNode60});
+            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("출퇴근관리");
+            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("근태현황");
+            System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("근태관리", new System.Windows.Forms.TreeNode[] {
+            treeNode62,
+            treeNode63});
+            System.Windows.Forms.TreeNode treeNode65 = new System.Windows.Forms.TreeNode("은행 등록");
+            System.Windows.Forms.TreeNode treeNode66 = new System.Windows.Forms.TreeNode("기숙사 등록");
+            System.Windows.Forms.TreeNode treeNode67 = new System.Windows.Forms.TreeNode("근태 등록");
+            System.Windows.Forms.TreeNode treeNode68 = new System.Windows.Forms.TreeNode("지원분야 등록");
+            System.Windows.Forms.TreeNode treeNode69 = new System.Windows.Forms.TreeNode("코드관리", new System.Windows.Forms.TreeNode[] {
+            treeNode65,
+            treeNode66,
+            treeNode67,
+            treeNode68});
+            System.Windows.Forms.TreeNode treeNode70 = new System.Windows.Forms.TreeNode("관리자", new System.Windows.Forms.TreeNode[] {
+            treeNode56,
+            treeNode58,
+            treeNode61,
+            treeNode64,
+            treeNode69});
+            System.Windows.Forms.TreeNode treeNode71 = new System.Windows.Forms.TreeNode("출/퇴근");
+            System.Windows.Forms.TreeNode treeNode72 = new System.Windows.Forms.TreeNode("학생", new System.Windows.Forms.TreeNode[] {
+            treeNode71});
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -116,45 +116,45 @@ namespace WindowsFormsApp1
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode91.Name = "노드1";
-            treeNode91.Text = "관리자 등록";
-            treeNode92.Name = "노드0";
-            treeNode92.Text = "관리자관리";
-            treeNode93.Name = "노드3";
-            treeNode93.Text = "학생인사정보등록/조회";
-            treeNode94.Name = "노드0";
-            treeNode94.Text = "학생관리";
-            treeNode95.Name = "노드4";
-            treeNode95.Text = "현장실습등록";
-            treeNode96.Name = "노드9";
-            treeNode96.Text = "현장실습신청인원신청/조회/승인";
-            treeNode97.Name = "노드1";
-            treeNode97.Text = "현장실습관리";
-            treeNode98.Name = "노드3";
-            treeNode98.Text = "출퇴근관리";
-            treeNode99.Name = "노드7";
-            treeNode99.Text = "근태현황";
-            treeNode100.Name = "노드2";
-            treeNode100.Text = "근태관리";
-            treeNode101.Name = "노드1";
-            treeNode101.Text = "은행 등록";
-            treeNode102.Name = "노드2";
-            treeNode102.Text = "기숙사 등록";
-            treeNode103.Name = "노드3";
-            treeNode103.Text = "근태 등록";
-            treeNode104.Name = "노드4";
-            treeNode104.Text = "지원분야 등록";
-            treeNode105.Name = "노드0";
-            treeNode105.Text = "코드관리";
-            treeNode106.Name = "노드1";
-            treeNode106.Text = "관리자";
-            treeNode107.Name = "노드5";
-            treeNode107.Text = "출/퇴근";
-            treeNode108.Name = "노드2";
-            treeNode108.Text = "학생";
+            treeNode55.Name = "노드1";
+            treeNode55.Text = "관리자 등록";
+            treeNode56.Name = "노드0";
+            treeNode56.Text = "관리자관리";
+            treeNode57.Name = "노드3";
+            treeNode57.Text = "학생인사정보등록/조회";
+            treeNode58.Name = "노드0";
+            treeNode58.Text = "학생관리";
+            treeNode59.Name = "노드4";
+            treeNode59.Text = "현장실습등록";
+            treeNode60.Name = "노드9";
+            treeNode60.Text = "현장실습신청인원신청/조회/승인";
+            treeNode61.Name = "노드1";
+            treeNode61.Text = "현장실습관리";
+            treeNode62.Name = "노드3";
+            treeNode62.Text = "출퇴근관리";
+            treeNode63.Name = "노드7";
+            treeNode63.Text = "근태현황";
+            treeNode64.Name = "노드2";
+            treeNode64.Text = "근태관리";
+            treeNode65.Name = "노드1";
+            treeNode65.Text = "은행 등록";
+            treeNode66.Name = "노드2";
+            treeNode66.Text = "기숙사 등록";
+            treeNode67.Name = "노드3";
+            treeNode67.Text = "근태 등록";
+            treeNode68.Name = "노드4";
+            treeNode68.Text = "지원분야 등록";
+            treeNode69.Name = "노드0";
+            treeNode69.Text = "코드관리";
+            treeNode70.Name = "노드1";
+            treeNode70.Text = "관리자";
+            treeNode71.Name = "노드5";
+            treeNode71.Text = "출/퇴근";
+            treeNode72.Name = "노드2";
+            treeNode72.Text = "학생";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode106,
-            treeNode108});
+            treeNode70,
+            treeNode72});
             this.treeView1.Size = new System.Drawing.Size(248, 684);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -201,7 +201,7 @@ namespace WindowsFormsApp1
             this.button4.Tag = "btn_load";
             this.button4.Text = "조회";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button1_Click);
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button6
             // 
@@ -222,7 +222,7 @@ namespace WindowsFormsApp1
             this.button3.Tag = "btn_delete";
             this.button3.Text = "삭제";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button1_Click);
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -233,7 +233,7 @@ namespace WindowsFormsApp1
             this.button2.Tag = "btn_update";
             this.button2.Text = "수정";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -273,7 +273,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AdminMenuForm";
             this.Text = "AdminMenuForm";
-            this.Load += new System.EventHandler(this.AdminMenuForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

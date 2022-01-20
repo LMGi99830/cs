@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
         }
             public void application_reset()
         {
-                
+               
             con = new OracleConnection(css);
             con.Open();
             adapt = new OracleDataAdapter("select * from P22_LMG_TATM_PRO where PRO_STATE = '신청가능' order by PRO_YEAR ASC", con);
@@ -251,7 +251,7 @@ namespace WindowsFormsApp1
         }
         public void UpdateStudentCount()
         {
-            int rowindex1 = dataGridView2.CurrentCell.RowIndex;
+            int rowindex1 = dataGridView2.CurrentCell.RowIndex;            
             OracleConnection conn = new OracleConnection(css);
             conn.Open();
 
@@ -367,6 +367,7 @@ namespace WindowsFormsApp1
                 cmd1.Parameters.Add(new OracleParameter("SEASON1", dataGridView2.Rows[rowindex].Cells[2].Value.ToString()));
                 cmd1.ExecuteNonQuery();
             }
+            UpdateStudentCount();
         }
     
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -498,39 +499,7 @@ namespace WindowsFormsApp1
 
         private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.ClearSelection();            
+            dataGridView1.ClearSelection();
         }
-
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            int rowindex1 = dataGridView1.CurrentCell.RowIndex;
-
-            STUNO = dataGridView1.Rows[rowindex1].Cells[0].Value.ToString(); // 연도
-            YEAR = dataGridView1.Rows[rowindex1].Cells[1].Value.ToString(); // 연도
-            SEASON = dataGridView1.Rows[rowindex1].Cells[2].Value.ToString(); // 연도
-            FIE_CODE = dataGridView1.Rows[rowindex1].Cells[3].Value.ToString(); // 연도
-            TELNO = dataGridView1.Rows[rowindex1].Cells[4].Value.ToString(); // 연도
-            AVG = dataGridView1.Rows[rowindex1].Cells[5].Value.ToString(); // 연도
-            MIL = dataGridView1.Rows[rowindex1].Cells[6].Value.ToString(); // 연도
-            CER1 = dataGridView1.Rows[rowindex1].Cells[7].Value.ToString(); // 연도
-            CER1_DATE = dataGridView1.Rows[rowindex1].Cells[8].Value.ToString(); // 연도
-            CER1_PLACE = dataGridView1.Rows[rowindex1].Cells[9].Value.ToString(); // 연도
-            CER2 = dataGridView1.Rows[rowindex1].Cells[10].Value.ToString(); // 연도
-            CER2_DATE = dataGridView1.Rows[rowindex1].Cells[11].Value.ToString(); // 연도
-            CER2_PLACE = dataGridView1.Rows[rowindex1].Cells[12].Value.ToString(); // 연도
-            ENG_CON = dataGridView1.Rows[rowindex1].Cells[13].Value.ToString(); // 연도
-            ENG_REA = dataGridView1.Rows[rowindex1].Cells[14].Value.ToString(); // 연도
-            ENG_WRT = dataGridView1.Rows[rowindex1].Cells[15].Value.ToString(); // 연도
-            SELF = dataGridView1.Rows[rowindex1].Cells[16].Value.ToString(); // 연도
-
-            UpdateApplicationForm Form1 = new UpdateApplicationForm();            
-            Form1.Show();
-
-        }
-
-        
-        
-
-       
     }
 }

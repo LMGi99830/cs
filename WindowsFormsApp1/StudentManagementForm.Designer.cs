@@ -32,16 +32,10 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.update_btn = new System.Windows.Forms.Button();
-            this.Search2 = new System.Windows.Forms.Button();
-            this.Search1 = new System.Windows.Forms.Button();
             this.DEPART_BTN = new System.Windows.Forms.Button();
             this.DEPART = new System.Windows.Forms.TextBox();
             this.DEPART_NAME = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.RESNO = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -109,7 +103,7 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.65636F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.034611F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.39267F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 480F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 527F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
@@ -130,24 +124,18 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 3);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(340, 3);
+            this.panel1.Location = new System.Drawing.Point(309, 3);
             this.panel1.Name = "panel1";
             this.tableLayoutPanel1.SetRowSpan(this.panel1, 3);
-            this.panel1.Size = new System.Drawing.Size(645, 662);
+            this.panel1.Size = new System.Drawing.Size(676, 662);
             this.panel1.TabIndex = 0;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.update_btn);
-            this.groupBox1.Controls.Add(this.Search2);
-            this.groupBox1.Controls.Add(this.Search1);
             this.groupBox1.Controls.Add(this.DEPART_BTN);
             this.groupBox1.Controls.Add(this.DEPART);
             this.groupBox1.Controls.Add(this.DEPART_NAME);
             this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.RESNO);
             this.groupBox1.Controls.Add(this.DOR_USE);
@@ -177,67 +165,16 @@ namespace WindowsFormsApp1
             this.groupBox1.Font = new System.Drawing.Font("굴림", 9F);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(645, 662);
+            this.groupBox1.Size = new System.Drawing.Size(676, 662);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "학생정보";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(413, 630);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 23);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "ㄲㄷ";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(332, 630);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "삭제";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // update_btn
-            // 
-            this.update_btn.Location = new System.Drawing.Point(239, 630);
-            this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(75, 23);
-            this.update_btn.TabIndex = 27;
-            this.update_btn.Text = "수정";
-            this.update_btn.UseVisualStyleBackColor = true;
-            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
-            // 
-            // Search2
-            // 
-            this.Search2.Location = new System.Drawing.Point(542, 639);
-            this.Search2.Name = "Search2";
-            this.Search2.Size = new System.Drawing.Size(10, 23);
-            this.Search2.TabIndex = 62;
-            this.Search2.Text = "button1";
-            this.Search2.UseVisualStyleBackColor = true;
-            this.Search2.Visible = false;
-            this.Search2.Click += new System.EventHandler(this.Search2_Click);
-            // 
-            // Search1
-            // 
-            this.Search1.Location = new System.Drawing.Point(526, 639);
-            this.Search1.Name = "Search1";
-            this.Search1.Size = new System.Drawing.Size(10, 23);
-            this.Search1.TabIndex = 61;
-            this.Search1.Text = "button1";
-            this.Search1.UseVisualStyleBackColor = true;
-            this.Search1.Visible = false;
-            this.Search1.Click += new System.EventHandler(this.Search1_Click);
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // DEPART_BTN
             // 
             this.DEPART_BTN.Font = new System.Drawing.Font("굴림", 8F);
-            this.DEPART_BTN.Location = new System.Drawing.Point(169, 132);
+            this.DEPART_BTN.Location = new System.Drawing.Point(169, 109);
             this.DEPART_BTN.Name = "DEPART_BTN";
             this.DEPART_BTN.Size = new System.Drawing.Size(55, 21);
             this.DEPART_BTN.TabIndex = 6;
@@ -248,7 +185,7 @@ namespace WindowsFormsApp1
             // DEPART
             // 
             this.DEPART.Font = new System.Drawing.Font("굴림", 9F);
-            this.DEPART.Location = new System.Drawing.Point(116, 133);
+            this.DEPART.Location = new System.Drawing.Point(116, 110);
             this.DEPART.Name = "DEPART";
             this.DEPART.ReadOnly = true;
             this.DEPART.Size = new System.Drawing.Size(47, 21);
@@ -257,8 +194,9 @@ namespace WindowsFormsApp1
             // DEPART_NAME
             // 
             this.DEPART_NAME.Font = new System.Drawing.Font("굴림", 9F);
-            this.DEPART_NAME.Location = new System.Drawing.Point(231, 132);
+            this.DEPART_NAME.Location = new System.Drawing.Point(231, 109);
             this.DEPART_NAME.Name = "DEPART_NAME";
+            this.DEPART_NAME.ReadOnly = true;
             this.DEPART_NAME.Size = new System.Drawing.Size(117, 21);
             this.DEPART_NAME.TabIndex = 7;
             // 
@@ -266,26 +204,17 @@ namespace WindowsFormsApp1
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("굴림", 8F);
-            this.label22.Location = new System.Drawing.Point(260, 62);
+            this.label22.Location = new System.Drawing.Point(279, 58);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(48, 11);
             this.label22.TabIndex = 57;
             this.label22.Text = "( - 생략)";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 9F);
-            this.label3.Location = new System.Drawing.Point(258, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 12);
-            this.label3.TabIndex = 56;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("굴림", 9F);
-            this.label2.Location = new System.Drawing.Point(57, 55);
+            this.label2.Location = new System.Drawing.Point(57, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 54;
@@ -294,17 +223,18 @@ namespace WindowsFormsApp1
             // RESNO
             // 
             this.RESNO.Font = new System.Drawing.Font("굴림", 9F);
-            this.RESNO.Location = new System.Drawing.Point(116, 52);
+            this.RESNO.Location = new System.Drawing.Point(116, 45);
             this.RESNO.MaxLength = 13;
             this.RESNO.Name = "RESNO";
             this.RESNO.Size = new System.Drawing.Size(130, 21);
             this.RESNO.TabIndex = 2;
+            this.RESNO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RESNO_KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("굴림", 9F);
-            this.label7.Location = new System.Drawing.Point(57, 330);
+            this.label7.Location = new System.Drawing.Point(17, 245);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 12);
             this.label7.TabIndex = 52;
@@ -313,7 +243,7 @@ namespace WindowsFormsApp1
             // 
             // STU_IMG_BTN
             // 
-            this.STU_IMG_BTN.Location = new System.Drawing.Point(402, 180);
+            this.STU_IMG_BTN.Location = new System.Drawing.Point(464, 180);
             this.STU_IMG_BTN.Name = "STU_IMG_BTN";
             this.STU_IMG_BTN.Size = new System.Drawing.Size(150, 23);
             this.STU_IMG_BTN.TabIndex = 25;
@@ -323,11 +253,12 @@ namespace WindowsFormsApp1
             // 
             // FIX
             // 
+            this.FIX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FIX.FormattingEnabled = true;
             this.FIX.Items.AddRange(new object[] {
             "남",
             "여"});
-            this.FIX.Location = new System.Drawing.Point(116, 106);
+            this.FIX.Location = new System.Drawing.Point(116, 89);
             this.FIX.Name = "FIX";
             this.FIX.Size = new System.Drawing.Size(57, 20);
             this.FIX.TabIndex = 4;
@@ -336,7 +267,7 @@ namespace WindowsFormsApp1
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("굴림", 9F);
-            this.label8.Location = new System.Drawing.Point(81, 109);
+            this.label8.Location = new System.Drawing.Point(81, 92);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 50;
@@ -346,7 +277,7 @@ namespace WindowsFormsApp1
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("굴림", 9F);
-            this.label19.Location = new System.Drawing.Point(81, 136);
+            this.label19.Location = new System.Drawing.Point(81, 113);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(29, 12);
             this.label19.TabIndex = 50;
@@ -355,17 +286,18 @@ namespace WindowsFormsApp1
             // NAME
             // 
             this.NAME.Font = new System.Drawing.Font("굴림", 9F);
-            this.NAME.Location = new System.Drawing.Point(116, 79);
+            this.NAME.Location = new System.Drawing.Point(116, 67);
             this.NAME.MaxLength = 20;
             this.NAME.Name = "NAME";
             this.NAME.Size = new System.Drawing.Size(130, 21);
             this.NAME.TabIndex = 3;
+            this.NAME.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NAME_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 9F);
-            this.label4.Location = new System.Drawing.Point(81, 82);
+            this.label4.Location = new System.Drawing.Point(81, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 42;
@@ -379,6 +311,7 @@ namespace WindowsFormsApp1
             this.STUNO.Name = "STUNO";
             this.STUNO.Size = new System.Drawing.Size(130, 21);
             this.STUNO.TabIndex = 1;
+            this.STUNO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.STUNO_KeyPress);
             // 
             // label1
             // 
@@ -393,7 +326,7 @@ namespace WindowsFormsApp1
             // ZIP_BTN
             // 
             this.ZIP_BTN.Font = new System.Drawing.Font("굴림", 8F);
-            this.ZIP_BTN.Location = new System.Drawing.Point(191, 233);
+            this.ZIP_BTN.Location = new System.Drawing.Point(191, 176);
             this.ZIP_BTN.Name = "ZIP_BTN";
             this.ZIP_BTN.Size = new System.Drawing.Size(55, 21);
             this.ZIP_BTN.TabIndex = 11;
@@ -411,9 +344,9 @@ namespace WindowsFormsApp1
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Location = new System.Drawing.Point(54, 489);
+            this.groupBox2.Location = new System.Drawing.Point(19, 376);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(498, 135);
+            this.groupBox2.Size = new System.Drawing.Size(595, 135);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "계좌사항";
@@ -421,7 +354,7 @@ namespace WindowsFormsApp1
             // ACC_BANK_BTN
             // 
             this.ACC_BANK_BTN.Font = new System.Drawing.Font("굴림", 8F);
-            this.ACC_BANK_BTN.Location = new System.Drawing.Point(115, 32);
+            this.ACC_BANK_BTN.Location = new System.Drawing.Point(150, 32);
             this.ACC_BANK_BTN.Name = "ACC_BANK_BTN";
             this.ACC_BANK_BTN.Size = new System.Drawing.Size(55, 21);
             this.ACC_BANK_BTN.TabIndex = 21;
@@ -432,7 +365,7 @@ namespace WindowsFormsApp1
             // ACC_BANK
             // 
             this.ACC_BANK.Font = new System.Drawing.Font("굴림", 9F);
-            this.ACC_BANK.Location = new System.Drawing.Point(62, 33);
+            this.ACC_BANK.Location = new System.Drawing.Point(97, 33);
             this.ACC_BANK.Name = "ACC_BANK";
             this.ACC_BANK.ReadOnly = true;
             this.ACC_BANK.Size = new System.Drawing.Size(47, 21);
@@ -441,28 +374,30 @@ namespace WindowsFormsApp1
             // ACC_NO
             // 
             this.ACC_NO.Font = new System.Drawing.Font("굴림", 9F);
-            this.ACC_NO.Location = new System.Drawing.Point(62, 89);
+            this.ACC_NO.Location = new System.Drawing.Point(97, 89);
             this.ACC_NO.MaxLength = 20;
             this.ACC_NO.Name = "ACC_NO";
-            this.ACC_NO.Size = new System.Drawing.Size(164, 21);
+            this.ACC_NO.Size = new System.Drawing.Size(232, 21);
             this.ACC_NO.TabIndex = 24;
             // 
             // ACC_NAME
             // 
             this.ACC_NAME.Font = new System.Drawing.Font("굴림", 9F);
-            this.ACC_NAME.Location = new System.Drawing.Point(62, 62);
+            this.ACC_NAME.Location = new System.Drawing.Point(97, 62);
             this.ACC_NAME.MaxLength = 10;
             this.ACC_NAME.Name = "ACC_NAME";
             this.ACC_NAME.Size = new System.Drawing.Size(108, 21);
             this.ACC_NAME.TabIndex = 23;
             this.ACC_NAME.TextChanged += new System.EventHandler(this.ACC_NAME_TextChanged);
+            this.ACC_NAME.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ACC_NAME_KeyPress);
             // 
             // ACC_BANK_NAME
             // 
             this.ACC_BANK_NAME.Font = new System.Drawing.Font("굴림", 9F);
-            this.ACC_BANK_NAME.Location = new System.Drawing.Point(177, 32);
+            this.ACC_BANK_NAME.Location = new System.Drawing.Point(212, 32);
             this.ACC_BANK_NAME.MaxLength = 20;
             this.ACC_BANK_NAME.Name = "ACC_BANK_NAME";
+            this.ACC_BANK_NAME.ReadOnly = true;
             this.ACC_BANK_NAME.Size = new System.Drawing.Size(117, 21);
             this.ACC_BANK_NAME.TabIndex = 22;
             // 
@@ -470,7 +405,7 @@ namespace WindowsFormsApp1
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("굴림", 9F);
-            this.label18.Location = new System.Drawing.Point(3, 92);
+            this.label18.Location = new System.Drawing.Point(38, 92);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(53, 12);
             this.label18.TabIndex = 18;
@@ -480,7 +415,7 @@ namespace WindowsFormsApp1
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("굴림", 9F);
-            this.label17.Location = new System.Drawing.Point(15, 62);
+            this.label17.Location = new System.Drawing.Point(50, 62);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(41, 12);
             this.label17.TabIndex = 19;
@@ -490,7 +425,7 @@ namespace WindowsFormsApp1
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("굴림", 9F);
-            this.label16.Location = new System.Drawing.Point(27, 36);
+            this.label16.Location = new System.Drawing.Point(62, 36);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(29, 12);
             this.label16.TabIndex = 20;
@@ -499,7 +434,7 @@ namespace WindowsFormsApp1
             // ADDR
             // 
             this.ADDR.Font = new System.Drawing.Font("굴림", 9F);
-            this.ADDR.Location = new System.Drawing.Point(116, 294);
+            this.ADDR.Location = new System.Drawing.Point(116, 220);
             this.ADDR.MaxLength = 100;
             this.ADDR.Name = "ADDR";
             this.ADDR.Size = new System.Drawing.Size(166, 21);
@@ -508,27 +443,30 @@ namespace WindowsFormsApp1
             // ZIPADDR
             // 
             this.ZIPADDR.Font = new System.Drawing.Font("굴림", 9F);
-            this.ZIPADDR.Location = new System.Drawing.Point(116, 265);
+            this.ZIPADDR.Location = new System.Drawing.Point(116, 198);
             this.ZIPADDR.MaxLength = 100;
             this.ZIPADDR.Name = "ZIPADDR";
+            this.ZIPADDR.ReadOnly = true;
             this.ZIPADDR.Size = new System.Drawing.Size(268, 21);
             this.ZIPADDR.TabIndex = 12;
             // 
             // PHONE
             // 
             this.PHONE.Font = new System.Drawing.Font("굴림", 9F);
-            this.PHONE.Location = new System.Drawing.Point(116, 171);
+            this.PHONE.Location = new System.Drawing.Point(116, 132);
             this.PHONE.MaxLength = 15;
             this.PHONE.Name = "PHONE";
             this.PHONE.Size = new System.Drawing.Size(130, 21);
             this.PHONE.TabIndex = 8;
+            this.PHONE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PHONE_KeyPress);
             // 
             // STU_IMG
             // 
             this.STU_IMG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.STU_IMG.Location = new System.Drawing.Point(402, 23);
+            this.STU_IMG.Location = new System.Drawing.Point(464, 23);
             this.STU_IMG.Name = "STU_IMG";
             this.STU_IMG.Size = new System.Drawing.Size(150, 150);
+            this.STU_IMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.STU_IMG.TabIndex = 3;
             this.STU_IMG.TabStop = false;
             // 
@@ -536,7 +474,7 @@ namespace WindowsFormsApp1
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("굴림", 9F);
-            this.label9.Location = new System.Drawing.Point(71, 205);
+            this.label9.Location = new System.Drawing.Point(71, 157);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 12);
             this.label9.TabIndex = 28;
@@ -546,7 +484,7 @@ namespace WindowsFormsApp1
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("굴림", 9F);
-            this.label6.Location = new System.Drawing.Point(69, 175);
+            this.label6.Location = new System.Drawing.Point(69, 136);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 12);
             this.label6.TabIndex = 29;
@@ -555,7 +493,7 @@ namespace WindowsFormsApp1
             // EMAIL
             // 
             this.EMAIL.Font = new System.Drawing.Font("굴림", 9F);
-            this.EMAIL.Location = new System.Drawing.Point(116, 202);
+            this.EMAIL.Location = new System.Drawing.Point(116, 154);
             this.EMAIL.MaxLength = 30;
             this.EMAIL.Name = "EMAIL";
             this.EMAIL.Size = new System.Drawing.Size(130, 21);
@@ -564,7 +502,7 @@ namespace WindowsFormsApp1
             // ZIP
             // 
             this.ZIP.Font = new System.Drawing.Font("굴림", 9F);
-            this.ZIP.Location = new System.Drawing.Point(116, 233);
+            this.ZIP.Location = new System.Drawing.Point(116, 176);
             this.ZIP.MaxLength = 5;
             this.ZIP.Name = "ZIP";
             this.ZIP.Size = new System.Drawing.Size(71, 21);
@@ -574,7 +512,7 @@ namespace WindowsFormsApp1
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("굴림", 9F);
-            this.label13.Location = new System.Drawing.Point(59, 297);
+            this.label13.Location = new System.Drawing.Point(59, 223);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(53, 12);
             this.label13.TabIndex = 30;
@@ -584,7 +522,7 @@ namespace WindowsFormsApp1
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("굴림", 9F);
-            this.label12.Location = new System.Drawing.Point(81, 268);
+            this.label12.Location = new System.Drawing.Point(83, 201);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 12);
             this.label12.TabIndex = 31;
@@ -594,7 +532,7 @@ namespace WindowsFormsApp1
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("굴림", 9F);
-            this.label5.Location = new System.Drawing.Point(59, 236);
+            this.label5.Location = new System.Drawing.Point(59, 179);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 32;
@@ -608,7 +546,7 @@ namespace WindowsFormsApp1
             this.panel4.Location = new System.Drawing.Point(3, 56);
             this.panel4.Name = "panel4";
             this.tableLayoutPanel1.SetRowSpan(this.panel4, 2);
-            this.panel4.Size = new System.Drawing.Size(331, 609);
+            this.panel4.Size = new System.Drawing.Size(300, 609);
             this.panel4.TabIndex = 19;
             // 
             // dataGridView1
@@ -619,7 +557,7 @@ namespace WindowsFormsApp1
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(331, 609);
+            this.dataGridView1.Size = new System.Drawing.Size(300, 609);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -630,7 +568,7 @@ namespace WindowsFormsApp1
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(331, 47);
+            this.panel2.Size = new System.Drawing.Size(300, 47);
             this.panel2.TabIndex = 18;
             // 
             // groupBox4
@@ -642,7 +580,7 @@ namespace WindowsFormsApp1
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(331, 47);
+            this.groupBox4.Size = new System.Drawing.Size(300, 47);
             this.groupBox4.TabIndex = 30;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "학생 검색";
@@ -696,9 +634,9 @@ namespace WindowsFormsApp1
             this.DOR_USE.Controls.Add(this.label15);
             this.DOR_USE.Controls.Add(this.label10);
             this.DOR_USE.Controls.Add(this.DOR_BTN);
-            this.DOR_USE.Location = new System.Drawing.Point(54, 354);
+            this.DOR_USE.Location = new System.Drawing.Point(19, 260);
             this.DOR_USE.Name = "DOR_USE";
-            this.DOR_USE.Size = new System.Drawing.Size(498, 110);
+            this.DOR_USE.Size = new System.Drawing.Size(595, 110);
             this.DOR_USE.TabIndex = 14;
             this.DOR_USE.TabStop = false;
             this.DOR_USE.Text = "사용함";
@@ -707,7 +645,7 @@ namespace WindowsFormsApp1
             // DOR_DON
             // 
             this.DOR_DON.Font = new System.Drawing.Font("굴림", 9F);
-            this.DOR_DON.Location = new System.Drawing.Point(62, 60);
+            this.DOR_DON.Location = new System.Drawing.Point(97, 59);
             this.DOR_DON.Name = "DOR_DON";
             this.DOR_DON.ReadOnly = true;
             this.DOR_DON.Size = new System.Drawing.Size(63, 21);
@@ -717,7 +655,7 @@ namespace WindowsFormsApp1
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("굴림", 9F);
-            this.label14.Location = new System.Drawing.Point(39, 62);
+            this.label14.Location = new System.Drawing.Point(74, 62);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(17, 12);
             this.label14.TabIndex = 56;
@@ -726,7 +664,7 @@ namespace WindowsFormsApp1
             // DOR_NAME
             // 
             this.DOR_NAME.Font = new System.Drawing.Font("굴림", 9F);
-            this.DOR_NAME.Location = new System.Drawing.Point(62, 33);
+            this.DOR_NAME.Location = new System.Drawing.Point(97, 32);
             this.DOR_NAME.Name = "DOR_NAME";
             this.DOR_NAME.ReadOnly = true;
             this.DOR_NAME.Size = new System.Drawing.Size(97, 21);
@@ -735,7 +673,7 @@ namespace WindowsFormsApp1
             // DOR_MB
             // 
             this.DOR_MB.Font = new System.Drawing.Font("굴림", 9F);
-            this.DOR_MB.Location = new System.Drawing.Point(165, 61);
+            this.DOR_MB.Location = new System.Drawing.Point(200, 60);
             this.DOR_MB.Name = "DOR_MB";
             this.DOR_MB.Size = new System.Drawing.Size(63, 21);
             this.DOR_MB.TabIndex = 18;
@@ -744,7 +682,7 @@ namespace WindowsFormsApp1
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("굴림", 9F);
-            this.label15.Location = new System.Drawing.Point(130, 64);
+            this.label15.Location = new System.Drawing.Point(165, 63);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(29, 12);
             this.label15.TabIndex = 52;
@@ -754,7 +692,7 @@ namespace WindowsFormsApp1
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("굴림", 9F);
-            this.label10.Location = new System.Drawing.Point(27, 36);
+            this.label10.Location = new System.Drawing.Point(62, 35);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 50;
@@ -763,7 +701,7 @@ namespace WindowsFormsApp1
             // DOR_BTN
             // 
             this.DOR_BTN.Font = new System.Drawing.Font("굴림", 8F);
-            this.DOR_BTN.Location = new System.Drawing.Point(165, 32);
+            this.DOR_BTN.Location = new System.Drawing.Point(200, 31);
             this.DOR_BTN.Name = "DOR_BTN";
             this.DOR_BTN.Size = new System.Drawing.Size(55, 21);
             this.DOR_BTN.TabIndex = 16;
@@ -779,7 +717,6 @@ namespace WindowsFormsApp1
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "StudentManagementForm";
-            this.Load += new System.EventHandler(this.StudentManagementForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -849,17 +786,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button DOR_BTN;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox RESNO;
         private System.Windows.Forms.Button DEPART_BTN;
         private System.Windows.Forms.TextBox DEPART;
         private System.Windows.Forms.TextBox DEPART_NAME;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button Search1;
-        private System.Windows.Forms.Button Search2;
-        private System.Windows.Forms.Button update_btn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }

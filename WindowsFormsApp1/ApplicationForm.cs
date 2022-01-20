@@ -31,6 +31,8 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+            
             OracleConnection con = new OracleConnection(cs);
             con.Open();
             OracleCommand cmd1 = con.CreateCommand();
@@ -39,8 +41,10 @@ namespace WindowsFormsApp1
             OracleDataReader dr = cmd1.ExecuteReader();
             Boolean check1 = true;
             OracleCommand cmd2 = con.CreateCommand();
-            cmd2.CommandText = "select * from P22_LMG_TATM_APP where APP_STUNO = :STUNO";
+            cmd2.CommandText = "select * from P22_LMG_TATM_APP where APP_STUNO = :STUNO and APP_YEAR = :YEAR and APP_SEASON = :SEASON";
             cmd2.Parameters.Add(new OracleParameter("STUNO", textBox1.Text.ToString()));
+            cmd2.Parameters.Add(new OracleParameter("YEAR", textBox2.Text.ToString()));
+            cmd2.Parameters.Add(new OracleParameter("SEASON", textBox3.Text.ToString()));
             OracleDataReader drr = cmd2.ExecuteReader();
             Boolean check2 = false;
             while (dr.Read())

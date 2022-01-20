@@ -92,6 +92,12 @@
     <Compile Include="ApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="asdasd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asdasd.Designer.cs">
+      <DependentUpon>asdasd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
@@ -194,12 +200,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReflactionTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReflactionTest.Designer.cs">
-      <DependentUpon>ReflactionTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="StudentManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminEnrollmentForm.resx">
       <DependentUpon>AdminEnrollmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asdasd.resx">
+      <DependentUpon>asdasd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
@@ -320,9 +323,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReflactionTest.resx">
-      <DependentUpon>ReflactionTest.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="StudentManagementForm.resx">
       <DependentUpon>StudentManagementForm.cs</DependentUpon>
     </EmbeddedResource>

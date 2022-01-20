@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         public AdminMenuForm()
         {
             InitializeComponent();
+            
 
         }
         public static Dictionary<string, int> DICT_REMOVE_INDEX = new Dictionary<string, int>();
@@ -25,20 +26,21 @@ namespace WindowsFormsApp1
 
             string str = (e.Node.ToString()).Substring(10);
             //공장코드관리
-
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button6.Enabled = true;
             switch (str)
-            {
+            {                
                 case "관리자 등록": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
-                        Type formType = Assembly.GetExecutingAssembly().GetTypes()
-                         .Where(a => a.BaseType == typeof(Form) && a.Name == "AdminEnrollmentForm")
-                         .FirstOrDefault();
-                        Form form = (Form)Activator.CreateInstance(formType);  // 동적생성(폼)
+                        PracticeForm form = new PracticeForm();
                         form.TopLevel = false;
                         tabControl1.TabPages.Add(str);
                         tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(form);
                         tabControl1.SelectedIndex = tabControl1.TabPages.Count - 1;
+                        tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(form);
                         AdminMenuForm.DICT_REMOVE_INDEX.Add(str, tabControl1.SelectedIndex); //Dictionary로 화면텍스트와 탭번호 저장
                         form.Dock = DockStyle.Fill;
                         form.Show();
@@ -122,6 +124,8 @@ namespace WindowsFormsApp1
                     {
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
+                    button1.Enabled = false;
+                    button3.Enabled = false;
                     break;
                 case "근태현황": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     MessageBox.Show("점검중");
@@ -208,13 +212,17 @@ namespace WindowsFormsApp1
                         tabControl1.SelectedIndex = tabControl1.TabPages.Count - 1;
                         tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(form);
                         AdminMenuForm.DICT_REMOVE_INDEX.Add(str, tabControl1.SelectedIndex); //Dictionary로 화면텍스트와 탭번호 저장
-                        form.Dock = DockStyle.Fill;
+                        form.Dock = DockStyle.Fill;                        
                         form.Show();
                     }
                     else
                     {
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
+                    button1.Enabled = false;
+                    button2.Enabled = false;
+                    button3.Enabled = false;
+                    button6.Enabled = false;
                     break;
             }
         }
@@ -227,26 +235,50 @@ namespace WindowsFormsApp1
             Form1.Show();
 
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            //버튼1
-            String btg = (String)(sender as Button).Tag as string;
 
-            Form form = (Form)tabControl1.SelectedTab.Controls[0];
-            Type type = form.GetType();  //> system.type의 형식결과를 반환 (메소드,필드, 프로퍼피등) 표현
-            System.Reflection.MethodInfo mtd = type.GetMethod(btg);
-
-            if (mtd == null) return;
-
-            //폼2에 있는 버튼클릭 메소드를 호출한다.
-            mtd.Invoke(form, null);
-
+            tabControl1
+                .SelectedTab.Controls[0]
+                .GetType()
+                .GetMethod("btn_enrollment")
+                .Invoke(tabControl1.SelectedTab.Controls[0], null);
         }
 
-        private void AdminMenuForm_Load(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
+            tabControl1
+                .SelectedTab.Controls[0]
+                .GetType()
+                .GetMethod("btn_load")
+                .Invoke(tabControl1.SelectedTab.Controls[0], null);
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabControl1
+                .SelectedTab.Controls[0]
+                .GetType()
+                .GetMethod("btn_update")
+                .Invoke(tabControl1.SelectedTab.Controls[0], null);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tabControl1
+                .SelectedTab.Controls[0]
+                .GetType()
+                .GetMethod("btn_delete")
+                .Invoke(tabControl1.SelectedTab.Controls[0], null);
+        }
+        public void Enabled_btn()
+        {
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button6.Enabled = false;
         }
     }
 }

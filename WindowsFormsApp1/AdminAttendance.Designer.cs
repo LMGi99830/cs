@@ -69,29 +69,18 @@ namespace WindowsFormsApp1
             this.label13 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -105,9 +94,7 @@ namespace WindowsFormsApp1
             this.groupBox1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox6
@@ -121,7 +108,7 @@ namespace WindowsFormsApp1
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(0, 0);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(629, 54);
+            this.groupBox6.Size = new System.Drawing.Size(646, 54);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "실습 검색";
@@ -184,8 +171,8 @@ namespace WindowsFormsApp1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.36406F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.99099F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.67567F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.79352F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.90688F));
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 3);
@@ -210,7 +197,7 @@ namespace WindowsFormsApp1
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 63);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(629, 190);
+            this.panel2.Size = new System.Drawing.Size(646, 190);
             this.panel2.TabIndex = 2;
             // 
             // dataGridView1
@@ -220,7 +207,8 @@ namespace WindowsFormsApp1
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(629, 190);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(646, 190);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -231,7 +219,7 @@ namespace WindowsFormsApp1
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 259);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(629, 53);
+            this.panel4.Size = new System.Drawing.Size(646, 53);
             this.panel4.TabIndex = 3;
             // 
             // groupBox7
@@ -248,7 +236,7 @@ namespace WindowsFormsApp1
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Location = new System.Drawing.Point(0, 0);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(629, 53);
+            this.groupBox7.Size = new System.Drawing.Size(646, 53);
             this.groupBox7.TabIndex = 3;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "출석 정보 검색";
@@ -338,7 +326,7 @@ namespace WindowsFormsApp1
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 318);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(629, 347);
+            this.panel5.Size = new System.Drawing.Size(646, 347);
             this.panel5.TabIndex = 4;
             // 
             // dataGridView2
@@ -348,7 +336,8 @@ namespace WindowsFormsApp1
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(629, 347);
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(646, 347);
             this.dataGridView2.TabIndex = 4;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
@@ -359,17 +348,17 @@ namespace WindowsFormsApp1
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(629, 54);
+            this.panel1.Size = new System.Drawing.Size(646, 54);
             this.panel1.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(638, 3);
+            this.panel3.Location = new System.Drawing.Point(655, 3);
             this.panel3.Name = "panel3";
             this.tableLayoutPanel1.SetRowSpan(this.panel3, 2);
-            this.panel3.Size = new System.Drawing.Size(347, 250);
+            this.panel3.Size = new System.Drawing.Size(330, 250);
             this.panel3.TabIndex = 11;
             // 
             // groupBox1
@@ -389,14 +378,14 @@ namespace WindowsFormsApp1
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(347, 250);
+            this.groupBox1.Size = new System.Drawing.Size(330, 250);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "학생 조회";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(137, 168);
+            this.textBox4.Location = new System.Drawing.Point(127, 168);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(118, 21);
@@ -405,7 +394,7 @@ namespace WindowsFormsApp1
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(56, 171);
+            this.label8.Location = new System.Drawing.Point(46, 171);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 12);
             this.label8.TabIndex = 2;
@@ -413,7 +402,7 @@ namespace WindowsFormsApp1
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(137, 141);
+            this.textBox3.Location = new System.Drawing.Point(127, 141);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(118, 21);
@@ -422,7 +411,7 @@ namespace WindowsFormsApp1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(102, 144);
+            this.label7.Location = new System.Drawing.Point(92, 144);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 3;
@@ -430,7 +419,7 @@ namespace WindowsFormsApp1
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(137, 33);
+            this.textBox2.Location = new System.Drawing.Point(127, 33);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(118, 21);
@@ -439,7 +428,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(102, 36);
+            this.label2.Location = new System.Drawing.Point(92, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 4;
@@ -447,7 +436,7 @@ namespace WindowsFormsApp1
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(137, 60);
+            this.textBox5.Location = new System.Drawing.Point(127, 60);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(118, 21);
@@ -457,7 +446,7 @@ namespace WindowsFormsApp1
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(90, 63);
+            this.label6.Location = new System.Drawing.Point(80, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 12);
             this.label6.TabIndex = 5;
@@ -465,7 +454,7 @@ namespace WindowsFormsApp1
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(137, 87);
+            this.textBox11.Location = new System.Drawing.Point(127, 87);
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(63, 21);
@@ -474,7 +463,7 @@ namespace WindowsFormsApp1
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(102, 90);
+            this.label11.Location = new System.Drawing.Point(92, 90);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(29, 12);
             this.label11.TabIndex = 6;
@@ -482,16 +471,17 @@ namespace WindowsFormsApp1
             // 
             // textBox16
             // 
-            this.textBox16.Location = new System.Drawing.Point(137, 114);
+            this.textBox16.Location = new System.Drawing.Point(127, 114);
             this.textBox16.Name = "textBox16";
             this.textBox16.ReadOnly = true;
             this.textBox16.Size = new System.Drawing.Size(118, 21);
             this.textBox16.TabIndex = 115;
+            this.textBox16.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(102, 117);
+            this.label13.Location = new System.Drawing.Point(92, 117);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(29, 12);
             this.label13.TabIndex = 7;
@@ -501,69 +491,87 @@ namespace WindowsFormsApp1
             // 
             this.panel6.Controls.Add(this.groupBox2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(638, 259);
+            this.panel6.Location = new System.Drawing.Point(655, 259);
             this.panel6.Name = "panel6";
             this.tableLayoutPanel1.SetRowSpan(this.panel6, 2);
-            this.panel6.Size = new System.Drawing.Size(347, 406);
+            this.panel6.Size = new System.Drawing.Size(330, 406);
             this.panel6.TabIndex = 5;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.groupBox5);
+            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.label21);
+            this.groupBox2.Controls.Add(this.textBox23);
+            this.groupBox2.Controls.Add(this.textBox10);
+            this.groupBox2.Controls.Add(this.textBox17);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.textBox20);
             this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(347, 406);
+            this.groupBox2.Size = new System.Drawing.Size(330, 406);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "출결정보";
             // 
-            // groupBox5
+            // label22
             // 
-            this.groupBox5.Controls.Add(this.textBox21);
-            this.groupBox5.Location = new System.Drawing.Point(29, 258);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(292, 75);
-            this.groupBox5.TabIndex = 10;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "결근 사유";
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(92, 95);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(29, 12);
+            this.label22.TabIndex = 36;
+            this.label22.Text = "퇴근";
             // 
-            // textBox21
+            // label21
             // 
-            this.textBox21.Location = new System.Drawing.Point(11, 20);
-            this.textBox21.Multiline = true;
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(275, 50);
-            this.textBox21.TabIndex = 1;
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(92, 68);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(29, 12);
+            this.label21.TabIndex = 37;
+            this.label21.Text = "출근";
+            // 
+            // textBox23
+            // 
+            this.textBox23.Location = new System.Drawing.Point(127, 92);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(83, 21);
+            this.textBox23.TabIndex = 34;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(127, 65);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(83, 21);
+            this.textBox17.TabIndex = 35;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.textBox18);
-            this.groupBox4.Location = new System.Drawing.Point(29, 169);
+            this.groupBox4.Location = new System.Drawing.Point(6, 206);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(292, 83);
+            this.groupBox4.Size = new System.Drawing.Size(324, 150);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "조퇴 사유";
+            this.groupBox4.Text = "사유";
             // 
             // textBox18
             // 
             this.textBox18.Location = new System.Drawing.Point(11, 20);
             this.textBox18.Multiline = true;
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(275, 50);
+            this.textBox18.Size = new System.Drawing.Size(304, 124);
             this.textBox18.TabIndex = 1;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(154, 143);
+            this.label19.Location = new System.Drawing.Point(68, 147);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(53, 12);
             this.label19.TabIndex = 29;
@@ -572,164 +580,42 @@ namespace WindowsFormsApp1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 143);
+            this.label4.Location = new System.Drawing.Point(68, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 29;
             this.label4.Text = "근태상태";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.textBox23);
-            this.groupBox3.Controls.Add(this.textBox22);
-            this.groupBox3.Controls.Add(this.textBox17);
-            this.groupBox3.Controls.Add(this.textBox10);
-            this.groupBox3.Controls.Add(this.textBox14);
-            this.groupBox3.Controls.Add(this.textBox19);
-            this.groupBox3.Controls.Add(this.textBox13);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Location = new System.Drawing.Point(29, 20);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(292, 114);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "날짜/시간";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("굴림", 11F);
-            this.label12.Location = new System.Drawing.Point(94, 57);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(12, 15);
-            this.label12.TabIndex = 32;
-            this.label12.Text = ":";
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(45, 51);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(43, 21);
-            this.textBox17.TabIndex = 4;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(110, 51);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(43, 21);
-            this.textBox10.TabIndex = 5;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(148, 21);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(43, 21);
-            this.textBox14.TabIndex = 3;
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(11, 20);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(43, 21);
-            this.textBox19.TabIndex = 1;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(76, 21);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(43, 21);
-            this.textBox13.TabIndex = 2;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(58, 29);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 12);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "년";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(195, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 12);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "일";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(123, 29);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(17, 12);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "월";
-            // 
             // textBox20
             // 
-            this.textBox20.Location = new System.Drawing.Point(213, 140);
+            this.textBox20.Location = new System.Drawing.Point(127, 144);
             this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(59, 21);
+            this.textBox20.Size = new System.Drawing.Size(83, 21);
             this.textBox20.TabIndex = 8;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(89, 140);
+            this.textBox6.Location = new System.Drawing.Point(127, 119);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(59, 21);
+            this.textBox6.Size = new System.Drawing.Size(83, 21);
             this.textBox6.TabIndex = 7;
             // 
-            // textBox22
+            // textBox10
             // 
-            this.textBox22.Location = new System.Drawing.Point(110, 78);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(43, 21);
-            this.textBox22.TabIndex = 5;
+            this.textBox10.Location = new System.Drawing.Point(127, 38);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
+            this.textBox10.Size = new System.Drawing.Size(83, 21);
+            this.textBox10.TabIndex = 35;
             // 
-            // textBox23
+            // label1
             // 
-            this.textBox23.Location = new System.Drawing.Point(45, 78);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(43, 21);
-            this.textBox23.TabIndex = 4;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("굴림", 11F);
-            this.label20.Location = new System.Drawing.Point(94, 84);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(12, 15);
-            this.label20.TabIndex = 32;
-            this.label20.Text = ":";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(10, 54);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(29, 12);
-            this.label21.TabIndex = 33;
-            this.label21.Text = "출근";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(10, 81);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(29, 12);
-            this.label22.TabIndex = 33;
-            this.label22.Text = "퇴근";
-            this.label22.Click += new System.EventHandler(this.label21_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(68, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "근무일자";
             // 
             // AdminAttendance
             // 
@@ -739,7 +625,6 @@ namespace WindowsFormsApp1
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AdminAttendance";
-            this.Load += new System.EventHandler(this.AdminAttendance_Load);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -757,12 +642,8 @@ namespace WindowsFormsApp1
             this.panel6.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -808,28 +689,17 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox10;
     }
 }
