@@ -133,9 +133,7 @@ namespace WindowsFormsApp1
 
         #region 빈칸 찾기, insert
         public void btn_enrollment()
-        {
-            int rowindex = dataGridView1.CurrentCell.RowIndex;
-            String STUNO1 = dataGridView1.Rows[rowindex].Cells[0].Value.ToString(); //학번
+        {            
 
             if (string.IsNullOrEmpty(STUNO.Text))
             {
@@ -202,7 +200,19 @@ namespace WindowsFormsApp1
                 MessageBox.Show("계좌번호를 입력해주세요!");
                 return;
             }
-            else if (STUNO.Text.Equals(STUNO1))
+            OracleConnection con = new OracleConnection(css);
+            con.Open();
+            OracleCommand cmd1 = new OracleCommand();
+            cmd1.Connection = con;
+            cmd1.CommandText = "select * from P22_LMG_TATM_STU where STU_STUNO = :STUNO1";
+            cmd1.Parameters.Add(new OracleParameter("STUNO1", STUNO.Text));
+            Boolean check = false;
+            OracleDataReader dr1 = cmd1.ExecuteReader();
+            while(dr1.Read())
+            {
+                check = true;
+            }
+            if(check)
             {
                 MessageBox.Show("중복되는 학번은 등록할 수 없습니다.");
                 return;

@@ -38,6 +38,14 @@ namespace WindowsFormsApp1
             this.label22 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.RESNO = new System.Windows.Forms.TextBox();
+            this.DOR_USE = new WindowsFormsApp1.CheckedGroupBox();
+            this.DOR_DON = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.DOR_NAME = new System.Windows.Forms.TextBox();
+            this.DOR_MB = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.DOR_BTN = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.STU_IMG_BTN = new System.Windows.Forms.Button();
             this.FIX = new System.Windows.Forms.ComboBox();
@@ -76,24 +84,16 @@ namespace WindowsFormsApp1
             this.SearchBox2 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.DOR_USE = new WindowsFormsApp1.CheckedGroupBox();
-            this.DOR_DON = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.DOR_NAME = new System.Windows.Forms.TextBox();
-            this.DOR_MB = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.DOR_BTN = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.DOR_USE.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.STU_IMG)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.DOR_USE.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -229,6 +229,92 @@ namespace WindowsFormsApp1
             this.RESNO.Size = new System.Drawing.Size(130, 21);
             this.RESNO.TabIndex = 2;
             this.RESNO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RESNO_KeyPress);
+            // 
+            // DOR_USE
+            // 
+            this.DOR_USE.Checked = true;
+            this.DOR_USE.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.DOR_USE.Controls.Add(this.DOR_DON);
+            this.DOR_USE.Controls.Add(this.label14);
+            this.DOR_USE.Controls.Add(this.DOR_NAME);
+            this.DOR_USE.Controls.Add(this.DOR_MB);
+            this.DOR_USE.Controls.Add(this.label15);
+            this.DOR_USE.Controls.Add(this.label10);
+            this.DOR_USE.Controls.Add(this.DOR_BTN);
+            this.DOR_USE.Location = new System.Drawing.Point(19, 260);
+            this.DOR_USE.Name = "DOR_USE";
+            this.DOR_USE.Size = new System.Drawing.Size(595, 110);
+            this.DOR_USE.TabIndex = 14;
+            this.DOR_USE.TabStop = false;
+            this.DOR_USE.Text = "사용함";
+            this.DOR_USE.ThreeState = false;
+            // 
+            // DOR_DON
+            // 
+            this.DOR_DON.Font = new System.Drawing.Font("굴림", 9F);
+            this.DOR_DON.Location = new System.Drawing.Point(97, 59);
+            this.DOR_DON.Name = "DOR_DON";
+            this.DOR_DON.ReadOnly = true;
+            this.DOR_DON.Size = new System.Drawing.Size(63, 21);
+            this.DOR_DON.TabIndex = 17;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("굴림", 9F);
+            this.label14.Location = new System.Drawing.Point(74, 62);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(17, 12);
+            this.label14.TabIndex = 56;
+            this.label14.Text = "동";
+            // 
+            // DOR_NAME
+            // 
+            this.DOR_NAME.Font = new System.Drawing.Font("굴림", 9F);
+            this.DOR_NAME.Location = new System.Drawing.Point(97, 32);
+            this.DOR_NAME.Name = "DOR_NAME";
+            this.DOR_NAME.ReadOnly = true;
+            this.DOR_NAME.Size = new System.Drawing.Size(97, 21);
+            this.DOR_NAME.TabIndex = 15;
+            // 
+            // DOR_MB
+            // 
+            this.DOR_MB.Font = new System.Drawing.Font("굴림", 9F);
+            this.DOR_MB.Location = new System.Drawing.Point(200, 60);
+            this.DOR_MB.Name = "DOR_MB";
+            this.DOR_MB.Size = new System.Drawing.Size(63, 21);
+            this.DOR_MB.TabIndex = 18;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("굴림", 9F);
+            this.label15.Location = new System.Drawing.Point(165, 63);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(29, 12);
+            this.label15.TabIndex = 52;
+            this.label15.Text = "호실";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("굴림", 9F);
+            this.label10.Location = new System.Drawing.Point(62, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 12);
+            this.label10.TabIndex = 50;
+            this.label10.Text = "이름";
+            // 
+            // DOR_BTN
+            // 
+            this.DOR_BTN.Font = new System.Drawing.Font("굴림", 8F);
+            this.DOR_BTN.Location = new System.Drawing.Point(200, 31);
+            this.DOR_BTN.Name = "DOR_BTN";
+            this.DOR_BTN.Size = new System.Drawing.Size(55, 21);
+            this.DOR_BTN.TabIndex = 16;
+            this.DOR_BTN.Text = "찾기";
+            this.DOR_BTN.UseVisualStyleBackColor = true;
+            this.DOR_BTN.Click += new System.EventHandler(this.DOR_BTN_Click);
             // 
             // label7
             // 
@@ -623,92 +709,6 @@ namespace WindowsFormsApp1
             this.label21.TabIndex = 3;
             this.label21.Text = "이름";
             // 
-            // DOR_USE
-            // 
-            this.DOR_USE.Checked = true;
-            this.DOR_USE.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.DOR_USE.Controls.Add(this.DOR_DON);
-            this.DOR_USE.Controls.Add(this.label14);
-            this.DOR_USE.Controls.Add(this.DOR_NAME);
-            this.DOR_USE.Controls.Add(this.DOR_MB);
-            this.DOR_USE.Controls.Add(this.label15);
-            this.DOR_USE.Controls.Add(this.label10);
-            this.DOR_USE.Controls.Add(this.DOR_BTN);
-            this.DOR_USE.Location = new System.Drawing.Point(19, 260);
-            this.DOR_USE.Name = "DOR_USE";
-            this.DOR_USE.Size = new System.Drawing.Size(595, 110);
-            this.DOR_USE.TabIndex = 14;
-            this.DOR_USE.TabStop = false;
-            this.DOR_USE.Text = "사용함";
-            this.DOR_USE.ThreeState = false;
-            // 
-            // DOR_DON
-            // 
-            this.DOR_DON.Font = new System.Drawing.Font("굴림", 9F);
-            this.DOR_DON.Location = new System.Drawing.Point(97, 59);
-            this.DOR_DON.Name = "DOR_DON";
-            this.DOR_DON.ReadOnly = true;
-            this.DOR_DON.Size = new System.Drawing.Size(63, 21);
-            this.DOR_DON.TabIndex = 17;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("굴림", 9F);
-            this.label14.Location = new System.Drawing.Point(74, 62);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(17, 12);
-            this.label14.TabIndex = 56;
-            this.label14.Text = "동";
-            // 
-            // DOR_NAME
-            // 
-            this.DOR_NAME.Font = new System.Drawing.Font("굴림", 9F);
-            this.DOR_NAME.Location = new System.Drawing.Point(97, 32);
-            this.DOR_NAME.Name = "DOR_NAME";
-            this.DOR_NAME.ReadOnly = true;
-            this.DOR_NAME.Size = new System.Drawing.Size(97, 21);
-            this.DOR_NAME.TabIndex = 15;
-            // 
-            // DOR_MB
-            // 
-            this.DOR_MB.Font = new System.Drawing.Font("굴림", 9F);
-            this.DOR_MB.Location = new System.Drawing.Point(200, 60);
-            this.DOR_MB.Name = "DOR_MB";
-            this.DOR_MB.Size = new System.Drawing.Size(63, 21);
-            this.DOR_MB.TabIndex = 18;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("굴림", 9F);
-            this.label15.Location = new System.Drawing.Point(165, 63);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(29, 12);
-            this.label15.TabIndex = 52;
-            this.label15.Text = "호실";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("굴림", 9F);
-            this.label10.Location = new System.Drawing.Point(62, 35);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 12);
-            this.label10.TabIndex = 50;
-            this.label10.Text = "이름";
-            // 
-            // DOR_BTN
-            // 
-            this.DOR_BTN.Font = new System.Drawing.Font("굴림", 8F);
-            this.DOR_BTN.Location = new System.Drawing.Point(200, 31);
-            this.DOR_BTN.Name = "DOR_BTN";
-            this.DOR_BTN.Size = new System.Drawing.Size(55, 21);
-            this.DOR_BTN.TabIndex = 16;
-            this.DOR_BTN.Text = "찾기";
-            this.DOR_BTN.UseVisualStyleBackColor = true;
-            this.DOR_BTN.Click += new System.EventHandler(this.DOR_BTN_Click);
-            // 
             // StudentManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -721,6 +721,8 @@ namespace WindowsFormsApp1
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.DOR_USE.ResumeLayout(false);
+            this.DOR_USE.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.STU_IMG)).EndInit();
@@ -729,8 +731,6 @@ namespace WindowsFormsApp1
             this.panel2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.DOR_USE.ResumeLayout(false);
-            this.DOR_USE.PerformLayout();
             this.ResumeLayout(false);
 
         }

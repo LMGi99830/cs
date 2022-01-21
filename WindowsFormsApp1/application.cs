@@ -13,7 +13,8 @@ using System.Windows.Forms;
 namespace WindowsFormsApp1
 {
     public partial class application : Form
-    {        
+    {
+        #region 공통 선언 변수
         string css = "Data Source=222.237.134.74:1522/Ora7;User Id=edu;Password=edu1234;";
         OracleConnection con;
         OracleDataAdapter adapt;
@@ -40,18 +41,23 @@ namespace WindowsFormsApp1
         public static string ENG_REA = "";
         public static string ENG_WRT = "";
         public static string SELF = "";
+        #endregion
         public application()
         {
             InitializeComponent();
 
 
         }
-            public void application_reset()
+            public void btn_load()
         {
                
             con = new OracleConnection(css);
             con.Open();
-            adapt = new OracleDataAdapter("select * from P22_LMG_TATM_PRO where PRO_STATE = '신청가능' order by PRO_YEAR ASC", con);
+            String sql = @"select *
+                                from P22_LMG_TATM_PRO
+                                where to_date(PRO_DAYS) between sysdate and sysdate + 16";
+
+            adapt = new OracleDataAdapter(sql, con);
             dt = new DataTable();
             
             adapt.Fill(dt);
@@ -78,8 +84,13 @@ namespace WindowsFormsApp1
             
         }
         private void application_Load(object sender, EventArgs e)
-        {            
-            application_reset();
+        {
+            
+        }
+
+        public void leavework()
+        {
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -246,7 +257,7 @@ namespace WindowsFormsApp1
                 reset_userform();
                 reset_userform2();
                 UpdateState();
-                application_reset();
+                btn_load();
             }
         }
         public void UpdateStudentCount()
@@ -332,7 +343,7 @@ namespace WindowsFormsApp1
                 reset_userform();
                 reset_userform2();
                 DeleteState();
-                application_reset();
+                btn_load();
                 conn.Close();
             }
                    
@@ -414,7 +425,7 @@ namespace WindowsFormsApp1
                         cmd1.Parameters.Add(new OracleParameter("SEASON1", SetValueForText2));
                         cmd1.ExecuteReader();
                         MessageBox.Show("삭제가 완료되었습니다.");
-                        application_reset();
+                        btn_load();
                     }
                 }
             }
@@ -441,7 +452,7 @@ namespace WindowsFormsApp1
                 cmd1.Parameters.Add(new OracleParameter("STUNO1", SetValueForText1));                    
                 cmd1.ExecuteReader();
                 MessageBox.Show("삭제가 완료되었습니다.");
-                application_reset();
+                btn_load();
                 reset_userform();
                 con.Close();
             }
@@ -465,7 +476,7 @@ namespace WindowsFormsApp1
                 cmd1.Parameters.Add(new OracleParameter("STUNO1", SetValueForText1));
                 cmd1.ExecuteReader();
                 MessageBox.Show("삭제가 완료되었습니다.");
-                application_reset();
+                btn_load();
                 DeleteState();                
                 reset_userform2();
                 con.Close();
