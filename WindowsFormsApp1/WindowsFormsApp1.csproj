@@ -98,6 +98,12 @@
     <Compile Include="asdasd.Designer.cs">
       <DependentUpon>asdasd.cs</DependentUpon>
     </Compile>
+    <Compile Include="BeAbsentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BeAbsentForm.Designer.cs">
+      <DependentUpon>BeAbsentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
@@ -242,12 +248,6 @@
     <Compile Include="TestCode\TestPicture.Designer.cs">
       <DependentUpon>TestPicture.cs</DependentUpon>
     </Compile>
-    <Compile Include="testsql.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="testsql.Designer.cs">
-      <DependentUpon>testsql.cs</DependentUpon>
-    </Compile>
     <Compile Include="UpdateApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="asdasd.resx">
       <DependentUpon>asdasd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BeAbsentForm.resx">
+      <DependentUpon>BeAbsentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
@@ -343,9 +346,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TestCode\TestPicture.resx">
       <DependentUpon>TestPicture.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="testsql.resx">
-      <DependentUpon>testsql.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateApplicationForm.resx">
       <DependentUpon>UpdateApplicationForm.cs</DependentUpon>

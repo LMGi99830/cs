@@ -48,14 +48,15 @@ namespace WindowsFormsApp1
 
 
         }
-            public void btn_load()
+         public void btn_load()
         {
                
             con = new OracleConnection(css);
             con.Open();
             String sql = @"select *
                                 from P22_LMG_TATM_PRO
-                                where to_date(PRO_DAYS) between sysdate and sysdate + 16";
+                                where to_date(PRO_DAYS) between sysdate and sysdate + 16
+                                and PRO_COUNT != PRO_STCOUNT";
 
             adapt = new OracleDataAdapter(sql, con);
             dt = new DataTable();
@@ -84,11 +85,6 @@ namespace WindowsFormsApp1
             
         }
         private void application_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        public void leavework()
         {
             
         }

@@ -50,9 +50,9 @@ C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\bin\Debug\System.ValueTupl
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.View.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.deleteform.resources
-C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.testsql.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdminCode.defCodeForm.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.TestPicture.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.UpdateApplicationForm.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdminEnrollmentForm.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.asdasd.resources
+C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BeAbsentForm.resources

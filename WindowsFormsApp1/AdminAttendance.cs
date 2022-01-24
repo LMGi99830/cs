@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("조회버튼 클릭 후 수정하고 싶은 값을 더블클릭 해주세요");
                 return;
             }
-            else if (textBox6.Text == "조퇴")
+            else if (textBox6.Text == "조퇴" || textBox6.Text == "지각 조퇴")
             {
                 if (textBox18.Text == "")
                 {
@@ -182,11 +182,17 @@ namespace WindowsFormsApp1
                 state = 1;
 
             }
+            else if (in_sysftime > in_ftime && in_systtime < in_ttime)
+            {
+                state = 5;
+                time_cha = in_sysftime - in_ftime;
+            }
             else if (in_sysftime > in_ftime)
             {
                 state = 2;
                 time_cha = in_sysftime - in_ftime;
             }
+            
             else if (textBox17.Text == null && textBox23.Text == null)
             {
                 state = 4;
@@ -318,47 +324,13 @@ namespace WindowsFormsApp1
                 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;   
-            cmd.CommandText = "select * from P22_LMG_TATM_PRO where pro_year = :YEAR and pro_season = :SEASON";
-            cmd.Parameters.Add(new OracleParameter("YEAR", textBox2.Text.ToString()));
-            cmd.Parameters.Add(new OracleParameter("SEASON", textBox11.Text.ToString()));
+            cmd.CommandText = "select a.ATD_NAME from P22_LMG_TATM_ATD a where a.ATD_CODE = :CODE1";
+            cmd.Parameters.Add(new OracleParameter("CODE1", code));
             OracleDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    int starttime = int.Parse(dr1.GetString(2)); // 학생이 출석한 시간                
-                    int startdr = int.Parse(dr.GetString(8)); // 실습 출석 시간
-                    int endtime = 0;
-                    int enddr = 0;
-                    if (dr1.IsDBNull(3))
-                    {
-                        string s_ttime = "0";
-                        endtime = int.Parse(s_ttime); // 학생이 퇴근한 시간
-                        enddr = int.Parse(dr.GetString(9)); // 실습 퇴근 시간
-                    }
-                    else
-                    {
-                        endtime = int.Parse(dr1.GetString(3)); // 학생이 퇴근한 시간
-                        enddr = int.Parse(dr.GetString(9)); // 실습 퇴근 시간
-                    }
-                    if (starttime <= startdr && endtime >= enddr || starttime > startdr && endtime >= enddr) 
-                    {
-                        textBox6.Text = "퇴근";
-                    }
-                    else if (starttime <= startdr)
-                    {
-                        textBox6.Text = "출근";
-                    }
-                    else if (dr1.GetString(2) == null && dr.GetString(8) == null)
-                    {
-                        textBox6.Text = "결근";
-                    }
-                    else if (endtime < enddr && starttime > startdr)
-                    {
-                        textBox6.Text = "지각";
-                    }
-                    else
-                    {
-                        textBox6.Text = "조퇴";
-                    }
+                    String codename = dr.GetString(0);
+                    textBox6.Text = codename;
                 }
                 dr.Close();
             }
@@ -367,6 +339,10 @@ namespace WindowsFormsApp1
                 textBox18.Text = jrea;
             }
             else if(textBox6.Text == "결근")
+            {
+                textBox18.Text = grea;
+            }
+            else if (textBox6.Text == "지각 조퇴")
             {
                 textBox18.Text = grea;
             }

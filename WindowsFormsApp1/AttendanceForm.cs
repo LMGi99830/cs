@@ -169,7 +169,7 @@ namespace WindowsFormsApp1
             }
 
             int rowindex2 = dataGridView1.CurrentCell.RowIndex;
-            String ttime = dataGridView1.Rows[rowindex2].Cells[6].Value.ToString(); // 학번
+            String ttime = dataGridView1.Rows[rowindex2].Cells[6].Value.ToString(); // 퇴근시간
             int state = 0; //근태 상태를 나타내는 함수
 
             int in_ttime = int.Parse(ttime); //퇴근해야하는 실습의 시간
@@ -226,24 +226,44 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-                OracleConnection conn = new OracleConnection(css);
-                conn.Open();
+            OracleConnection conn = new OracleConnection(css);
+            OracleCommand cmd = new OracleCommand();
+            OracleCommand cmd1 = new OracleCommand();
+            cmd.Connection = conn;
+            cmd1.Connection = conn;
+            conn.Open();
+
+            cmd.CommandText = "select * from P22_LMG_TATM_DIL where DIL_DATE = :TIME1 and DIL_STUNO = :STUNO2";
+            cmd.Parameters.Add(new OracleParameter("TIME1", label10.Text.ToString()));
+            cmd.Parameters.Add(new OracleParameter("STUNO2", textBox2.Text.ToString()));
+            
+            OracleDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                if(dr.GetString(2).Equals("2"))
+                {
+                    cmd1.CommandText = "UPDATE P22_LMG_TATM_DIL SET DIL_DILCODE = 5 where DIL_DATE = :TIME2 and DIL_STUNO = :STUNO3 ";
+                    cmd1.Parameters.Add(new OracleParameter("TIME2", label10.Text.ToString()));
+                    cmd1.Parameters.Add(new OracleParameter("STUNO3", textBox2.Text.ToString()));
+                    cmd1.ExecuteNonQuery();
+                }                  
+            }
+            OracleCommand cmd2 = new OracleCommand();
+            cmd2.Connection = conn;
 
 
-                OracleCommand cmd = new OracleCommand();
-                cmd.Connection = conn;
-
-                // SQL문 지정 및 INSERT 실행            
-                cmd.CommandText = "UPDATE P22_LMG_TATM_ATT SET ATT_TTIME = :label9 where ATT_STUNO = :STUNO1 and ATT_DATE = :TIME1 ";
-                cmd.Parameters.Add(new OracleParameter("TIME2", label9.Text.ToString()));
-                cmd.Parameters.Add(new OracleParameter("STUNO1", textBox2.Text.ToString()));
-                cmd.Parameters.Add(new OracleParameter("TIME1", label10.Text.ToString()));
+            // SQL문 지정 및 INSERT 실행            
+            cmd2.CommandText = "UPDATE P22_LMG_TATM_ATT SET ATT_TTIME = :label9 where ATT_STUNO = :STUNO1 and ATT_DATE = :TIME1 ";
+            cmd2.Parameters.Add(new OracleParameter("TIME2", label9.Text.ToString()));
+            cmd2.Parameters.Add(new OracleParameter("STUNO1", textBox2.Text.ToString()));
+            cmd2.Parameters.Add(new OracleParameter("TIME1", label10.Text.ToString()));
             MessageBox.Show("퇴근 완료 되었습니다. 오늘도 수고하셨어요~");
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                
-                button1.Enabled = false;
-                button2.Enabled = false;
+            cmd2.ExecuteNonQuery();
+            conn.Close();
+
+            button1.Enabled = false;
+            button2.Enabled = false;
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

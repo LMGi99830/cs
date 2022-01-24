@@ -209,11 +209,11 @@ namespace WindowsFormsApp1
             Boolean check = false;
             OracleDataReader dr1 = cmd1.ExecuteReader();
             while(dr1.Read())
-            {
+            {             
                 check = true;
             }
             if(check)
-            {
+            {                
                 MessageBox.Show("중복되는 학번은 등록할 수 없습니다.");
                 return;
             }

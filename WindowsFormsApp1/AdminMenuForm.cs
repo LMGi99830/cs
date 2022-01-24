@@ -128,7 +128,40 @@ namespace WindowsFormsApp1
                     button3.Enabled = false;
                     break;
                 case "근태현황": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
-                    MessageBox.Show("점검중");
+                    if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
+                    {
+                        AttendanceTotal form = new AttendanceTotal();
+                        form.TopLevel = false;
+                        tabControl1.TabPages.Add(str);
+                        tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(form);
+                        tabControl1.SelectedIndex = tabControl1.TabPages.Count - 1;
+                        tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(form);
+                        AdminMenuForm.DICT_REMOVE_INDEX.Add(str, tabControl1.SelectedIndex); //Dictionary로 화면텍스트와 탭번호 저장
+                        form.Dock = DockStyle.Fill;
+                        form.Show();
+                    }
+                    else
+                    {
+                        tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
+                    }
+                    break;
+                case "결근 관리": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                    if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
+                    {
+                        BeAbsentForm form = new BeAbsentForm();
+                        form.TopLevel = false;
+                        tabControl1.TabPages.Add(str);
+                        tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(form);
+                        tabControl1.SelectedIndex = tabControl1.TabPages.Count - 1;
+                        tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(form);
+                        AdminMenuForm.DICT_REMOVE_INDEX.Add(str, tabControl1.SelectedIndex); //Dictionary로 화면텍스트와 탭번호 저장
+                        form.Dock = DockStyle.Fill;
+                        form.Show();
+                    }
+                    else
+                    {
+                        tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
+                    }
                     break;
                 case "은행 등록": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))

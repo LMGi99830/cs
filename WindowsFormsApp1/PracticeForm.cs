@@ -106,14 +106,15 @@ namespace WindowsFormsApp1
                     OracleCommand cmd = new OracleCommand();
                     cmd.Connection = con;
                     cmd.CommandText = @"insert into P22_LMG_TATM_PRO (
-                                                PRO_YEAR, PRO_SEASON, PRO_STATE, PRO_NAME, PRO_COUNT, PRO_DAYS, PRO_DAYE,
+                                                PRO_YEAR, PRO_SEASON, PRO_STATE, PRO_NAME, PRO_COUNT, PRO_STCOUNT, PRO_DAYS, PRO_DAYE,
                                                 PRO_TIMES, PRO_TIMEE)
-                                            values (:YEAR,:SEASON,:STATE,:NAME,:COUNT, :DAYS,:DAYE,:TIMES,:TIMEE)";
+                                            values (:YEAR,:SEASON,:STATE,:NAME,:COUNT, :STCOUNT, :DAYS,:DAYE,:TIMES,:TIMEE)";
                     cmd.Parameters.Add(new OracleParameter("YEAR", dateTimePicker4.Text.ToString()));
                     cmd.Parameters.Add(new OracleParameter("SEASON", comboBox2.Text.ToString()));
                     cmd.Parameters.Add(new OracleParameter("STATE", "신청가능"));
                     cmd.Parameters.Add(new OracleParameter("NAME", textBox3.Text.ToString()));
                     cmd.Parameters.Add(new OracleParameter("COUNT", textBox6.Text.ToString()));
+                    cmd.Parameters.Add(new OracleParameter("STCOUNT", "0"));
                     cmd.Parameters.Add(new OracleParameter("DAYS", dateTimePicker1.Text.ToString()));
                     cmd.Parameters.Add(new OracleParameter("DAYE", dateTimePicker2.Text.ToString()));
                     cmd.Parameters.Add(new OracleParameter("TIMES", textBox1.Text.ToString()));
