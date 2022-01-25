@@ -23,12 +23,13 @@ namespace WindowsFormsApp1
         OracleDataAdapter adapt;
         DataTable dt;
         int count = 0;
+        int nBetweenDayCnt = 0;
         public PracticeForm()
         {
             InitializeComponent();
             panel1.TabStop = false;
-            panel2.TabStop = false;            
-            panel4.TabStop = false;            
+            panel2.TabStop = false;
+            panel4.TabStop = false;
         }
 
         public void btn_enrollment()
@@ -75,7 +76,7 @@ namespace WindowsFormsApp1
             }
             int start_time = int.Parse(textBox1.Text);
             int end_time = int.Parse(textBox2.Text);
-            if( start_time > 2359 || end_time > 2359)
+            if (start_time > 2359 || end_time > 2359)
             {
                 MessageBox.Show("시간을 다시 입력해주세요(24시는 00시로 입력합니다.)");
                 return;
@@ -94,7 +95,7 @@ namespace WindowsFormsApp1
                 {
                     check1 = true;
                 }
-                
+
                 if (check1)
                 {
                     MessageBox.Show("연도와 계절은 변경할 수 없습니다.");
@@ -121,10 +122,52 @@ namespace WindowsFormsApp1
                     cmd.Parameters.Add(new OracleParameter("TIMEE", textBox2.Text.ToString()));
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("등록이 완료되었습니다.");                    
+
+                    hoilday();
+                    MessageBox.Show("등록이 완료되었습니다.");
                 }
                 con.Close();
                 btn_load();
+            }
+        }
+
+        public void hoilday()
+        {
+            nBetweenDayCnt = 0;
+
+            int i = 0;
+            DateTime temp;
+            while (true)
+            {
+                temp = dateTimePicker1.Value.Date.AddDays(i);
+
+                if (temp.DayOfWeek == DayOfWeek.Sunday || temp.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    String date1 = "휴일";
+                    String date2 = temp.Date.ToString("yyyyMMdd");
+                    OracleConnection con = new OracleConnection(cs);
+                    con.Open();
+                    OracleCommand cmd1 = new OracleCommand();
+                    cmd1.Connection = con;
+                    cmd1.CommandText = "INSERT INTO P22_LMG_TATM_HOI(HOI_YEAR, HOI_SEASON, HOI_DATE, HOI_NAME) VALUES(:YEAR1,:SEASON1,:DAY2, :DAY1)";
+                    cmd1.Parameters.Add(new OracleParameter("YEAR1", dateTimePicker4.Text.ToString()));
+                    cmd1.Parameters.Add(new OracleParameter("SEASON1", comboBox2.Text.ToString()));
+                    cmd1.Parameters.Add(new OracleParameter("DAY2", date2));
+                    cmd1.Parameters.Add(new OracleParameter("DAY1", date1));
+
+                    cmd1.ExecuteNonQuery();
+                    if (temp.DayOfWeek != DayOfWeek.Sunday && temp.DayOfWeek != DayOfWeek.Saturday)
+                        nBetweenDayCnt++;
+
+                    TimeSpan Between = dateTimePicker2.Value.Date - temp;
+                    if (Between.Days <= 0)
+                    {
+                        break;
+                    }
+
+                    temp = dateTimePicker1.Value.Date.AddDays(i);
+                    i++;
+                }
             }
         }
 
@@ -159,7 +202,7 @@ namespace WindowsFormsApp1
         }
 
         public void btn_update()
-        {               
+        {
             if (count == 0)
             {
                 MessageBox.Show("조회버튼 클릭 후 수정하고 싶은 값을 더블클릭 해주세요");
@@ -190,7 +233,7 @@ namespace WindowsFormsApp1
                 con.Close();
                 btn_load();
             }
-            
+
         }
 
         public void btn_delete()
@@ -228,8 +271,8 @@ namespace WindowsFormsApp1
                     con.Close();
                 }
             }
-            
-            
+
+
         }
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
@@ -244,7 +287,7 @@ namespace WindowsFormsApp1
             {
                 DateTime dateValue;
                 DateTime dateValue1;
-                DateTime dateValue2;                
+                DateTime dateValue2;
 
                 String P_YEAR = dataGridView1.Rows[rowindex].Cells[0].Value.ToString(); // 연도
                 String P_SEASON = dataGridView1.Rows[rowindex].Cells[1].Value.ToString(); // 계절
@@ -254,13 +297,13 @@ namespace WindowsFormsApp1
                 String P_DAYE = dataGridView1.Rows[rowindex].Cells[7].Value.ToString(); // 실습 종료 기간
                 String P_TIME = dataGridView1.Rows[rowindex].Cells[8].Value.ToString(); // 실습 시작 시간
                 String P_TIMES = dataGridView1.Rows[rowindex].Cells[9].Value.ToString(); //실습 종료 시간       
-                
+
                 DateTime.TryParseExact(P_YEAR, "yyyy", null, DateTimeStyles.None, out dateValue2);
                 dateTimePicker4.Value = dateValue2;
                 comboBox2.Text = P_SEASON;
                 textBox3.Text = P_NAME;
-                textBox6.Text = P_COUNT;          
-                
+                textBox6.Text = P_COUNT;
+
                 DateTime.TryParseExact(P_DAYS, "yyyyMMdd", null, DateTimeStyles.None, out dateValue);
                 DateTime.TryParseExact(P_DAYE, "yyyyMMdd", null, DateTimeStyles.None, out dateValue1);
                 dateTimePicker1.Value = dateValue;

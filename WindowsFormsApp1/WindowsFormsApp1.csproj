@@ -66,6 +66,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -98,14 +99,26 @@
     <Compile Include="asdasd.Designer.cs">
       <DependentUpon>asdasd.cs</DependentUpon>
     </Compile>
-    <Compile Include="BeAbsentForm.cs">
+    <Compile Include="datetest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BeAbsentForm.Designer.cs">
-      <DependentUpon>BeAbsentForm.cs</DependentUpon>
+    <Compile Include="datetest.Designer.cs">
+      <DependentUpon>datetest.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HolidayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HolidayForm.Designer.cs">
+      <DependentUpon>HolidayForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchCode\defCodeForm.cs">
       <SubType>Form</SubType>
@@ -263,11 +276,17 @@
     <EmbeddedResource Include="asdasd.resx">
       <DependentUpon>asdasd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BeAbsentForm.resx">
-      <DependentUpon>BeAbsentForm.cs</DependentUpon>
+    <EmbeddedResource Include="datetest.resx">
+      <DependentUpon>datetest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HolidayForm.resx">
+      <DependentUpon>HolidayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchCode\defCodeForm.resx">
       <DependentUpon>defCodeForm.cs</DependentUpon>

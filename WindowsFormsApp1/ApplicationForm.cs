@@ -14,8 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class ApplicationForm : Form
     {
-        string cs = "Data Source=222.237.134.74:1522/Ora7;User Id=edu;Password=edu1234;";
-        OracleConnection con;
+        string cs = "Data Source=222.237.134.74:1522/Ora7;User Id=edu;Password=edu1234;";       
         public ApplicationForm()
         {
             InitializeComponent();

@@ -45,7 +45,17 @@ namespace WindowsFormsApp1
         }
         private void ZIP_BTN_Click(object sender, EventArgs e)
         {
+            Form2 frm = new Form2();
+            frm.ShowDialog();
 
+            if (frm.Tag == null) { return; }
+            DataRow dr = (DataRow)frm.Tag;
+
+            ZIP.Text = dr["zonecode"].ToString();
+            ZIPADDR.Text = dr["ADDR1"].ToString();
+            ADDR.Text = "";            
+
+            ADDR.Focus();
         }
 
         private void DOR_BTN_Click(object sender, EventArgs e)

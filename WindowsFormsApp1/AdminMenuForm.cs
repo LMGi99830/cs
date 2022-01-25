@@ -145,10 +145,10 @@ namespace WindowsFormsApp1
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
                     break;
-                case "결근 관리": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "휴일 관리": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
-                        BeAbsentForm form = new BeAbsentForm();
+                        HolidayForm form = new HolidayForm();
                         form.TopLevel = false;
                         tabControl1.TabPages.Add(str);
                         tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(form);
@@ -312,6 +312,16 @@ namespace WindowsFormsApp1
             button3.Enabled = false;
             button4.Enabled = false;
             button6.Enabled = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("로그 아웃 되었습니다.");
+            this.Close(); // 현재 폼 종료, Application.Restart만 하니깐 현재 폼이 안죽음
+            Application.Restart(); // 현재 어플리케이션을 종료하고 즉시 새 인스턴스를 시작
+            
+
+
         }
     }
 }

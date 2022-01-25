@@ -17,9 +17,7 @@ namespace WindowsFormsApp1
         string css = "Data Source=222.237.134.74:1522/Ora7;User Id=edu;Password=edu1234;";
         OracleConnection con;
         OracleDataAdapter adapt;
-        DataTable dt;
-        OracleCommand cmd;
-        DataSet dtSet = new DataSet();
+        DataTable dt;               
         int count = 0;
 
         public AdminAttendance()
@@ -236,7 +234,8 @@ namespace WindowsFormsApp1
                                     where d.DIL_STUNO = p.APP_STUNO
                                     and p.APP_APPRO = 'Y'
                                     and p.APP_YEAR = '{indexvalue}'
-                                    and p.APP_SEASON = '{indexvalue1}'";
+                                    and p.APP_SEASON = '{indexvalue1}'
+                                    and d.dil_dilcode != 6";
             adapt = new OracleDataAdapter(sql, con);
             dt = new DataTable();
             adapt.Fill(dt);
@@ -249,9 +248,6 @@ namespace WindowsFormsApp1
             dataGridView2.Columns[3].HeaderText = "지각시간";
             dataGridView2.Columns[4].HeaderText = "조퇴사유";
             dataGridView2.Columns[5].HeaderText = "결근사유";
-
-
-
 
             dataGridView2.Columns[0].Name = "date";
             dataGridView2.Columns[1].Name = "stuno";

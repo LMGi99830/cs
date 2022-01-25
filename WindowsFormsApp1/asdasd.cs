@@ -16,8 +16,7 @@ namespace WindowsFormsApp1
 {      
 
     public partial class asdasd : Form
-    {
-        string label2 = "";
+    {       
         public asdasd()
         {
             InitializeComponent();                

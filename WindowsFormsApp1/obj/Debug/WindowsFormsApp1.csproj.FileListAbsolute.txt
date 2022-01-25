@@ -55,4 +55,6 @@ C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.UpdateApplicationForm.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdminEnrollmentForm.resources
 C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.asdasd.resources
-C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BeAbsentForm.resources
+C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.datetest.resources
+C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.HolidayForm.resources
+C:\Users\MTPC4-06\Desktop\LMGproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
