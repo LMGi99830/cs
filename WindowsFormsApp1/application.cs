@@ -65,18 +65,17 @@ namespace WindowsFormsApp1
             con.Close();
 
             dataGridView2.Columns[0].HeaderText = "연도";
-            dataGridView2.Columns[1].HeaderText = "계절";
-            dataGridView2.Columns[2].HeaderText = "상태";
-            dataGridView2.Columns[3].HeaderText = "실습명";
-            dataGridView2.Columns[4].HeaderText = "정원";
-            dataGridView2.Columns[5].HeaderText = "신청인원";
-            dataGridView2.Columns[6].HeaderText = "실습시작일자";
-            dataGridView2.Columns[7].HeaderText = "실습종료일자";
-            dataGridView2.Columns[8].HeaderText = "실습시작시간";
-            dataGridView2.Columns[9].HeaderText = "실습종료시간";
-            dataGridView2.Columns[10].HeaderText = "자료처리시간";
-            dataGridView2.Columns[11].HeaderText = "자료처리구분";
-            dataGridView2.Columns[12].HeaderText = "자료처리자";
+            dataGridView2.Columns[1].HeaderText = "계절";            
+            dataGridView2.Columns[2].HeaderText = "실습명";
+            dataGridView2.Columns[3].HeaderText = "정원";
+            dataGridView2.Columns[4].HeaderText = "신청인원";
+            dataGridView2.Columns[5].HeaderText = "실습시작일자";
+            dataGridView2.Columns[6].HeaderText = "실습종료일자";
+            dataGridView2.Columns[7].HeaderText = "실습시작시간";
+            dataGridView2.Columns[8].HeaderText = "실습종료시간";
+            dataGridView2.Columns[9].HeaderText = "자료처리시간";
+            dataGridView2.Columns[10].HeaderText = "자료처리구분";
+            dataGridView2.Columns[11].HeaderText = "자료처리자";
 
             dataGridView2.Columns[0].Name = "Year";
             dataGridView2.Columns[1].Name = "Season";
@@ -307,8 +306,26 @@ namespace WindowsFormsApp1
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {            
-            if (dataGridView4.SelectedCells.Count.ToString() == "0")
+        {
+            int rowindex = dataGridView2.CurrentCell.RowIndex;
+            OracleConnection con = new OracleConnection(css);
+            con.Open();
+
+            OracleCommand cmdE = con.CreateCommand();
+            cmdE.CommandText = "select * from P22_LMG_TATM_ATT where ATT_STUNO = :STUNOO";
+            cmdE.Parameters.Add(new OracleParameter("STUNOO", dataGridView2.Rows[rowindex].Cells[0].Value.ToString()));            
+            OracleDataReader drrl = cmdE.ExecuteReader();
+            Boolean check = false;
+            while (drrl.Read())
+            {
+                check = true;
+            }
+            if(check)
+            {
+                MessageBox.Show("현재 출석중인 학생은 반려 시킬 수 없습니다.");
+                return;
+            }
+                if (dataGridView4.SelectedCells.Count.ToString() == "0")
             {
                 MessageBox.Show("반려 시키고 싶은 학생을 선택해주세요.");
                 return;
@@ -477,25 +494,25 @@ namespace WindowsFormsApp1
                 con.Close();
             }
         }
-        private void button4_Click(object sender, EventArgs e)
+
+        public void btn_delete()
         {
-            
-                if(dataGridView1.SelectedCells.Count.ToString() == "0" && dataGridView4.SelectedCells.Count.ToString() == "0")
+            if (dataGridView1.SelectedCells.Count.ToString() == "0" && dataGridView4.SelectedCells.Count.ToString() == "0")
+            {
+                DeleteDatagridview2();
+            }
+            else
+            {
+                if (dataGridView2.SelectedCells.Count.ToString() != "0" && dataGridView4.SelectedCells.Count.ToString() == "0")
                 {
-                    DeleteDatagridview2();
+                    DeleteDatagridview1();
                 }
                 else
                 {
-                    if(dataGridView2.SelectedCells.Count.ToString() != "0" && dataGridView4.SelectedCells.Count.ToString() == "0")
-                    {
-                        DeleteDatagridview1();
-                    }
-                    else
-                    {
-                        DeleteDatagridview4();
-                    }
-                
-            }     
+                    DeleteDatagridview4();
+                }
+
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -50,7 +50,6 @@ namespace WindowsFormsApp1
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -135,7 +134,7 @@ namespace WindowsFormsApp1
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("굴림", 9F);
-            this.textBox4.Location = new System.Drawing.Point(49, 23);
+            this.textBox4.Location = new System.Drawing.Point(49, 17);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(120, 21);
             this.textBox4.TabIndex = 1;
@@ -144,7 +143,7 @@ namespace WindowsFormsApp1
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("굴림", 9F);
-            this.label7.Location = new System.Drawing.Point(14, 26);
+            this.label7.Location = new System.Drawing.Point(14, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 2;
@@ -154,7 +153,7 @@ namespace WindowsFormsApp1
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("굴림", 9F);
-            this.label8.Location = new System.Drawing.Point(175, 26);
+            this.label8.Location = new System.Drawing.Point(175, 20);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 3;
@@ -163,7 +162,7 @@ namespace WindowsFormsApp1
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("굴림", 9F);
-            this.textBox5.Location = new System.Drawing.Point(210, 23);
+            this.textBox5.Location = new System.Drawing.Point(210, 17);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(70, 21);
             this.textBox5.TabIndex = 2;
@@ -292,7 +291,6 @@ namespace WindowsFormsApp1
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.textBox2);
@@ -309,21 +307,11 @@ namespace WindowsFormsApp1
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "실습 검색";
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(750, 39);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "제거";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("굴림", 8F);
-            this.label11.Location = new System.Drawing.Point(550, 49);
+            this.label11.Location = new System.Drawing.Point(550, 30);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(179, 11);
             this.label11.TabIndex = 6;
@@ -331,7 +319,7 @@ namespace WindowsFormsApp1
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(456, 40);
+            this.button3.Location = new System.Drawing.Point(456, 23);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(88, 21);
             this.button3.TabIndex = 5;
@@ -341,7 +329,7 @@ namespace WindowsFormsApp1
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(47, 41);
+            this.textBox2.Location = new System.Drawing.Point(41, 22);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(81, 21);
             this.textBox2.TabIndex = 4;
@@ -349,7 +337,7 @@ namespace WindowsFormsApp1
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(12, 44);
+            this.label15.Location = new System.Drawing.Point(6, 25);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(29, 12);
             this.label15.TabIndex = 3;
@@ -358,7 +346,7 @@ namespace WindowsFormsApp1
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(239, 44);
+            this.label17.Location = new System.Drawing.Point(233, 25);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(41, 12);
             this.label17.TabIndex = 0;
@@ -367,7 +355,7 @@ namespace WindowsFormsApp1
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(134, 44);
+            this.label16.Location = new System.Drawing.Point(128, 25);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(29, 12);
             this.label16.TabIndex = 0;
@@ -380,7 +368,7 @@ namespace WindowsFormsApp1
             this.comboBox8.Items.AddRange(new object[] {
             "동계",
             "하계"});
-            this.comboBox8.Location = new System.Drawing.Point(169, 41);
+            this.comboBox8.Location = new System.Drawing.Point(163, 22);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(64, 20);
             this.comboBox8.TabIndex = 1;
@@ -388,7 +376,7 @@ namespace WindowsFormsApp1
             // textBox11
             // 
             this.textBox11.Font = new System.Drawing.Font("굴림", 9F);
-            this.textBox11.Location = new System.Drawing.Point(286, 41);
+            this.textBox11.Location = new System.Drawing.Point(280, 22);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(119, 21);
             this.textBox11.TabIndex = 2;
@@ -421,7 +409,7 @@ namespace WindowsFormsApp1
             // textBox20
             // 
             this.textBox20.Font = new System.Drawing.Font("굴림", 9F);
-            this.textBox20.Location = new System.Drawing.Point(47, 26);
+            this.textBox20.Location = new System.Drawing.Point(40, 17);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(120, 21);
             this.textBox20.TabIndex = 4;
@@ -430,7 +418,7 @@ namespace WindowsFormsApp1
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("굴림", 9F);
-            this.label20.Location = new System.Drawing.Point(12, 29);
+            this.label20.Location = new System.Drawing.Point(5, 20);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(29, 12);
             this.label20.TabIndex = 5;
@@ -440,7 +428,7 @@ namespace WindowsFormsApp1
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("굴림", 9F);
-            this.label21.Location = new System.Drawing.Point(173, 29);
+            this.label21.Location = new System.Drawing.Point(166, 20);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(29, 12);
             this.label21.TabIndex = 7;
@@ -449,7 +437,7 @@ namespace WindowsFormsApp1
             // textBox21
             // 
             this.textBox21.Font = new System.Drawing.Font("굴림", 9F);
-            this.textBox21.Location = new System.Drawing.Point(208, 26);
+            this.textBox21.Location = new System.Drawing.Point(201, 17);
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(70, 21);
             this.textBox21.TabIndex = 6;
@@ -576,6 +564,5 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button4;
     }
 }

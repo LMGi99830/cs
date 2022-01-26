@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
                 if (temp.DayOfWeek == DayOfWeek.Sunday || temp.DayOfWeek == DayOfWeek.Saturday)
                 {
                     String date1 = "휴일";
-                    String date2 = temp.Date.ToString("yyyy-MM-dd");
+                    String date2 = temp.Date.ToString("yyyyMMdd");
                     OracleConnection con = new OracleConnection(css);
                     con.Open();
 

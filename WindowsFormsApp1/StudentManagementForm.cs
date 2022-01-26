@@ -37,7 +37,7 @@ namespace WindowsFormsApp1
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 image_file = dialog.FileName;
-                STU_IMG.BackgroundImage = Bitmap.FromFile(image_file);
+                STU_IMG.Image = Bitmap.FromFile(image_file);
                 imgvalue = 1;                
 
             }
@@ -235,7 +235,7 @@ namespace WindowsFormsApp1
                 byte[] b = new byte[0];
                 if (!(STU_IMG.Image is null))
                 {
-                    Bitmap bitmap = new Bitmap((Image)STU_IMG.BackgroundImage);
+                    Bitmap bitmap = new Bitmap((Image)STU_IMG.Image);
                     ImageConverter converter = new ImageConverter();
                     b = (byte[])converter.ConvertTo(bitmap, typeof(byte[]));
                 }
@@ -360,7 +360,7 @@ namespace WindowsFormsApp1
                 byte[] imgByte = (byte[])dr["STU_IMG"];
 
                 MemoryStream memoryStream = new MemoryStream(imgByte);
-                STU_IMG.BackgroundImage = new Bitmap(memoryStream);                
+                STU_IMG.Image = new Bitmap(memoryStream);                
             }
             
             conn.Close();
@@ -374,9 +374,9 @@ namespace WindowsFormsApp1
                 conn.Open();
                 OracleCommand cmd = conn.CreateCommand();
             byte[] b = new byte[0];
-            if (!(STU_IMG.BackgroundImage is null))
+            if (!(STU_IMG.Image is null))
             {
-                Bitmap bitmap = new Bitmap((Image)STU_IMG.BackgroundImage);
+                Bitmap bitmap = new Bitmap((Image)STU_IMG.Image);
                 ImageConverter converter = new ImageConverter();
                 b = (byte[])converter.ConvertTo(bitmap, typeof(byte[]));
             }

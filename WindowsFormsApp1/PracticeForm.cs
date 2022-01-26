@@ -107,12 +107,11 @@ namespace WindowsFormsApp1
                     OracleCommand cmd = new OracleCommand();
                     cmd.Connection = con;
                     cmd.CommandText = @"insert into P22_LMG_TATM_PRO (
-                                                PRO_YEAR, PRO_SEASON, PRO_STATE, PRO_NAME, PRO_COUNT, PRO_STCOUNT, PRO_DAYS, PRO_DAYE,
+                                                PRO_YEAR, PRO_SEASON, PRO_NAME, PRO_COUNT, PRO_STCOUNT, PRO_DAYS, PRO_DAYE,
                                                 PRO_TIMES, PRO_TIMEE)
-                                            values (:YEAR,:SEASON,:STATE,:NAME,:COUNT, :STCOUNT, :DAYS,:DAYE,:TIMES,:TIMEE)";
+                                            values (:YEAR,:SEASON,:NAME,:COUNT, :STCOUNT, :DAYS,:DAYE,:TIMES,:TIMEE)";
                     cmd.Parameters.Add(new OracleParameter("YEAR", dateTimePicker4.Text.ToString()));
-                    cmd.Parameters.Add(new OracleParameter("SEASON", comboBox2.Text.ToString()));
-                    cmd.Parameters.Add(new OracleParameter("STATE", "신청가능"));
+                    cmd.Parameters.Add(new OracleParameter("SEASON", comboBox2.Text.ToString()));                    
                     cmd.Parameters.Add(new OracleParameter("NAME", textBox3.Text.ToString()));
                     cmd.Parameters.Add(new OracleParameter("COUNT", textBox6.Text.ToString()));
                     cmd.Parameters.Add(new OracleParameter("STCOUNT", "0"));
@@ -147,6 +146,8 @@ namespace WindowsFormsApp1
                     String date2 = temp.Date.ToString("yyyyMMdd");
                     OracleConnection con = new OracleConnection(cs);
                     con.Open();
+
+                    // 명령 객체 생성
                     OracleCommand cmd1 = new OracleCommand();
                     cmd1.Connection = con;
                     cmd1.CommandText = "INSERT INTO P22_LMG_TATM_HOI(HOI_YEAR, HOI_SEASON, HOI_DATE, HOI_NAME) VALUES(:YEAR1,:SEASON1,:DAY2, :DAY1)";
@@ -156,6 +157,7 @@ namespace WindowsFormsApp1
                     cmd1.Parameters.Add(new OracleParameter("DAY1", date1));
 
                     cmd1.ExecuteNonQuery();
+                }
                     if (temp.DayOfWeek != DayOfWeek.Sunday && temp.DayOfWeek != DayOfWeek.Saturday)
                         nBetweenDayCnt++;
 
@@ -169,7 +171,6 @@ namespace WindowsFormsApp1
                     i++;
                 }
             }
-        }
 
         public void btn_load()
         {
@@ -187,18 +188,17 @@ namespace WindowsFormsApp1
         public void dataHearder()
         {
             dataGridView1.Columns[0].HeaderText = "연도";
-            dataGridView1.Columns[1].HeaderText = "계절";
-            dataGridView1.Columns[2].HeaderText = "상태";
-            dataGridView1.Columns[3].HeaderText = "실습명";
-            dataGridView1.Columns[4].HeaderText = "정원";
-            dataGridView1.Columns[5].HeaderText = "신청인원";
-            dataGridView1.Columns[6].HeaderText = "실습시작일자";
-            dataGridView1.Columns[7].HeaderText = "실습종료일자";
-            dataGridView1.Columns[8].HeaderText = "실습시작시간";
-            dataGridView1.Columns[9].HeaderText = "실습종료시간";
-            dataGridView1.Columns[10].HeaderText = "자료처리시간";
-            dataGridView1.Columns[11].HeaderText = "자료처리구분";
-            dataGridView1.Columns[12].HeaderText = "자료처리자";
+            dataGridView1.Columns[1].HeaderText = "계절";            
+            dataGridView1.Columns[2].HeaderText = "실습명";
+            dataGridView1.Columns[3].HeaderText = "정원";
+            dataGridView1.Columns[4].HeaderText = "신청인원";
+            dataGridView1.Columns[5].HeaderText = "실습시작일자";
+            dataGridView1.Columns[6].HeaderText = "실습종료일자";
+            dataGridView1.Columns[7].HeaderText = "실습시작시간";
+            dataGridView1.Columns[8].HeaderText = "실습종료시간";
+            dataGridView1.Columns[9].HeaderText = "자료처리시간";
+            dataGridView1.Columns[10].HeaderText = "자료처리구분";
+            dataGridView1.Columns[11].HeaderText = "자료처리자";
         }
 
         public void btn_update()
@@ -248,9 +248,9 @@ namespace WindowsFormsApp1
                 int rowindex = dataGridView1.CurrentCell.RowIndex;
                 String yearindex = dataGridView1.Rows[rowindex].Cells[0].Value.ToString();
                 String seasonindex = dataGridView1.Rows[rowindex].Cells[1].Value.ToString();
-                String indexvalue1 = dataGridView1.Rows[rowindex].Cells[5].Value.ToString();
+                String indexvalue1 = dataGridView1.Rows[rowindex].Cells[4].Value.ToString();
 
-                if (indexvalue1 != "")
+                if (indexvalue1 != "0")
                 {
                     MessageBox.Show("신청한 학생이 있는 경우에는 삭제가 불가능합니다.");
                     return;
@@ -281,7 +281,12 @@ namespace WindowsFormsApp1
             int rowindex = dataGridView1.CurrentCell.RowIndex;
             if (dataGridView1.Rows[rowindex].Cells[0].Value.ToString() == "")
             {
-                btn_load();
+                dateTimePicker4.Enabled = true;
+                comboBox2.Enabled = true;
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox6.Text = "";
             }
             else
             {
@@ -291,12 +296,12 @@ namespace WindowsFormsApp1
 
                 String P_YEAR = dataGridView1.Rows[rowindex].Cells[0].Value.ToString(); // 연도
                 String P_SEASON = dataGridView1.Rows[rowindex].Cells[1].Value.ToString(); // 계절
-                String P_NAME = dataGridView1.Rows[rowindex].Cells[3].Value.ToString(); // 이름
-                String P_COUNT = dataGridView1.Rows[rowindex].Cells[4].Value.ToString(); // 정원
-                String P_DAYS = dataGridView1.Rows[rowindex].Cells[6].Value.ToString(); // 실습 시작 기간
-                String P_DAYE = dataGridView1.Rows[rowindex].Cells[7].Value.ToString(); // 실습 종료 기간
-                String P_TIME = dataGridView1.Rows[rowindex].Cells[8].Value.ToString(); // 실습 시작 시간
-                String P_TIMES = dataGridView1.Rows[rowindex].Cells[9].Value.ToString(); //실습 종료 시간       
+                String P_NAME = dataGridView1.Rows[rowindex].Cells[2].Value.ToString(); // 이름
+                String P_COUNT = dataGridView1.Rows[rowindex].Cells[3].Value.ToString(); // 정원
+                String P_DAYS = dataGridView1.Rows[rowindex].Cells[5].Value.ToString(); // 실습 시작 기간
+                String P_DAYE = dataGridView1.Rows[rowindex].Cells[6].Value.ToString(); // 실습 종료 기간
+                String P_TIME = dataGridView1.Rows[rowindex].Cells[7].Value.ToString(); // 실습 시작 시간
+                String P_TIMES = dataGridView1.Rows[rowindex].Cells[8].Value.ToString(); //실습 종료 시간       
 
                 DateTime.TryParseExact(P_YEAR, "yyyy", null, DateTimeStyles.None, out dateValue2);
                 dateTimePicker4.Value = dateValue2;
@@ -312,6 +317,11 @@ namespace WindowsFormsApp1
                 textBox2.Text = P_TIMES;
 
             }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

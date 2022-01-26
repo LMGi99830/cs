@@ -14,17 +14,23 @@ namespace WindowsFormsApp1
 
     public partial class AdminMenuForm : Form
     {
+        private Point _imageLocation = new Point(15, 5);
+        private Point _imgHitArea = new Point(13, 2);
+        string str = "";
         public AdminMenuForm()
         {
             InitializeComponent();
-            
+            // set the Mode of Drawing as Owner Drawn
+            this.tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
+            // Add the Handler to draw the Image on Tab Pages
+            tabControl1.DrawItem += tabControl1_DrawItem;
 
         }
         public static Dictionary<string, int> DICT_REMOVE_INDEX = new Dictionary<string, int>();
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
-            string str = (e.Node.ToString()).Substring(10);
+            str = (e.Node.ToString()).Substring(10);
             //공장코드관리
             button1.Enabled = true;
             button2.Enabled = true;
@@ -32,10 +38,10 @@ namespace WindowsFormsApp1
             button6.Enabled = true;
             switch (str)
             {                
-                case "관리자 등록": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "관리자 등록   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
-                        PracticeForm form = new PracticeForm();
+                        AdminEnrollmentForm form = new AdminEnrollmentForm();
                         form.TopLevel = false;
                         tabControl1.TabPages.Add(str);
                         tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(form);
@@ -46,11 +52,12 @@ namespace WindowsFormsApp1
                         form.Show();
                     }
                     else
-                    {
+                    {                        
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
+                    
                     break;
-                case "학생인사정보등록/조회": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "학생인사정보등록/조회   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
                         Type formType = Assembly.GetExecutingAssembly().GetTypes()
@@ -70,7 +77,7 @@ namespace WindowsFormsApp1
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
                     break;
-                case "현장실습등록": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "현장실습등록   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
                         PracticeForm form = new PracticeForm();
@@ -88,7 +95,7 @@ namespace WindowsFormsApp1
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
                     break;
-                case "현장실습신청인원신청/조회/승인": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "현장실습신청인원신청/조회/승인   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
                         application form = new application();
@@ -107,7 +114,7 @@ namespace WindowsFormsApp1
                     }
                     break;
 
-                case "출퇴근관리": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "출퇴근관리   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
                         AdminAttendance form = new AdminAttendance();
@@ -127,7 +134,7 @@ namespace WindowsFormsApp1
                     button1.Enabled = false;
                     button3.Enabled = false;
                     break;
-                case "근태현황": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "근태현황   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
                         AttendanceTotal form = new AttendanceTotal();
@@ -145,7 +152,7 @@ namespace WindowsFormsApp1
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
                     break;
-                case "휴일 관리": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "휴일 관리   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
                         HolidayForm form = new HolidayForm();
@@ -163,7 +170,7 @@ namespace WindowsFormsApp1
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
                     break;
-                case "은행 등록": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "은행 등록   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
                         BnkCode form = new BnkCode();
@@ -181,7 +188,7 @@ namespace WindowsFormsApp1
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
                     break;
-                case "기숙사 등록": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "기숙사 등록   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
                         DormiCode form = new DormiCode();
@@ -199,7 +206,7 @@ namespace WindowsFormsApp1
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
                     break;
-                case "근태 등록": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "근태 등록   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
                         AtdCode form = new AtdCode();
@@ -217,7 +224,7 @@ namespace WindowsFormsApp1
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
                     break;
-                case "지원분야 등록": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "지원분야 등록   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
                         SupAreasCode form = new SupAreasCode();
@@ -235,7 +242,7 @@ namespace WindowsFormsApp1
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
                     break;
-                case "출/퇴근": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "출/퇴근   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
                         AttendanceForm form = new AttendanceForm();
@@ -322,6 +329,47 @@ namespace WindowsFormsApp1
             
 
 
+        }
+
+        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            try
+            {
+                // Close Image to draw
+                Image img = new Bitmap("C:\\Close.gif");
+
+                Rectangle r = e.Bounds;
+                r = this.tabControl1.GetTabRect(e.Index);
+                r.Offset(2, 2);
+
+                Brush TitleBrush = new SolidBrush(Color.Black);
+                Font f = this.Font;
+
+                string title = this.tabControl1.TabPages[e.Index].Text;
+
+                e.Graphics.DrawString(title, f, TitleBrush, new PointF(r.X, r.Y));
+                e.Graphics.DrawImage(img, new Point(r.X + (this.tabControl1.GetTabRect(e.Index).Width - _imageLocation.X), _imageLocation.Y));
+            }
+            catch (Exception) { }
+        }
+
+        private void tabControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+            var _key = AdminMenuForm.DICT_REMOVE_INDEX.FirstOrDefault(x => x.Value == tabControl1.SelectedIndex).Key;            
+            TabControl tc = (TabControl)sender;
+            Point p = e.Location;
+            int _tabWidth = 0;
+            _tabWidth = this.tabControl1.GetTabRect(tc.SelectedIndex).Width - (_imgHitArea.X);
+            Rectangle r = this.tabControl1.GetTabRect(tc.SelectedIndex);
+            r.Offset(_tabWidth, _imgHitArea.Y);
+            r.Width = 16;
+            r.Height = 16;
+            if (r.Contains(p))
+            {
+                TabPage TabP = (TabPage)tc.TabPages[tc.SelectedIndex];
+                tc.TabPages.Remove(TabP);
+                AdminMenuForm.DICT_REMOVE_INDEX.Remove(_key);
+            }            
         }
     }
 }
