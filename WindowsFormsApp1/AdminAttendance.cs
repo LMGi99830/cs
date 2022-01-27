@@ -235,7 +235,8 @@ namespace WindowsFormsApp1
                                     and p.APP_APPRO = 'Y'
                                     and p.APP_YEAR = '{indexvalue}'
                                     and p.APP_SEASON = '{indexvalue1}'
-                                    and d.dil_dilcode != 6";
+                                    and d.dil_dilcode != 6
+                                    order by d.dil_dilcode";
             adapt = new OracleDataAdapter(sql, con);
             dt = new DataTable();
             adapt.Fill(dt);
@@ -298,38 +299,45 @@ namespace WindowsFormsApp1
             // 2 11
             OracleConnection con = new OracleConnection(css);
             con.Open();
+            OracleCommand cmdd = new OracleCommand();
+            cmdd.Connection = con;
+            cmdd.CommandText = "select STU_NAME , DEF_NAME from P22_LMG_TATM_STU stu , P22_LMG_TATM_DEF def where stu.STU_DEPART = def.DEF_CODE and stu.STU_STUNO = :STUNO";
+            cmdd.Parameters.Add(new OracleParameter("STUNO", stuno));
+            OracleDataReader drr = cmdd.ExecuteReader();
+            while (drr.Read())
+            {
+                textBox3.Text = drr.GetString(0);
+                textBox4.Text = drr.GetString(1);
+            }
+
             OracleCommand cmd1 = new OracleCommand();
             cmd1.Connection = con;
             cmd1.CommandText = "select * from P22_LMG_TATM_ATT where ATT_DATE = :YEAR and ATT_STUNO = :STUNO";
             cmd1.Parameters.Add(new OracleParameter("YEAR", date));
             cmd1.Parameters.Add(new OracleParameter("STUNO", stuno));
             OracleDataReader dr1 = cmd1.ExecuteReader();
-            while(dr1.Read())
-            {                
-                if(dr1.IsDBNull(3))
-                {
-                    string s_ttime = "";
-                    textBox17.Text = dr1.GetString(2);
-                    textBox23.Text = s_ttime;
-                }
-                else
-                {
-                    textBox17.Text = dr1.GetString(2);
-                    textBox23.Text = dr1.GetString(3);
-                }
-                
+            while (dr1.Read())
+            {
+                textBox17.Text = dr1.GetString(2);
+                textBox23.Text = dr1.GetString(3);
+            }
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;   
-            cmd.CommandText = "select a.ATD_NAME from P22_LMG_TATM_ATD a where a.ATD_CODE = :CODE1";
+            cmd.CommandText = "select DILC_NAME from P22_LMG_TATM_DILC where DILC_CODE = :CODE1";
             cmd.Parameters.Add(new OracleParameter("CODE1", code));
             OracleDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     String codename = dr.GetString(0);
                     textBox6.Text = codename;
+                    if(dr.GetString(0).Equals("결근"))
+                    {
+                        textBox17.Text = "";
+                        textBox23.Text = "";
+                    }
                 }
                 dr.Close();
-            }
+            
             if(textBox6.Text == "조퇴")
             {
                 textBox18.Text = jrea;
@@ -353,6 +361,11 @@ namespace WindowsFormsApp1
         }
 
         private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
         {
 
         }

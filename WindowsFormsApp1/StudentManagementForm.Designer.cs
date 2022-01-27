@@ -30,14 +30,6 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.SearchBox1 = new System.Windows.Forms.TextBox();
-            this.SearchBox2 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ACC_BANK_BTN = new System.Windows.Forms.Button();
@@ -82,15 +74,23 @@ namespace WindowsFormsApp1
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.SearchBox1 = new System.Windows.Forms.TextBox();
+            this.SearchBox2 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.DOR_USE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.STU_IMG)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -115,91 +115,6 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 534);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.panel4, 2);
-            this.panel4.Controls.Add(this.dataGridView1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 56);
-            this.panel4.Name = "panel4";
-            this.tableLayoutPanel1.SetRowSpan(this.panel4, 2);
-            this.panel4.Size = new System.Drawing.Size(426, 475);
-            this.panel4.TabIndex = 19;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(426, 475);
-            this.dataGridView1.TabIndex = 19;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // panel2
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.panel2, 2);
-            this.panel2.Controls.Add(this.groupBox4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(426, 47);
-            this.panel2.TabIndex = 18;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.SearchBox1);
-            this.groupBox4.Controls.Add(this.SearchBox2);
-            this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.label21);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(0, 0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(426, 47);
-            this.groupBox4.TabIndex = 30;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "학생 검색";
-            // 
-            // SearchBox1
-            // 
-            this.SearchBox1.Font = new System.Drawing.Font("굴림", 9F);
-            this.SearchBox1.Location = new System.Drawing.Point(39, 20);
-            this.SearchBox1.Name = "SearchBox1";
-            this.SearchBox1.Size = new System.Drawing.Size(106, 21);
-            this.SearchBox1.TabIndex = 1;
-            this.SearchBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox11_KeyDown);
-            // 
-            // SearchBox2
-            // 
-            this.SearchBox2.Font = new System.Drawing.Font("굴림", 9F);
-            this.SearchBox2.Location = new System.Drawing.Point(186, 20);
-            this.SearchBox2.Name = "SearchBox2";
-            this.SearchBox2.Size = new System.Drawing.Size(88, 21);
-            this.SearchBox2.TabIndex = 2;
-            this.SearchBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchBox2_KeyDown);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("굴림", 9F);
-            this.label20.Location = new System.Drawing.Point(4, 23);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(29, 12);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "학번";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("굴림", 9F);
-            this.label21.Location = new System.Drawing.Point(151, 23);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(29, 12);
-            this.label21.TabIndex = 3;
-            this.label21.Text = "이름";
             // 
             // panel1
             // 
@@ -267,6 +182,7 @@ namespace WindowsFormsApp1
             this.ACC_BANK_BTN.TabIndex = 97;
             this.ACC_BANK_BTN.Text = "찾기";
             this.ACC_BANK_BTN.UseVisualStyleBackColor = true;
+            this.ACC_BANK_BTN.Click += new System.EventHandler(this.ACC_BANK_BTN_Click);
             // 
             // ACC_BANK
             // 
@@ -344,6 +260,7 @@ namespace WindowsFormsApp1
             this.DEPART_BTN.TabIndex = 72;
             this.DEPART_BTN.Text = "찾기";
             this.DEPART_BTN.UseVisualStyleBackColor = true;
+            this.DEPART_BTN.Click += new System.EventHandler(this.DEPART_BTN_Click);
             // 
             // DEPART
             // 
@@ -476,6 +393,7 @@ namespace WindowsFormsApp1
             this.DOR_BTN.TabIndex = 16;
             this.DOR_BTN.Text = "찾기";
             this.DOR_BTN.UseVisualStyleBackColor = true;
+            this.DOR_BTN.Click += new System.EventHandler(this.DOR_BTN_Click);
             // 
             // STU_IMG_BTN
             // 
@@ -565,6 +483,7 @@ namespace WindowsFormsApp1
             this.ZIP_BTN.TabIndex = 77;
             this.ZIP_BTN.Text = "찾기";
             this.ZIP_BTN.UseVisualStyleBackColor = true;
+            this.ZIP_BTN.Click += new System.EventHandler(this.ZIP_BTN_Click);
             // 
             // ADDR
             // 
@@ -672,6 +591,91 @@ namespace WindowsFormsApp1
             this.label5.TabIndex = 86;
             this.label5.Text = "우편번호";
             // 
+            // panel4
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.panel4, 2);
+            this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 56);
+            this.panel4.Name = "panel4";
+            this.tableLayoutPanel1.SetRowSpan(this.panel4, 2);
+            this.panel4.Size = new System.Drawing.Size(426, 475);
+            this.panel4.TabIndex = 19;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(426, 475);
+            this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // panel2
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.panel2, 2);
+            this.panel2.Controls.Add(this.groupBox4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(426, 47);
+            this.panel2.TabIndex = 18;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.SearchBox1);
+            this.groupBox4.Controls.Add(this.SearchBox2);
+            this.groupBox4.Controls.Add(this.label20);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(426, 47);
+            this.groupBox4.TabIndex = 30;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "학생 검색";
+            // 
+            // SearchBox1
+            // 
+            this.SearchBox1.Font = new System.Drawing.Font("굴림", 9F);
+            this.SearchBox1.Location = new System.Drawing.Point(39, 20);
+            this.SearchBox1.Name = "SearchBox1";
+            this.SearchBox1.Size = new System.Drawing.Size(106, 21);
+            this.SearchBox1.TabIndex = 1;
+            this.SearchBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox11_KeyDown);
+            // 
+            // SearchBox2
+            // 
+            this.SearchBox2.Font = new System.Drawing.Font("굴림", 9F);
+            this.SearchBox2.Location = new System.Drawing.Point(186, 20);
+            this.SearchBox2.Name = "SearchBox2";
+            this.SearchBox2.Size = new System.Drawing.Size(88, 21);
+            this.SearchBox2.TabIndex = 2;
+            this.SearchBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchBox2_KeyDown);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("굴림", 9F);
+            this.label20.Location = new System.Drawing.Point(4, 23);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(29, 12);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "학번";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("굴림", 9F);
+            this.label21.Location = new System.Drawing.Point(151, 23);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(29, 12);
+            this.label21.TabIndex = 3;
+            this.label21.Text = "이름";
+            // 
             // StudentManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -681,17 +685,17 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "StudentManagementForm";
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.DOR_USE.ResumeLayout(false);
             this.DOR_USE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.STU_IMG)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }

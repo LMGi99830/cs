@@ -112,6 +112,8 @@ namespace WindowsFormsApp1
                     {
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
+                    button1.Enabled = false;
+                    button2.Enabled = false;
                     break;
 
                 case "출퇴근관리   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
@@ -152,7 +154,7 @@ namespace WindowsFormsApp1
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
                     break;
-                case "휴일 관리   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
+                case "휴일관리   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
                     {
                         HolidayForm form = new HolidayForm();
@@ -187,6 +189,7 @@ namespace WindowsFormsApp1
                     {
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
+                    button6.Enabled = false;
                     break;
                 case "기숙사 등록   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
@@ -205,6 +208,7 @@ namespace WindowsFormsApp1
                     {
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
+                    button6.Enabled = false;
                     break;
                 case "근태 등록   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
@@ -223,6 +227,7 @@ namespace WindowsFormsApp1
                     {
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
+                    button6.Enabled = false;
                     break;
                 case "지원분야 등록   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))
@@ -241,6 +246,7 @@ namespace WindowsFormsApp1
                     {
                         tabControl1.SelectedTab = tabControl1.TabPages[AdminMenuForm.DICT_REMOVE_INDEX[str]];
                     }
+                    button6.Enabled = false;
                     break;
                 case "출/퇴근   ": //탭이 겹치면 그 탭을 열고 겹치는 탭이 없으면 새로운 탭 생성
                     if (!AdminMenuForm.DICT_REMOVE_INDEX.ContainsKey(str))

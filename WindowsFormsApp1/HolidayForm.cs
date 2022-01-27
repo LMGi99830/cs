@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
                     if (a >= 0 && a < count)
                     {
                         OracleCommand cmd1 = con.CreateCommand();
-                        String sql = "select app_stuno from p22_lmg_tatm_app where app_appro = 'Y'";
+                        String sql = "select app_stuno from p22_lmg_tatm_app where app_appro = 'Y' and app_year = '"+ year2 + "' and app_season = '"+ season2 + "'";
                         cmd1.CommandText = sql;
                         OracleDataReader dr = cmd1.ExecuteReader();
                         while (dr.Read())
@@ -152,6 +152,11 @@ namespace WindowsFormsApp1
         public void asd()
         {
            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -229,23 +229,15 @@ namespace WindowsFormsApp1
             else
             {
                 int rowindex1 = dataGridView1.CurrentCell.RowIndex;
-
                 OracleConnection conn = new OracleConnection(css);
                 conn.Open();
-
-                // 명령 객체 생성
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = conn;
-
-                // SQL문 지정 및 INSERT 실행
-
                 this.dataGridView4.AllowUserToAddRows = true;
                 cmd.CommandText = "Update P22_LMG_TATM_APP set APP_APPRO = 'Y' where APP_STUNO = :STUNO1";
                 cmd.Parameters.Add(new OracleParameter("STUNO1", dataGridView1.Rows[rowindex1].Cells[0].Value.ToString()));
                 cmd.ExecuteNonQuery();
-
                 UpdateStudentCount();
-
                 MessageBox.Show("승인되었습니다.");
                 conn.Close();
                 reset_userform();

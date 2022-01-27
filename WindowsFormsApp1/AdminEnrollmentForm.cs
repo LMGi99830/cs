@@ -183,7 +183,8 @@ namespace WindowsFormsApp1
         {
             con = new OracleConnection(css);
             con.Open();
-            adapt = new OracleDataAdapter("select * from P22_LMG_TATM_ADMIN where ADM_NAME like '" + textBox4.Text + "%' order by ADM_ID", con);
+            adapt = new OracleDataAdapter("select * from P22_LMG_TATM_ADMIN where ADM_NAME like '" + textBox4.Text + "%'" +
+                "order by ADM_ID", con);
             dt = new DataTable();
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;

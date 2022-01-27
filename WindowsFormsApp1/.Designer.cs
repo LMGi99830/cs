@@ -84,6 +84,7 @@ namespace WindowsFormsApp1
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(564, 480);
@@ -125,7 +126,7 @@ namespace WindowsFormsApp1
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(208, 528);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "현장 실습 프로그램";
             // 
@@ -134,14 +135,14 @@ namespace WindowsFormsApp1
             this.textBox2.Location = new System.Drawing.Point(96, 273);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(54, 21);
-            this.textBox2.TabIndex = 24;
+            this.textBox2.TabIndex = 8;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(96, 250);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(54, 21);
-            this.textBox1.TabIndex = 24;
+            this.textBox1.TabIndex = 7;
             // 
             // dateTimePicker4
             // 
@@ -151,7 +152,7 @@ namespace WindowsFormsApp1
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.ShowUpDown = true;
             this.dateTimePicker4.Size = new System.Drawing.Size(54, 21);
-            this.dateTimePicker4.TabIndex = 23;
+            this.dateTimePicker4.TabIndex = 1;
             // 
             // dateTimePicker2
             // 
@@ -160,7 +161,7 @@ namespace WindowsFormsApp1
             this.dateTimePicker2.Location = new System.Drawing.Point(96, 227);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(107, 21);
-            this.dateTimePicker2.TabIndex = 22;
+            this.dateTimePicker2.TabIndex = 6;
             // 
             // dateTimePicker1
             // 
@@ -169,14 +170,14 @@ namespace WindowsFormsApp1
             this.dateTimePicker1.Location = new System.Drawing.Point(96, 204);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(107, 21);
-            this.dateTimePicker1.TabIndex = 22;
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(96, 158);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(107, 21);
-            this.textBox3.TabIndex = 16;
+            this.textBox3.TabIndex = 3;
             // 
             // label8
             // 
@@ -194,7 +195,7 @@ namespace WindowsFormsApp1
             this.textBox6.MaxLength = 3;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(54, 21);
-            this.textBox6.TabIndex = 16;
+            this.textBox6.TabIndex = 4;
             // 
             // label12
             // 
@@ -216,7 +217,7 @@ namespace WindowsFormsApp1
             this.comboBox2.Location = new System.Drawing.Point(96, 136);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(54, 20);
-            this.comboBox2.TabIndex = 1;
+            this.comboBox2.TabIndex = 2;
             // 
             // label10
             // 
@@ -326,7 +327,7 @@ namespace WindowsFormsApp1
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(564, 42);
-            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "검색";
             // 
@@ -352,7 +353,7 @@ namespace WindowsFormsApp1
             this.comboBox4.Location = new System.Drawing.Point(75, 20);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(74, 20);
-            this.comboBox4.TabIndex = 0;
+            this.comboBox4.TabIndex = 1;
             // 
             // comboBox3
             // 
@@ -363,14 +364,14 @@ namespace WindowsFormsApp1
             this.comboBox3.Location = new System.Drawing.Point(190, 20);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(54, 20);
-            this.comboBox3.TabIndex = 1;
+            this.comboBox3.TabIndex = 2;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(297, 20);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(131, 21);
-            this.textBox5.TabIndex = 2;
+            this.textBox5.TabIndex = 3;
             // 
             // label5
             // 

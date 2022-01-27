@@ -64,14 +64,16 @@ namespace WindowsFormsApp1
             this.textBox2.Location = new System.Drawing.Point(82, 63);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(115, 21);
-            this.textBox2.TabIndex = 4;
+            this.textBox2.TabIndex = 2;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(82, 32);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(65, 21);
-            this.textBox1.TabIndex = 5;
+            this.textBox1.TabIndex = 1;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // label2
             // 
@@ -129,20 +131,26 @@ namespace WindowsFormsApp1
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 120);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.tableLayoutPanel1.SetRowSpan(this.dataGridView1, 2);
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(244, 327);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "DILC_CODE";
             this.Column1.HeaderText = "코드명";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "DILC_NAME";
             this.Column2.HeaderText = "명칭";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // AtdCode
             // 

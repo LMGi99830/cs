@@ -113,7 +113,9 @@ namespace WindowsFormsApp1
             cmd1.Parameters.Add(new OracleParameter("Difference1", time_cha));
             cmd.ExecuteNonQuery();
             cmd1.ExecuteNonQuery();
-            
+            BeAbsent();
+
+
             MessageBox.Show("출근 완료 되었습니다.");
             button1.Enabled = false;
             button2.Enabled = true;
@@ -127,16 +129,17 @@ namespace WindowsFormsApp1
             int rowindex = dataGridView1.CurrentCell.RowIndex;
             string year2 = dataGridView1.Rows[rowindex].Cells[0].Value.ToString();
             string season2 = dataGridView1.Rows[rowindex].Cells[1].Value.ToString();
+            
             OracleCommand cmd2 = con.CreateCommand();
-            string sqql = $@"SELECT row_number() over (partition by APP_STUNO order by APP_STUNO), APP_STUNO,to_char(TO_DATE(PRO_DAYS), 'YYYYMMDD') + (LEVEL-1) AS DT
+            string sqql = $@"SELECT distinct row_number() over (partition by APP_STUNO order by APP_STUNO), APP_STUNO , to_char(TO_DATE(PRO_DAYS), 'YYYYMMDD') + (LEVEL-1) AS DT
                                     FROM P22_LMG_TATM_PRO pro, P22_LMG_TATM_APP app
-                                    where pro.PRO_YEAR = app.APP_YEAR
-                                    and PRO_SEASON = '{season2}'
-                                    and app_stuno = '{textBox2.Text}'
+                                    where pro.PRO_YEAR = APP_YEAR
+                                    and pro.PRO_SEASON = '{season2}'
+                                    and app.APP_STUNO = '{textBox2.Text}'
                                     CONNECT BY LEVEL <=
-                                               (TO_DATE(sysdate) - TO_DATE(PRO_DAYS, 'YYYYMMDD')) + 1
+                                        (TO_DATE(sysdate) - TO_DATE(PRO_DAYS, 'YYYYMMDD')) + 1
                                     group by APP_STUNO, to_char(TO_DATE(PRO_DAYS), 'YYYYMMDD') + (LEVEL-1)
-                                    order by APP_STUNO";
+                                    order by DT";
             cmd2.CommandText = sqql;
             OracleDataReader dr2 = cmd2.ExecuteReader();
             while (dr2.Read())
@@ -148,11 +151,15 @@ namespace WindowsFormsApp1
 
                     OracleCommand cmd3 = con.CreateCommand();
                     String sql = "select * from p22_lmg_tatm_dil where dil_stuno = '" + stuno + "' and dil_date = '" + days + "'";
+                    Boolean check = true;
                     cmd3.CommandText = sql;                   
                     OracleDataReader dr = cmd3.ExecuteReader();
                     while (dr.Read())
-                    {                       
-                        stuno = dr.GetString(0);
+                    {
+                        check = false;
+                    }
+                    if (check)
+                    {
                         // 명령 객체 생성
                         OracleCommand cmd4 = new OracleCommand();
                         cmd4.Connection = con;
@@ -242,13 +249,14 @@ namespace WindowsFormsApp1
         }
         public void btn_load()
         {
-            string queryString = "select stu_name, stu_depart from P22_LMG_TATM_STU where STU_STUNO like '" + textBox2.Text + "'";
+            string queryString = $@"select stu_name, def_name from P22_LMG_TATM_STU stu, P22_LMG_TATM_DEF def
+            where stu.stu_depart = def.def_code and stu.stu_stuno like '{ textBox2.Text }'";            
             using (OracleConnection connection = new OracleConnection(css))
             {
-                OracleCommand command = new OracleCommand(queryString, connection);
+                OracleCommand command = new OracleCommand(queryString, connection);                
                 connection.Open();
-                OracleDataReader reader;
-                reader = command.ExecuteReader();
+                OracleDataReader reader;               
+                reader = command.ExecuteReader();                
 
                 // Always call Read before accessing data.
                 while (reader.Read())
@@ -263,8 +271,8 @@ namespace WindowsFormsApp1
                 }
                 MessageBox.Show("존재하지않는 학번입니다.");
                 return;
-            }
-            // Always call Close when done reading.                
+                connection.Close();
+            }   
         }
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e)

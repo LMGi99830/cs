@@ -70,8 +70,10 @@ namespace WindowsFormsApp1
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
@@ -79,8 +81,6 @@ namespace WindowsFormsApp1
             this.label4 = new System.Windows.Forms.Label();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -108,7 +108,7 @@ namespace WindowsFormsApp1
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(0, 0);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(646, 54);
+            this.groupBox6.Size = new System.Drawing.Size(604, 46);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "실습 검색";
@@ -119,7 +119,7 @@ namespace WindowsFormsApp1
             this.comboBox1.Items.AddRange(new object[] {
             "하계",
             "동계"});
-            this.comboBox1.Location = new System.Drawing.Point(393, 23);
+            this.comboBox1.Location = new System.Drawing.Point(382, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(57, 20);
             this.comboBox1.TabIndex = 3;
@@ -127,7 +127,7 @@ namespace WindowsFormsApp1
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(358, 29);
+            this.label18.Location = new System.Drawing.Point(347, 25);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(29, 12);
             this.label18.TabIndex = 17;
@@ -135,14 +135,15 @@ namespace WindowsFormsApp1
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(82, 23);
+            this.textBox15.Location = new System.Drawing.Point(71, 22);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(99, 21);
             this.textBox15.TabIndex = 1;
+            this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(234, 23);
+            this.textBox1.Location = new System.Drawing.Point(223, 22);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(118, 21);
             this.textBox1.TabIndex = 2;
@@ -151,7 +152,7 @@ namespace WindowsFormsApp1
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("굴림", 9F);
-            this.label5.Location = new System.Drawing.Point(187, 29);
+            this.label5.Location = new System.Drawing.Point(176, 26);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 12);
             this.label5.TabIndex = 14;
@@ -161,7 +162,7 @@ namespace WindowsFormsApp1
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 9F);
-            this.label3.Location = new System.Drawing.Point(19, 29);
+            this.label3.Location = new System.Drawing.Point(8, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 12);
             this.label3.TabIndex = 15;
@@ -187,7 +188,7 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.53368F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.981002F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.67703F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(988, 668);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(924, 577);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel2
@@ -195,9 +196,9 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.SetColumnSpan(this.panel2, 2);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 63);
+            this.panel2.Location = new System.Drawing.Point(3, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(646, 190);
+            this.panel2.Size = new System.Drawing.Size(604, 163);
             this.panel2.TabIndex = 2;
             // 
             // dataGridView1
@@ -208,7 +209,7 @@ namespace WindowsFormsApp1
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(646, 190);
+            this.dataGridView1.Size = new System.Drawing.Size(604, 163);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -217,9 +218,9 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.SetColumnSpan(this.panel4, 2);
             this.panel4.Controls.Add(this.groupBox7);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 259);
+            this.panel4.Location = new System.Drawing.Point(3, 224);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(646, 53);
+            this.panel4.Size = new System.Drawing.Size(604, 45);
             this.panel4.TabIndex = 3;
             // 
             // groupBox7
@@ -236,7 +237,7 @@ namespace WindowsFormsApp1
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Location = new System.Drawing.Point(0, 0);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(646, 53);
+            this.groupBox7.Size = new System.Drawing.Size(604, 45);
             this.groupBox7.TabIndex = 3;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "출석 정보 검색";
@@ -244,7 +245,7 @@ namespace WindowsFormsApp1
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("굴림", 8F);
-            this.button1.Location = new System.Drawing.Point(404, 26);
+            this.button1.Location = new System.Drawing.Point(377, 23);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(48, 21);
             this.button1.TabIndex = 3;
@@ -255,15 +256,15 @@ namespace WindowsFormsApp1
             // textBox12
             // 
             this.textBox12.Font = new System.Drawing.Font("굴림", 9F);
-            this.textBox12.Location = new System.Drawing.Point(324, 24);
+            this.textBox12.Location = new System.Drawing.Point(319, 22);
             this.textBox12.Name = "textBox12";
             this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(74, 21);
+            this.textBox12.Size = new System.Drawing.Size(52, 21);
             this.textBox12.TabIndex = 111;
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(505, 25);
+            this.textBox9.Location = new System.Drawing.Point(478, 22);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(100, 21);
@@ -272,7 +273,7 @@ namespace WindowsFormsApp1
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(458, 30);
+            this.label16.Location = new System.Drawing.Point(431, 27);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(41, 12);
             this.label16.TabIndex = 58;
@@ -281,7 +282,7 @@ namespace WindowsFormsApp1
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(265, 30);
+            this.label17.Location = new System.Drawing.Point(260, 27);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(53, 12);
             this.label17.TabIndex = 59;
@@ -290,7 +291,7 @@ namespace WindowsFormsApp1
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(148, 30);
+            this.label15.Location = new System.Drawing.Point(148, 27);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(29, 12);
             this.label15.TabIndex = 0;
@@ -299,7 +300,7 @@ namespace WindowsFormsApp1
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(8, 32);
+            this.label14.Location = new System.Drawing.Point(8, 27);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(29, 12);
             this.label14.TabIndex = 0;
@@ -307,14 +308,14 @@ namespace WindowsFormsApp1
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(183, 25);
+            this.textBox8.Location = new System.Drawing.Point(178, 21);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(76, 21);
             this.textBox8.TabIndex = 2;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(43, 26);
+            this.textBox7.Location = new System.Drawing.Point(43, 21);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(99, 21);
             this.textBox7.TabIndex = 1;
@@ -324,9 +325,9 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.SetColumnSpan(this.panel5, 2);
             this.panel5.Controls.Add(this.dataGridView2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 318);
+            this.panel5.Location = new System.Drawing.Point(3, 275);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(646, 347);
+            this.panel5.Size = new System.Drawing.Size(604, 299);
             this.panel5.TabIndex = 4;
             // 
             // dataGridView2
@@ -337,7 +338,7 @@ namespace WindowsFormsApp1
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(646, 347);
+            this.dataGridView2.Size = new System.Drawing.Size(604, 299);
             this.dataGridView2.TabIndex = 4;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
@@ -348,17 +349,17 @@ namespace WindowsFormsApp1
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(646, 54);
+            this.panel1.Size = new System.Drawing.Size(604, 46);
             this.panel1.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(655, 3);
+            this.panel3.Location = new System.Drawing.Point(613, 3);
             this.panel3.Name = "panel3";
             this.tableLayoutPanel1.SetRowSpan(this.panel3, 2);
-            this.panel3.Size = new System.Drawing.Size(330, 250);
+            this.panel3.Size = new System.Drawing.Size(308, 215);
             this.panel3.TabIndex = 11;
             // 
             // groupBox1
@@ -378,7 +379,7 @@ namespace WindowsFormsApp1
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(330, 250);
+            this.groupBox1.Size = new System.Drawing.Size(308, 215);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "학생 조회";
@@ -491,10 +492,10 @@ namespace WindowsFormsApp1
             // 
             this.panel6.Controls.Add(this.groupBox2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(655, 259);
+            this.panel6.Location = new System.Drawing.Point(613, 224);
             this.panel6.Name = "panel6";
             this.tableLayoutPanel1.SetRowSpan(this.panel6, 2);
-            this.panel6.Size = new System.Drawing.Size(330, 406);
+            this.panel6.Size = new System.Drawing.Size(308, 350);
             this.panel6.TabIndex = 5;
             // 
             // groupBox2
@@ -513,7 +514,7 @@ namespace WindowsFormsApp1
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(330, 406);
+            this.groupBox2.Size = new System.Drawing.Size(308, 350);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "출결정보";
@@ -526,6 +527,15 @@ namespace WindowsFormsApp1
             this.label22.Size = new System.Drawing.Size(29, 12);
             this.label22.TabIndex = 36;
             this.label22.Text = "퇴근";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(68, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "근무일자";
             // 
             // label21
             // 
@@ -543,6 +553,14 @@ namespace WindowsFormsApp1
             this.textBox23.Size = new System.Drawing.Size(83, 21);
             this.textBox23.TabIndex = 34;
             // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(127, 38);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
+            this.textBox10.Size = new System.Drawing.Size(83, 21);
+            this.textBox10.TabIndex = 35;
+            // 
             // textBox17
             // 
             this.textBox17.Location = new System.Drawing.Point(127, 65);
@@ -553,9 +571,9 @@ namespace WindowsFormsApp1
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.textBox18);
-            this.groupBox4.Location = new System.Drawing.Point(6, 206);
+            this.groupBox4.Location = new System.Drawing.Point(6, 171);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(324, 150);
+            this.groupBox4.Size = new System.Drawing.Size(283, 150);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "사유";
@@ -565,7 +583,7 @@ namespace WindowsFormsApp1
             this.textBox18.Location = new System.Drawing.Point(11, 20);
             this.textBox18.Multiline = true;
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(304, 124);
+            this.textBox18.Size = new System.Drawing.Size(266, 124);
             this.textBox18.TabIndex = 1;
             // 
             // label19
@@ -600,28 +618,11 @@ namespace WindowsFormsApp1
             this.textBox6.Size = new System.Drawing.Size(83, 21);
             this.textBox6.TabIndex = 7;
             // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(127, 38);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(83, 21);
-            this.textBox10.TabIndex = 35;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "근무일자";
-            // 
             // AdminAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 668);
+            this.ClientSize = new System.Drawing.Size(924, 577);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AdminAttendance";

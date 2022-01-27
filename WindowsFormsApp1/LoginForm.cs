@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
             }
             if(check)
             {
-                MessageBox.Show("관리자로 로그인 됨");
+                MessageBox.Show("환영합니다.");
                 this.Visible = false; // 현재 폼 안보이게 하기
                 AdminMenuForm frm = new AdminMenuForm(); // 새 폼 생성¬
                 frm.Owner = this; // 새 폼의 오너를 현재 폼으로

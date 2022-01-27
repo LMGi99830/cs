@@ -133,40 +133,34 @@ namespace WindowsFormsApp1
         public void hoilday()
         {
             nBetweenDayCnt = 0;
-
             int i = 0;
             DateTime temp;
             while (true)
             {
                 temp = dateTimePicker1.Value.Date.AddDays(i);
-
                 if (temp.DayOfWeek == DayOfWeek.Sunday || temp.DayOfWeek == DayOfWeek.Saturday)
                 {
                     String date1 = "휴일";
                     String date2 = temp.Date.ToString("yyyyMMdd");
                     OracleConnection con = new OracleConnection(cs);
                     con.Open();
-
-                    // 명령 객체 생성
                     OracleCommand cmd1 = new OracleCommand();
                     cmd1.Connection = con;
-                    cmd1.CommandText = "INSERT INTO P22_LMG_TATM_HOI(HOI_YEAR, HOI_SEASON, HOI_DATE, HOI_NAME) VALUES(:YEAR1,:SEASON1,:DAY2, :DAY1)";
+                    cmd1.CommandText = "INSERT INTO P22_LMG_TATM_HOI(HOI_YEAR, HOI_SEASON, HOI_DATE, HOI_NAME)" +
+                        "VALUES(:YEAR1,:SEASON1,:DAY2, :DAY1)";
                     cmd1.Parameters.Add(new OracleParameter("YEAR1", dateTimePicker4.Text.ToString()));
                     cmd1.Parameters.Add(new OracleParameter("SEASON1", comboBox2.Text.ToString()));
                     cmd1.Parameters.Add(new OracleParameter("DAY2", date2));
                     cmd1.Parameters.Add(new OracleParameter("DAY1", date1));
-
                     cmd1.ExecuteNonQuery();
                 }
                     if (temp.DayOfWeek != DayOfWeek.Sunday && temp.DayOfWeek != DayOfWeek.Saturday)
                         nBetweenDayCnt++;
-
                     TimeSpan Between = dateTimePicker2.Value.Date - temp;
                     if (Between.Days <= 0)
                     {
                         break;
                     }
-
                     temp = dateTimePicker1.Value.Date.AddDays(i);
                     i++;
                 }
@@ -260,13 +254,19 @@ namespace WindowsFormsApp1
                     con = new OracleConnection(cs);
                     con.Open();
                     OracleCommand cmd = new OracleCommand();
-                    cmd.Connection = con;
-                    //선택한 동과 같은 값을 db에서 찾아서 제거
+                    cmd.Connection = con;                    
                     cmd.CommandText = "DELETE P22_LMG_TATM_PRO WHERE PRO_YEAR = :YEAR_IN and PRO_SEASON = :SEASON_IN";
                     cmd.Parameters.Add(new OracleParameter("YEAR_IN", yearindex));
                     cmd.Parameters.Add(new OracleParameter("SEASON_IN", seasonindex));
-                    MessageBox.Show("삭제가 완료되었습니다.");
                     cmd.ExecuteNonQuery();
+
+                    OracleCommand cmd1 = new OracleCommand();
+                    cmd1.Connection = con;                    
+                    cmd1.CommandText = "DELETE P22_LMG_TATM_HOI WHERE HOI_YEAR = :YEAR_HO and HOI_SEASON = :SEASON_HO";
+                    cmd1.Parameters.Add(new OracleParameter("YEAR_HO", yearindex));
+                    cmd1.Parameters.Add(new OracleParameter("SEASON_HO", seasonindex));
+                    MessageBox.Show("삭제가 완료되었습니다.");
+                    cmd1.ExecuteNonQuery();
                     btn_load();
                     con.Close();
                 }
@@ -275,6 +275,11 @@ namespace WindowsFormsApp1
 
         }
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dateTimePicker4.Enabled = false;
             comboBox2.Enabled = false;
@@ -317,11 +322,6 @@ namespace WindowsFormsApp1
                 textBox2.Text = P_TIMES;
 
             }
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
         }
     }
 }

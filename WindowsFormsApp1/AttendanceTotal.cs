@@ -56,7 +56,8 @@ namespace WindowsFormsApp1
             String Year1 = dataGridView1.Rows[rowindex].Cells[0].Value.ToString(); // 연도
             String Season1 = dataGridView1.Rows[rowindex].Cells[1].Value.ToString(); // 계절
 
-            String sql = $@"select DIL_STUNO, STU_NAME, DEF_NAME, (select count(*) from P22_LMG_TATM_DIL where DIL_DILCODE = 1),(select count(*) from P22_LMG_TATM_DIL where DIL_DILCODE = 3),
+            String sql = $@"select DIL_STUNO, STU_NAME, DEF_NAME, (select count(*) from P22_LMG_TATM_DIL
+                                    where DIL_DILCODE = 1),(select count(*) from P22_LMG_TATM_DIL where DIL_DILCODE = 3),
                                    (select count(*) from P22_LMG_TATM_DIL where DIL_DILCODE = 4),(select count(*) from P22_LMG_TATM_DIL where DIL_DILCODE = 5),
                                    (select count(*) from P22_LMG_TATM_DIL where DIL_DILCODE = 2), sum(DIL_DILTIME)
                                     from P22_LMG_TATM_DIL dil, P22_LMG_TATM_APP app, P22_LMG_TATM_STU stu, P22_LMG_TATM_DEF def
